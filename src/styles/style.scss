@@ -1,7 +1,45 @@
+$dark: #1F2041;
+$dark-75: rgba(31, 32, 65, 0.75);
+$dark-50: rgba(31, 32, 65, 0.50);
+$dark-25: rgba(31, 32, 65, 0.25);
+$dark-05: rgba(31, 32, 65, 0.05);
+$green: #6FCF97;
+$purple: #BC9CFF;
+
+html {
+    box-sizing: border-box;
+}
+
 @import './normalize.css';
-@import '../components/header/header.scss';
 @import './fonts/font.css';
+@import '../components/header/header.scss';
+@import '../components/button/button.scss';
+
+body {
+    font-family: 'Montserrat-Regular', sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+    color: $dark-75;
+}
 
 h1 {
     font-family: 'Montserrat-Bold', sans-serif;
+    font-size: 24px;
+    line-height: 29px;
+    color: $dark;
+}
+
+h2 {
+    font-family: 'Montserrat-Bold', sans-serif;
+    font-size: 19px;
+    line-height: 23px;
+    color: $dark;
+}
+
+h3 {
+    font-family: 'Montserrat-Bold', sans-serif;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: $dark;
 }

@@ -1,6 +1,7 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin')
 
 module.exports = {
   mode: 'development',
@@ -9,6 +10,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
+    assetModuleFilename: 'images/[name][ext]'
   },
   module: {
     rules: [
@@ -47,8 +49,8 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: `src/styles/fonts/[name]/[name].[ext]`,
-              publicPath: "../"
+              name: `fonts/[name]/[name].[ext]`,
+              publicPath: "./"
             }
           }
         ]
@@ -61,6 +63,15 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'src') + '/index.pug'
-    })
-  ]
+    }),
+    new CopyPlugin({
+      patterns: [
+          {
+            from: path.resolve(__dirname, 'src/images'),
+            to:   path.resolve(__dirname, 'dist/images')
+          }
+        ]
+      })
+  ],
+  
 };
