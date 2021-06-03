@@ -5,7 +5,11 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    position: relative;
+    z-index: 1;
     padding: 15px 140px;
+    background-color: #fff;
+    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
 
     &__logo {
         display: flex;
@@ -23,6 +27,10 @@
 
         font-size: 14px;
         color: $dark-50;
+    }
+
+    &__button {
+        margin-right: 25px;
     }
 
     &__burger {
@@ -68,13 +76,13 @@
         background-color: $dark-50;
 
         transform: translateY(-50%);
-
-        
     }
 
     &__link {
         margin-right: 20px;
-        &_active {
+        transition: .2s color, .2s font-weight;
+
+        &_active, &:hover {
             color: $dark-75;
             font-weight: bold;
         }
@@ -116,7 +124,7 @@
     }
 
     @media (max-width: 1280px) {
-        &__signin {
+        .user-name {
             width: 200px;
             line-height: 1.1; 
         }
@@ -132,13 +140,33 @@
         }
     }
 
-    @media (max-width: 840px) {
+    
+
+    @media (max-width: 900px) {
+        &__logo-img {
+            margin-right: 12.5px;
+        }
+        
+        &__logo-text {
+            display: block;
+        }
+
         &__nav {
             display: none;
         }
 
         &__burger {
             display: block;
+        }
+
+        @media (max-width: 380px) {
+            &__logo-img {
+                margin-right: 0;
+            }
+    
+            &__logo-text {
+                display: none;
+            }
         }
     }
 }
@@ -149,9 +177,27 @@
     }
 }
 
-@media (max-width: 960px) {
+@media (max-width: 1030px) {
     .header {
         padding: 15px 60px;
+    }
+}
+
+@media (max-width: 960px) {
+    .header {
+        padding: 15px 40px;
+    }
+}
+
+@media (max-width: 900px) {
+    .header {
+        padding: 15px 80px;
+    }
+}
+
+@media (max-width: 620px) {
+    .header {
+        padding: 15px 40px;
     }
 }
 

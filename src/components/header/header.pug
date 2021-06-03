@@ -1,10 +1,10 @@
 include ../button/button
 
 mixin header(registred)
-    header.header 
+    header(class="header" + ' ' + attributes.class)
         a.header__logo
-            img(src="./images/logo.png", alt="Logo").header__logo-img
-            img(src="./images/logo-text.png" alt="logo text").header__logo-text
+            img(src="../images/logo.png", alt="Logo").header__logo-img
+            img(src="../images/logo-text.png" alt="logo text").header__logo-text
 
         nav.header__nav 
             a.header__link.header__link_active О нас
@@ -18,7 +18,7 @@ mixin header(registred)
             .header__signin 
                 if registred
                     .separator 
-                    p.user-name Констанин Констанинович Константинопольский
+                    p.user-name Юлий Цезарь
                 else 
                     +button('white', 'Войти')(class="header__button")
                     +button('purple', 'Зарегестрироваться')
