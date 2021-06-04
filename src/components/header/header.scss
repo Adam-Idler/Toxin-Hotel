@@ -11,16 +11,6 @@
     background-color: #fff;
     box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
 
-    &__logo {
-        display: flex;
-        align-items: center;
-    }
-
-    &__logo-img {
-        vertical-align: bottom;
-        margin-right: 12.5px;
-    }
-
     &__nav {
         display: flex;
         align-items: center;
@@ -130,27 +120,7 @@
         }
     }
 
-    @media (max-width: 1120px) {
-        &__logo-img {
-            margin-right: 0;
-        }
-
-        &__logo-text {
-            display: none;
-        }
-    }
-
-    
-
     @media (max-width: 900px) {
-        &__logo-img {
-            margin-right: 12.5px;
-        }
-        
-        &__logo-text {
-            display: block;
-        }
-
         &__nav {
             display: none;
         }
@@ -177,6 +147,16 @@
     }
 }
 
+@media (max-width: 1120px) {
+    .logo_img {
+        margin-right: 0;
+    }
+
+    .logo_text {
+        display: none;
+    }
+}
+
 @media (max-width: 1030px) {
     .header {
         padding: 15px 60px;
@@ -190,6 +170,14 @@
 }
 
 @media (max-width: 900px) {
+    .logo_img {
+        margin-right: 12.5px;
+    }
+    
+    .logo_text {
+        display: block;
+    }
+
     .header {
         padding: 15px 80px;
     }

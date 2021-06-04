@@ -16,7 +16,9 @@ html {
 
 // components styles
 @import '../components/header/header.scss';
+@import '../components/footer/footer.scss';
 @import '../components/button/button.scss';
+@import '../components/subscription-field/subscription-field.scss';
 
 // pages styles
 @import '../pages/headers & footers/styles.scss';
@@ -48,4 +50,14 @@ h3 {
     line-height: 15px;
     text-transform: uppercase;
     color: $dark;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+
+    &_img {
+        vertical-align: bottom;
+        margin-right: 12.5px;
+    }
 }

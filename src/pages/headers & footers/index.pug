@@ -1,4 +1,5 @@
 include ../../components/header/header
+include ../../components/footer/footer
 
 doctype html 
 html(lang="ru")
@@ -8,4 +9,7 @@ html(lang="ru")
         title Headers & footers
     body 
         +header(false)(class="headers__block")
-        +header(true)
+        +header(true)(class="header__block-2")
+
+        +footer(false)(class="footer__block")
+        +footer(true)(class="footer__mobile-block")

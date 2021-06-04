@@ -1,0 +1,82 @@
+.subscription {
+    display: inline-block;
+    position: relative;
+
+    &::before {
+        content: "";
+        display: block;
+        width: 10px;
+        height: 10px;
+
+        position: absolute;
+        top: 50%;
+        right: 15px;
+
+        transform: translateY(-50%) rotate(45deg);
+
+        border: 2px solid black;
+        border-bottom: none;
+        border-left: none;
+        border-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+        border-image-slice: 1;
+    }
+
+    &::after {
+        content: "";
+        display: block;
+        width: 15px;
+        height: 2px;
+
+        position: absolute;
+        top: 50%;
+        right: 15px;
+        
+        transform: translateY(-50%);
+        
+        background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    }
+
+    &__field {
+        font-family: 'Montserrat-Regular';
+        color: $dark-75;
+
+        box-sizing: border-box;
+        width: 260px;
+        height: 44px;
+
+        border: 1px solid $dark-25;
+        outline: none;
+        border-radius: 4px;
+
+        padding: 10px 15px;
+
+        transition: .2s border-color;
+    }
+
+    &__field:hover, &__field:focus {
+        border: 1px solid $dark-75;
+    }
+
+    &__button {
+        background-color: transparent;
+        border: none;
+        outline: none;
+        width: 44px;
+        height: 44px;
+        padding: 0;
+
+        position: absolute;
+        right: 0;
+        top: 50%;
+
+        transform: translateY(-50%);
+
+        transition: .2s background-color;
+        
+        &:hover, &:focus {
+            cursor: pointer;
+
+            background-color: rgba(188, 156, 255, .2);
+        }
+    }
+}
