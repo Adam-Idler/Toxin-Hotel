@@ -6,6 +6,7 @@
     &__widgets {
         display: flex;
         max-width: 100%;
+        flex-wrap: wrap;
         padding: 100px 140px;
         justify-content: space-between;
     }
@@ -61,25 +62,102 @@
             margin-right: 0;
         }
     }
-}
 
-.footer-mobile {
-    width: 768px;
-    box-sizing: border-box;
-    padding: 120px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: #fff;
-    text-align: center;
+    @media (max-width: 1330px) {
+        &__text_about {
+            display: none;
+        }
 
-    &__logo {
-        align-self: center;
-        margin-bottom: 20px;
+        &__logo_img {
+            margin-right: 0 !important;
+        }
+
+        &__logo_text {
+            display: none;
+        }
     }
 
-    &__copyrights {
-        margin-bottom: 25px;
-        line-height: 17px;
+    @media (max-width: 1280px) {
+        &__widgets {
+            padding: 100px;
+        }
+
+        &__copyrights {
+            padding: 0 100px;
+        }
+    }
+
+    @media (max-width: 1160px) {
+        &__widgets {
+            padding: 60px 100px;
+        }
+
+        &__words {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+    
+            margin-bottom: 40px;
+        }
+    }
+
+    @media (max-width: 1030px) {
+        &__widgets {
+            padding: 60px;
+        }
+
+        &__copyrights {
+            padding: 0 60px;
+        }
+    }
+
+    @media (max-width: 900px) {
+        & {
+            padding: 120px 100px;
+        }
+
+        &__widgets {
+            padding: 0;
+        }
+
+        &__widget {
+            display: none;
+        }
+
+        &__words {
+            margin-bottom: 20px;
+        }
+
+        &__logo_img {
+            margin-right: 12.5px !important;
+        }
+
+        &__logo_text {
+            display: block;
+        }
+
+        &__copyrights {
+            box-shadow: none;
+            border-top: none;
+
+            display: flex;
+            flex-direction: column;
+
+            padding: 0;
+
+            text-align: center;
+        }
+    }
+
+    @media (max-width: 750px) {
+        & {
+            padding: 60px 10px;
+        }
+    }
+
+    @media (max-width: 391px) {
+        &__socials {
+            margin-top: 10px;
+        }
     }
 }

@@ -1,9 +1,9 @@
 mixin footer(mobile)
-    if mobile 
+    if mobile
         footer(class= attributes.class ? "footer-mobile " + attributes.class : "footer-mobile")
             .footer-mobile__logo.logo 
-                img(src="../images/logo.png", alt="Logo").logo_img
-                img(src="../images/logo-text.png" alt="logo text").logo_text
+                img(src="../images/logo.png", alt="Logo").footer-mobile__logo_img
+                img(src="../images/logo-text.png" alt="logo text")
 
             p.footer-mobile__copyrights Copyright © 2018 Toxin отель. Все права защищены.
 
@@ -44,11 +44,11 @@ mixin footer(mobile)
         footer.footer(class= attributes.class ? "footer " + attributes.class : "footer")
             .footer__widgets
                 .footer__words
-                    .logo
-                        img(src="../images/logo.png", alt="Logo").logo_img
-                        img(src="../images/logo-text.png" alt="Logo text").logo_text
+                    .logo.footer__logo
+                        img(src="../images/logo.png", alt="Logo").logo_img.footer__logo_img
+                        img(src="../images/logo-text.png" alt="Logo text").logo_text.footer__logo_text
 
-                    p.footer__text Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
+                    p.footer__text.footer__text_about Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
 
                 .footer__widget.footer__widget_nav
                     h3.footer__widget-title Навигация

@@ -18,3 +18,39 @@ body {
     margin: 0 auto;
     margin-bottom: 140px;
 }
+
+.footer-mobile {
+    width: 768px;
+    box-sizing: border-box;
+    padding: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #fff;
+    text-align: center;
+
+    &__logo {
+        align-self: center;
+        margin-bottom: 20px;
+    }
+
+    &__logo_img {
+        margin-right: 12.5px;
+    }
+
+    &__copyrights {
+        margin-bottom: 25px;
+        line-height: 17px;
+    }
+}
+
+
+@media (max-width: 900px) {
+    .footer-mobile {
+        display: none;
+    }
+
+    .footer__block {
+        margin-bottom: 0;
+    }
+}
