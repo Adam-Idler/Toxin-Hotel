@@ -38,8 +38,15 @@
         line-height: 17px;
         margin-bottom: 20px;
 
+        transition: .2s color, .2s font-weight;
+
         &:last-of-type {
             margin-bottom: 0;
+        }
+
+        &:hover {
+            color: $dark-75;
+            font-weight: bold;
         }
     }
 

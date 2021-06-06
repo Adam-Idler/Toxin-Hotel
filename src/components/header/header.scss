@@ -17,6 +17,14 @@
 
         font-size: 14px;
         color: $dark-50;
+
+        &-menu {
+            display: flex;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
     }
 
     &__button {
@@ -70,9 +78,10 @@
 
     &__link {
         margin-right: 20px;
+        color: $dark-50;
         transition: .2s color, .2s font-weight;
 
-        &_active, &:hover {
+        &_active, &:hover:not(.header__link_expanded) {
             color: $dark-75;
             font-weight: bold;
         }
@@ -85,7 +94,7 @@
         &_expanded::after {
             content: "";
             position: absolute;
-            top: 7px;
+            top: 4px;
             right: -17px;
             display: block;
             width: 6px;
@@ -94,6 +103,48 @@
             border-top: none;
             border-left: none;
             transform: rotate(45deg);
+        }
+
+        &__expanded-list {
+            pointer-events: none;
+            position: absolute;
+            top: 0;
+            z-index: 10;
+
+            margin: 0;
+            padding: 0;
+            list-style: none;
+
+            display: none;
+
+            &-item {
+                pointer-events: none;
+                opacity: 0;
+                background-color: #fff;
+                padding: 4px 10px;
+                
+                &:first-of-type {
+                    padding: 24px 10px 4px;
+                }
+
+                &:last-of-type {
+                    padding: 4px 10px 14px;
+                }
+            }
+        }
+
+        &_expanded:hover + &__expanded-list,
+        &__expanded-list:hover {
+            display: block;
+            animation: shadow 0.2s linear 0.3s forwards;
+        }
+
+        @for $i from 1 through 8 {
+            &_expanded:hover + &__expanded-list > &__expanded-list-item:nth-child(#{$i}),
+            li:hover &__expanded-list-item:nth-child(#{$i}) {
+                animation: menu 0.1s ease-in-out forwards;
+                animation-delay: 0.1s * $i;
+            }
         }
     }
 
@@ -189,3 +240,25 @@
     }
 }
 
+@keyframes menu {
+    0% {
+      opacity: 0;
+      transform: rotateX(-90deg);
+    }
+
+    100% {
+      opacity: 1;
+      pointer-events: auto;
+      transform: rotateX(0);
+    }
+  }
+
+@keyframes shadow {
+    0% {
+        box-shadow: none;
+    }
+
+    100% {
+        box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.12);
+    }
+}

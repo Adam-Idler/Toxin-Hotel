@@ -64,6 +64,7 @@ html {
    */
   
   a {
+    text-decoration: none;
     background-color: transparent;
     cursor: pointer;
   }
