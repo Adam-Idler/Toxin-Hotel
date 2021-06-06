@@ -7,13 +7,22 @@ mixin header(registred)
             img(src="../images/logo-text.png" alt="logo text").logo_text.header__logo_img
 
         nav.header__nav 
+            ul
             a.header__link.header__link_active О нас
-            a.header__link.header__link_expanded Услуги
+            a.header__link.header__link_expanded
+                .header__expanded_links
+                    a.header__expanded_link Подбор номера
+                    a.header__expanded_link Подбор отеля
+                    a.header__expanded_link Отзывы о номерах
+                    a.header__expanded_link Сравнение цен
+                
             a.header__link Вакансии
             a.header__link Новости
             a.header__link.header__link_expanded Соглашения
-
-            
+                .header__expanded_links
+                    a.header__expanded_link Пользовательское
+                    a.header__expanded_link Обработка персональных данных
+                    a.header__expanded_link Оказание услуг
 
             .header__signin 
                 if registred
