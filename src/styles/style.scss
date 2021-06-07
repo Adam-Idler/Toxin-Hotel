@@ -6,23 +6,6 @@ $dark-05: rgba(31, 32, 65, 0.05);
 $green: #6FCF97;
 $purple: #BC9CFF;
 
-html {
-    box-sizing: border-box;
-}
-
-// common styles
-@import './normalize.css';
-@import './fonts/font.css';
-
-// components styles
-@import '../components/header/header.scss';
-@import '../components/footer/footer.scss';
-@import '../components/button/button.scss';
-@import '../components/subscription-field/subscription-field.scss';
-
-// pages styles
-@import '../pages/headers & footers/styles.scss';
-
 body {
     font-family: 'Montserrat-Regular', sans-serif;
     font-size: 14px;
@@ -60,4 +43,22 @@ h3 {
         vertical-align: bottom;
         margin-right: 12.5px;
     }
+}
+
+// common styles
+@import './normalize.css';
+@import './fonts/font.css';
+
+// components styles
+@import '../components/header/header.scss';
+@import '../components/footer/footer.scss';
+@import '../components/button/button.scss';
+@import '../components/subscription-field/subscription-field.scss';
+@import '../components/burger-menu/burger-menu.scss';
+
+// pages styles
+@import '../pages/headers & footers/styles.scss';
+
+* {
+    box-sizing: border-box;
 }

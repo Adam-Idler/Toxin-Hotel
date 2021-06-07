@@ -1,0 +1,26 @@
+include ../button/button
+
+mixin burger-menu(registred)
+    .burger-menu
+        .burger-menu__block
+            button.burger-menu__close-btn
+
+            header.burger-menu__header
+                .logo.burger-menu__logo
+                    img(src="../images/logo.png", alt="Logo").logo_img.burger-menu__logo_img
+                    img(src="../images/logo-text.png" alt="logo text").logo_text.burger-menu__logo_text
+
+                .burger-menu__signin 
+                    if registred
+                        .burger-menu__separator 
+                        p.burger-menu__user-name Юлий Цезарь
+                    else 
+                        +button('white', 'Войти')(class="header__button")
+                        +button('purple', 'Зарегестрироваться')
+
+            nav.burger-menu__nav 
+                a(href="#").burger-menu__link О нас
+                a(href="#").burger-menu__link Услуги
+                a(href="#").burger-menu__link Новости
+                a(href="#").burger-menu__link Вакансии
+                a(href="#").burger-menu__link Соглашения

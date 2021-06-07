@@ -1,10 +1,11 @@
 include ../button/button
+include ../burger-menu/burger-menu
 
 mixin header(registred)
     header(class=attributes.class ? "header" + ' ' + attributes.class : "header")
         a(href="#").logo
             img(src="../images/logo.png", alt="Logo").logo_img.header__logo_img
-            img(src="../images/logo-text.png" alt="logo text").logo_text.header__logo_img
+            img(src="../images/logo-text.png" alt="logo text").logo_text.header__logo_text
 
         nav.header__nav 
             ul.header__nav-menu
@@ -46,3 +47,11 @@ mixin header(registred)
 
         button.header__burger 
                 .header__burger-item 
+
+    +burger-menu(false)
+
+        
+
+            
+            
+
