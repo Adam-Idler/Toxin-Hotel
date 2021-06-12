@@ -40,7 +40,6 @@
         font-family: 'Montserrat-Regular';
         color: $dark-75;
 
-        box-sizing: border-box;
         width: 260px;
         height: 44px;
 
@@ -51,6 +50,10 @@
         padding: 10px 15px;
 
         transition: .2s border-color;
+
+        &::placeholder {
+            color: $dark-25;
+        }
     }
 
     &__field:hover, &__field:focus {

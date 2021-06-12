@@ -1,0 +1,50 @@
+.text-field {
+    width: 320px;
+    font-family: 'Montserrat-Regular';
+    color: $dark-75;
+
+    width: 260px;
+    height: 44px;
+
+    border: 1px solid $dark-25;
+    outline: none;
+    border-radius: 4px;
+
+    padding: 10px 15px;
+
+    transition: .2s border-color;
+
+    &::placeholder {
+        color: $dark-25;
+    }
+
+    &:hover, &:focus {
+        border: 1px solid $dark-75;
+        color: $dark-75;
+    }
+
+    &__masked {
+        text-transform: uppercase;
+
+        &:not(.has-value) {
+            color: #fff;
+        }
+
+        &:focus {
+            color: $dark-75;
+        }
+
+        &:not(:focus):not(.has-value):before {
+            content: attr(placeholder);
+            color: $dark-25;
+        }
+
+        &::-webkit-calendar-picker-indicator {
+            display: none;
+        }
+    }
+
+    &__indent-40 {
+        margin-bottom: 40px;
+    }
+}

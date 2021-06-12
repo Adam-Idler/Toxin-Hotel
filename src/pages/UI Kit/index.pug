@@ -1,0 +1,47 @@
+include ../../components/header/header
+include ../../components/footer/footer
+include ../../components/text-field/text-field
+
+doctype html 
+html(lang="ru")
+    head 
+        meta(charset="utf-8")
+        meta(name="viewport", content="initial-scale=1.0, width=device-width")
+        title UI Kit
+    body 
+        //- Headers & Footers
+        h1.block__name Headers & Footers
+        +header(false)(class="headers__block")
+        +header(true)(class="header__block-2")
+
+        +footer(false)(class="footer__block")
+        +footer(true)(class="footer__mobile-block")
+
+        //- Form Elements
+        h1.block__name Form Elements
+        .form-elements
+            .form-elements__column.form-elements__column-1
+                .form-elements__element
+                    .form-elements__annotation
+                        h3.form-elements__element-name Text Field
+                        p.form-elements__subtext Default
+                    +text-field('email', 'Email')
+
+                .form-elements__element
+                    .form-elements__annotation
+                        h3.form-elements__element-name Text Field
+                        p.form-elements__subtext Hover / Focus
+                    +text-field("text", "", "This is pretty awesome")(class="text-field__active")
+
+                .form-elements__element
+                    .form-elements__annotation
+                        h3.form-elements__element-name Masked Text Field
+                    +text-field('date', 'ДД.ММ.ГГГГ')(class="text-field__masked text-field__indent-40")
+
+            .form-elements__column.form-elements__column-2
+
+            .form-elements__column.form-elements__column-3
+
+        
+        
+        

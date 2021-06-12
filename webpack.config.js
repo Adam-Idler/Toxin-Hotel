@@ -61,13 +61,16 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: 'styles/styles.css'
     }),
+
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'src') + '/index.pug'
+      template: path.resolve(__dirname, 'src/pages/Website Pages') + '/index.pug',
+      filename: 'pages/Website-pages.html'
     }),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'src/pages/headers & footers') + '/index.pug',
-      filename: 'pages/headers&footers.html'
+      template: path.resolve(__dirname, 'src/pages/UI Kit') + '/index.pug',
+      filename: 'pages/UI-kit.html'
     }),
+
     new CopyPlugin({
       patterns: [
           {

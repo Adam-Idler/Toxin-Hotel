@@ -1,0 +1,8 @@
+mixin text-field(type='text', placeholder="", value="")
+    input(
+            type= type,
+            placeholder= placeholder,
+            value= value,
+            class!= attributes.class ? 'text-field ' + attributes.class : 'text-field',
+            oninput = type=='date' ? "this.classList.toggle('has-value',this.value)>" : ''
+        )

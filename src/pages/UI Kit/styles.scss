@@ -1,3 +1,8 @@
+.block__name {
+    padding: 10px;
+}
+
+// Headers & Footers
 body {
     background-color: #F4F4F6;
 }
@@ -54,4 +59,43 @@ body {
     .footer__block {
         margin-bottom: 0;
     }
+}
+
+// Form Elements
+
+.form-elements {
+    padding: 140px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #fff;
+
+    &__element {
+        margin-bottom: 20px;
+    }
+
+    &__annotation {
+        display: flex;
+        justify-content: space-between;
+
+        align-items: center;
+    }
+
+    &__subtext {
+        font-size: 12px;
+        line-height: 15px;
+        margin-bottom: 5px;
+        color: $dark-25;
+        text-transform: uppercase;
+    }
+
+    &__element-name {
+        margin-bottom: 5px;
+    }
+}
+
+.text-field__active {
+    border: 1px solid $dark-75;
+    color: $dark-75;
 }
