@@ -73,6 +73,10 @@ body {
 
     &__element {
         margin-bottom: 20px;
+
+        &_indent-40 {
+            margin-bottom: 40px;
+        }
     }
 
     &__annotation {
@@ -92,6 +96,15 @@ body {
 
     &__element-name {
         margin-bottom: 5px;
+    }
+
+    &_date-dropdown {
+        display: flex;
+        max-height: 70px;
+        width: 320px;
+        align-content: space-between;
+        flex-wrap: wrap;
+        flex-direction: column;
     }
 }
 

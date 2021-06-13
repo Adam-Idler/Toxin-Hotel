@@ -1,6 +1,7 @@
 include ../../components/header/header
 include ../../components/footer/footer
 include ../../components/text-field/text-field
+include ../../components/dropdown/dropdown
 
 doctype html 
 html(lang="ru")
@@ -35,8 +36,21 @@ html(lang="ru")
 
                 .form-elements__element
                     .form-elements__annotation
+                        h3.form-elements__element-name Dropdown
+                    +dropdown()
+
+                .form-elements__element.form-elements__element_indent-40
+                    .form-elements__annotation
                         h3.form-elements__element-name Masked Text Field
-                    +text-field('date', 'ДД.ММ.ГГГГ')(class="text-field__masked text-field__indent-40")
+                    +text-field('date', 'ДД.ММ.ГГГГ')(class="text-field__masked")
+
+                .form-elements__element.form-elements_date-dropdown
+                    .form-elements__annotation
+                        h3.form-elements__element-name Date dropdown
+                    +text-field('date', 'ДД.ММ.ГГГГ')(class="text-field__masked text-field__masked_mini")
+                    .form-elements__annotation
+                        h3.form-elements__element-name Date dropdown
+                    +text-field('date', 'ДД.ММ.ГГГГ', '2019-08-19')(class="text-field__masked text-field__masked_mini")
 
             .form-elements__column.form-elements__column-2
 

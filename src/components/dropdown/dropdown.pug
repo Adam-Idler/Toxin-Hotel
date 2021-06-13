@@ -1,0 +1,23 @@
+mixin dropdown()
+    .dropdown
+        button.dropdown__button Сколько гостей
+        ul.dropdown__list 
+            li.dropdown__item
+                p.dropdown__item-name Взрослые
+                .dropdown__count
+                    button.dropdown__button-minus -
+                    input(type="number" value="0" min="0" readonly).dropdown__count-digit
+                    button.dropdown__button-plus +
+            li.dropdown__item
+                p.dropdown__item-name Дети
+                .dropdown__count
+                    button.dropdown__button-minus -
+                    input(type="number" value="0" min="0" readonly).dropdown__count-digit
+                    button.dropdown__button-plus +
+            li.dropdown__item
+                p.dropdown__item-name Младенцы
+                .dropdown__count
+                    button.dropdown__button-minus -
+                    input(type="number" value="0" min="0" readonly).dropdown__count-digit
+                    button.dropdown__button-plus +
+
