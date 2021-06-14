@@ -83,11 +83,11 @@
     &__link {
         margin-right: 20px;
         color: $dark-50;
-        transition: .2s color, .2s font-weight;
+        transition: .2s color, .2s text-shadow;
 
         &_active, &:hover:not(.header__link_expanded) {
             color: $dark-75;
-            font-weight: bold;
+            text-shadow: 0 0 .8px $dark-75, 0 0 .8px $dark-75;
         }
 
         &_expanded {

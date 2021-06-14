@@ -6,7 +6,7 @@
     background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
 
     font-size: 12px;
-    font-weight: bold;
+    font-family: 'Montserrat-Bold';
     text-transform: uppercase;
     color: #fff;
 
@@ -22,7 +22,7 @@
     padding: 9px 20px;
 
     font-size: 12px;
-    font-weight: bold;
+    font-family: 'Montserrat-Bold';
     text-transform: uppercase;
     color: $purple;
 
@@ -42,7 +42,6 @@
 
         transition: .2s opacity;
     }
-
     &:hover {
         color: rgba(188, 156, 255, .5);
     }
@@ -51,4 +50,22 @@
 .button_purple:hover, .button_purple:active,
 .button_white:hover:after, .button_white:active:after {
     opacity: .5;
+}
+
+.button_no-border {
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    background-color: #fff;
+
+    font-size: 12px;
+    font-family: 'Montserrat-Bold';
+    text-transform: uppercase;
+    color: $purple;
+
+    transition: .2s color;
+}
+
+.button_no-border:hover, .button_no-border:active {
+    color: $dark-50;
 }

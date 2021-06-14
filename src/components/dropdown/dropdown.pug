@@ -1,23 +1,53 @@
-mixin dropdown()
-    .dropdown
-        button.dropdown__button Сколько гостей
-        ul.dropdown__list 
-            li.dropdown__item
-                p.dropdown__item-name Взрослые
-                .dropdown__count
-                    button.dropdown__button-minus -
-                    input(type="number" value="0" min="0" readonly).dropdown__count-digit
-                    button.dropdown__button-plus +
-            li.dropdown__item
-                p.dropdown__item-name Дети
-                .dropdown__count
-                    button.dropdown__button-minus -
-                    input(type="number" value="0" min="0" readonly).dropdown__count-digit
-                    button.dropdown__button-plus +
-            li.dropdown__item
-                p.dropdown__item-name Младенцы
-                .dropdown__count
-                    button.dropdown__button-minus -
-                    input(type="number" value="0" min="0" readonly).dropdown__count-digit
-                    button.dropdown__button-plus +
+include ../button/button
+
+mixin dropdown(typeWithButtons, text="Сколько гостей")
+    if !typeWithButtons
+        .dropdown
+            button(type="button" data-initial-value= text data-type= typeWithButtons).dropdown__button 
+                .dropdown__button__text= text
+            ul.dropdown__list 
+                li.dropdown__item
+                    p.dropdown__item-name Спальни
+                    .dropdown__count
+                        button(type="button").dropdown__button-minus -
+                        input(type="number" value="0" min="0" readonly).dropdown__count-digit
+                        button(type="button").dropdown__button-plus +
+                li.dropdown__item
+                    p.dropdown__item-name Кровати
+                    .dropdown__count
+                        button(type="button").dropdown__button-minus -
+                        input(type="number" value="0" min="0" readonly).dropdown__count-digit
+                        button(type="button").dropdown__button-plus +
+                li.dropdown__item
+                    p.dropdown__item-name Ванные комнаты
+                    .dropdown__count
+                        button(type="button").dropdown__button-minus -
+                        input(type="number" value="0" min="0" readonly).dropdown__count-digit
+                        button(type="button").dropdown__button-plus +
+    else 
+        .dropdown
+            button(type="button" data-initial-value= text data-type= typeWithButtons).dropdown__button 
+                .dropdown__button__text= text
+            ul.dropdown__list 
+                li.dropdown__item
+                    p.dropdown__item-name Взрослые
+                    .dropdown__count
+                        button(type="button").dropdown__button-minus -
+                        input(type="number" value="0" min="0" readonly).dropdown__count-digit
+                        button(type="button").dropdown__button-plus +
+                li.dropdown__item
+                    p.dropdown__item-name Дети
+                    .dropdown__count
+                        button(type="button").dropdown__button-minus -
+                        input(type="number" value="0" min="0" readonly).dropdown__count-digit
+                        button(type="button").dropdown__button-plus +
+                li.dropdown__item
+                    p.dropdown__item-name Младенцы
+                    .dropdown__count
+                        button(type="button").dropdown__button-minus -
+                        input(type="number" value="0" min="0" readonly).dropdown__count-digit
+                        button(type="button").dropdown__button-plus +
+                li.dropdown__item.dropdown__item_solution
+                    +button('no-border', 'Очистить')(class='dropdown__button-solution dropdown__button-solution_cancel')
+                    +button('no-border', 'Применить')(class='dropdown__button-solution dropdown__button-solution_confirm')
 

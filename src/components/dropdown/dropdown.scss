@@ -1,5 +1,5 @@
 .dropdown {
-    width: 320px;
+    width: 266px;
     height: 44px;
 
     &__button {
@@ -21,6 +21,12 @@
         position: relative;
         transition: .2s border-color, .2s border-radius, .2s border;
         
+        &__text {
+            max-width: 160px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
 
         &:hover {
             border: 1px solid $dark-50;
@@ -47,7 +53,7 @@
         position: relative;
         z-index: 100;
         margin: 0;
-        padding: 15px;
+        padding: 7px 7px 13px 15px;
         list-style: none;
 
         width: 100%;
@@ -74,11 +80,16 @@
     &__item {
         display: flex;
         justify-content: space-between;
+        align-items: center;
 
         margin-bottom: 7px;
 
         &:last-of-type {
-            margin-bottom: none;
+            margin-bottom: 0;
+        }
+
+        &_solution {
+            margin-top: 20px;
         }
     }
 
@@ -87,6 +98,11 @@
         font-family: 'Montserrat-Bold';
         color: $dark;
         font-size: 12px;
+        line-height: 15px;
+    }
+
+    &__button-minus {
+        opacity: 0.5;
     }
 
     &__button-minus, &__button-plus {
