@@ -1,0 +1,8 @@
+mixin datepicker(placeholder="", value="")
+    input(
+            type= "text",
+            placeholder!= placeholder,
+            value!= value,
+            class!= attributes.class ? 'datepicker ' + attributes.class : 'datepicker',
+        )
+    .datepicker__wrapper

@@ -1,5 +1,5 @@
 .dropdown {
-    width: 266px;
+    width: 320px;
     height: 44px;
 
     &__button {
@@ -65,13 +65,19 @@
         transition: .2s border-color;
     }
 
-    &_extended > &__list {
+    &_extended > &__list,
+    &_extended-always > &__list {
         display: block;
         border: 1px solid $dark-50;
         color: $dark-75;
     }
 
-    &_extended > &__button {
+    &_extended-always > &__list {
+        z-index: 50;
+    }
+
+    &_extended > &__button,
+    &_extended-always > &__button {
         border: 1px solid $dark-50;
         border-radius: 4px 4px 0 0;
         border-bottom:  none;

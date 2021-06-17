@@ -2,40 +2,6 @@
     width: 260px;
     position: relative;
 
-    &::before {
-        content: "";
-        display: block;
-        width: 10px;
-        height: 10px;
-
-        position: absolute;
-        top: 50%;
-        right: 15px;
-
-        transform: translateY(-50%) rotate(45deg);
-
-        border: 2px solid black;
-        border-bottom: none;
-        border-left: none;
-        border-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-        border-image-slice: 1;
-    }
-
-    &::after {
-        content: "";
-        display: block;
-        width: 15px;
-        height: 2px;
-
-        position: absolute;
-        top: 50%;
-        right: 15px;
-        
-        transform: translateY(-50%);
-        
-        background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-    }
-
     &__field {
         font-family: 'Montserrat-Regular';
         color: $dark-75;
@@ -80,6 +46,40 @@
             cursor: pointer;
 
             background-color: rgba(188, 156, 255, .2);
+        }
+
+        &::before {
+            content: "";
+            display: block;
+            width: 10px;
+            height: 10px;
+    
+            position: absolute;
+            top: 50%;
+            right: 15px;
+    
+            transform: translateY(-50%) rotate(45deg);
+    
+            border: 2px solid black;
+            border-bottom: none;
+            border-left: none;
+            border-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+            border-image-slice: 1;
+        }
+    
+        &::after {
+            content: "";
+            display: block;
+            width: 15px;
+            height: 2px;
+    
+            position: absolute;
+            top: 50%;
+            right: 15px;
+            
+            transform: translateY(-50%);
+            
+            background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
         }
     }
 }

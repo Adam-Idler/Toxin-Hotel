@@ -6,7 +6,6 @@ $dark-50: rgba(31, 32, 65, 0.50);
 $dark-25: rgba(31, 32, 65, 0.25);
 $dark-05: rgba(31, 32, 65, 0.05);
 
-
 body {
     font-family: 'Montserrat-Regular', sans-serif;
     font-size: 14px;
@@ -61,6 +60,7 @@ h3 {
 @import '../components/subscription-field/subscription-field.scss';
 @import '../components/burger-menu/burger-menu.scss';
 @import '../components/text-field/text-field.scss';
+@import '../components/datepicker/datepicker.scss';
 @import '../components/dropdown/dropdown.scss';
 
 // pages styles

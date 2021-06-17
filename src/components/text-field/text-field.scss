@@ -18,67 +18,7 @@
         color: $dark-75;
     }
 
-    &__masked {
-        text-transform: uppercase;
-
-        &:not(.has-value) {
-            color: #fff;
-        }
-
-        &:focus {
-            color: $dark-75;
-        }
-
-        &:not(:focus):not(.has-value):before {
-            content: attr(placeholder);
-            color: $dark-25;
-        }
-
-        &::-webkit-calendar-picker-indicator {
-            display: none;
-        }
-
-        &_mini {
-            width: 150px;
-            padding-right: 0;
-            position: relative;
-
-            &:not(.has-value) {
-                color: $dark-75;
-            }
-
-            &::-webkit-calendar-picker-indicator {
-                display: block;
-                width: 40px;
-                height: 40px;
-                position: relative;
-                z-index: 10;
-                padding: 0;
-                margin: 0;
-                cursor: pointer;
-                opacity: 0;
-            }
-
-            &::before {
-                display: none;
-                position: relative;
-                z-index: -1;
-            }
-
-            &::after {
-                content: "";
-                position: absolute;
-                top: 46%;
-                right: 20px;
-                display: block;
-                width: 6px;
-                height: 6px;
-                border: 2px solid #8F8FA0;
-                border-top: none;
-                border-left: none;
-    
-                transform: rotate(45deg) translateY(-46%);
-            }
-        }
+    &::placeholder {
+        color: $dark-25;
     }
 }

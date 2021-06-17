@@ -2,8 +2,12 @@ include ../button/button
 
 mixin dropdown(typeWithButtons, text="Сколько гостей")
     if !typeWithButtons
-        .dropdown
-            button(type="button" data-initial-value= text data-type= typeWithButtons).dropdown__button 
+        div(class!= attributes.class ? 'dropdown ' + attributes.class : 'dropdown')
+            button(
+                type="button" 
+                data-initial-value= text 
+                data-type= typeWithButtons 
+                ).dropdown__button
                 .dropdown__button__text= text
             ul.dropdown__list 
                 li.dropdown__item
