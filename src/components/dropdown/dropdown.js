@@ -30,23 +30,35 @@ export const dropdownActivate = () => {
                     } else {
                         dropdownButtonText.textContent = dropdownButton.dataset.initialValue;
                     }
+                } else {
+                    let guestsArray = [...dropdown.querySelectorAll('.dropdown__count-digit')].map(input => +input.value),
+                        babiesCount = dropdown.querySelectorAll('.dropdown__count-digit')[guestsArray.length - 1].value,
+                        guestsCount = guestsArray.reduce((sum, current) => sum + current, 0) - babiesCount;
+
+                    if (guestsCount != 0 || babiesCount != 0) {
+                        dropdownButtonText.textContent = `${guestsCount} ${declOfNum(guestsCount, ['гость', 'гостя', 'гостей'])}` + 
+                                                `${babiesCount != 0 ? `, ${babiesCount} ${declOfNum(babiesCount, ['младенец', 'младенца', 'младенцев'])}` : ''}`;
+                    } else {
+                        dropdownButtonText.textContent = dropdownButton.dataset.initialValue;
+                    }
                 }
             })
             return;
         }
-        
+
         if (target.closest('.dropdown_extended > .dropdown__button') ||
             target.classList.contains('dropdown__button-solution_confirm')) 
         {
             target.closest('.dropdown').classList.remove('dropdown_extended');
             
         } else {
-            target.parentNode.classList.add('dropdown_extended');
+            target.closest('.dropdown').classList.add('dropdown_extended');
         }
     };
 
     const changeValue = (e) => {
         let target = e.target;
+        let clearButton = document.querySelector('.dropdown__button-solution_cancel');
 
         if (!target.classList.contains('dropdown__button-minus') && 
             !target.classList.contains('dropdown__button-plus') &&
@@ -61,10 +73,14 @@ export const dropdownActivate = () => {
 
             if (target.parentNode.querySelector('.dropdown__count-digit').value <= 0) 
             {
+                clearButton.style.opacity = 0;
+                clearButton.style.pointerEvents = 'none';
                 target.parentNode.querySelector('.dropdown__count-digit').value = 0
                 target.style.opacity = 0.5;
             } else 
             {
+                clearButton.style.opacity = 1;
+                clearButton.style.pointerEvents = 'auto';
                 target.style.opacity = 1;
                 target.parentNode.querySelector('.dropdown__button-plus').style.opacity = 1;
             }
@@ -80,6 +96,8 @@ export const dropdownActivate = () => {
             } 
             else 
             {
+                clearButton.style.opacity = 1;
+                clearButton.style.pointerEvents = 'auto';
                 target.style.opacity = 1;
                 target.parentNode.querySelector('.dropdown__button-minus').style.opacity = 1;
             }
@@ -87,12 +105,15 @@ export const dropdownActivate = () => {
         else if (target.classList.contains('dropdown__button-solution')) 
         {
             let dropdown = target.closest('.dropdown'),
-                dropdownButtonText = dropdown.querySelector('.dropdown__button__text');
+                dropdownButton = dropdown.querySelector('.dropdown__button'),
+                dropdownButtonText = dropdownButton.querySelector('.dropdown__button__text');
 
             if (target.classList.contains('dropdown__button-solution_cancel')) 
             {
+                dropdownButtonText.textContent = dropdownButton.dataset.initialValue;
+                clearButton.style.opacity = 0;
+                clearButton.style.pointerEvents = 'none';
                 dropdown.querySelectorAll('.dropdown__count-digit').forEach(input => input.value = 0);
-                dropdownButtonText.textContent = dropdownButtonText.dataset.initialValue;
                 dropdown.querySelectorAll('.dropdown__button-minus').forEach(button => button.style.opacity = 0.5)
             } 
             else if (target.classList.contains('dropdown__button-solution_confirm')) 

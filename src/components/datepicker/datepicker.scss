@@ -58,7 +58,8 @@
     width: 320px;
     padding: 20px;
     border-radius: 4px;
-    display: block;
+    margin-top: 5px;
+    overflow: hidden;
     position: relative;
     z-index: 1000 !important;
 }
@@ -204,15 +205,16 @@ td .ui-state-default {
 }
 
 td .ui-state-hover:hover {
-    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%) !important;
     font-family: 'Montserrat-Bold';
     color: #fff !important;
 }
 
-td .ui-state-active {
+td .ui-state-highlight {
     background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%) !important;
     font-family: 'Montserrat-Bold';
     color: #fff !important;
+    
 }
 
 button.ui-datepicker-close,
@@ -236,4 +238,49 @@ button.ui-datepicker-current {
 .ui-datepicker-buttonpane {
     border: none;
     margin: 0;
+}
+
+.selected .ui-state-active {
+    border-radius: 0;
+    position: relative;
+    z-index: 10;
+}
+
+.selected .ui-state-active::before {
+    content: "";
+    display: block;
+    background: linear-gradient(180deg, rgba(188, 156, 255, 0.25) 0%, rgba(139, 164, 249, 0.25) 100%);
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: -20px;
+    z-index: -1;
+}
+
+.selected-start .ui-state-active::before,
+.selected .ui-state-highlight::before {
+    left: 20px;
+}
+
+.selected-end .ui-state-active::before {
+    display: none;
+}
+
+.selected .ui-state-highlight {
+    border-radius: 50px;
+}
+
+.selected-start .ui-state-active,
+.selected-end .ui-state-active,
+.selected .ui-state-active:hover,
+.ui-datepicker-current-day .ui-state-active {
+    border-radius: 50px;
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    font-family: 'Montserrat-Bold';
+    color: #fff !important;
+}
+
+.selected .ui-state-active:hover::before {
+    left: 20px;
 }

@@ -27,6 +27,11 @@
             overflow: hidden;
             text-overflow: ellipsis;
         }
+        
+        &-solution_cancel {
+            opacity: 0;
+            pointer-events: none;
+        }
 
         &:hover {
             border: 1px solid $dark-50;

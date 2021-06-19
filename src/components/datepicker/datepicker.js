@@ -18,11 +18,47 @@ export const datepickerActivate = () => {
     };
     $.datepicker.setDefaults($.datepicker.regional['ru']);
 
-    $('.datepicker').datepicker({
+    $.datepicker._selectDateOverload = $.datepicker._selectDate;
+    $.datepicker._selectDate = function(id, dateStr) {
+        var target = $(id);
+        var inst = this._getInst(target[0]);
+        inst.inline = true;
+        $.datepicker._selectDateOverload(id, dateStr);
+        inst.inline = false;
+        this._updateDatepicker(inst);
+    }
+
+    $('.datepicker_standart').datepicker({
         showButtonPanel: true,
         showOtherMonths: true,
         currentText: 'Очистить',
         closeText: 'Применить',
         gotoCurrent: true,
+        defaultDate: '+0d',
+        onSelect: function() {
+            $(this).data('datepicker').inline = true;                               
+        },
+        onClose: function() {
+            $(this).data('datepicker').inline = false;
+        }
     });
+
+    $('.datepicker_mini_start').datepicker({
+        range: 'period',
+        showButtonPanel: true,
+        showOtherMonths: true,
+        currentText: 'Очистить',
+        closeText: 'Применить',
+        gotoCurrent: true,
+        defaultDate: '+0d',
+        onSelect: function(dateText, inst, extensionRange) {
+          $('.datepicker_mini_start').val(extensionRange.startDateText);
+          $('.datepicker_mini_end').val(extensionRange.endDateText);
+        }
+    });
+
+    $('.datepicker_mini_end').on('click', () => {
+        $('.datepicker_mini_start').datepicker('show');
+    });
+    
 };

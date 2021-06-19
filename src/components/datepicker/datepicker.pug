@@ -1,8 +1,16 @@
-mixin datepicker(placeholder="", value="")
-    input(
-            type= "text",
-            placeholder!= placeholder,
-            value!= value,
-            class!= attributes.class ? 'datepicker ' + attributes.class : 'datepicker',
-        )
-    .datepicker__wrapper
+mixin datepicker(type="standart", value="")
+    if type == 'standart'
+        input(
+                type= "text",
+                placeholder!= 'ДД.ММ.ГГГГ',
+                value!= value,
+                class!= attributes.class ? 'datepicker datepicker_standart' + attributes.class : 'datepicker datepicker_standart',
+            )
+    else if type == 'mini'
+        input(
+                type= "text",
+                placeholder!= 'ДД.ММ.ГГГГ',
+                value!= value,
+                class!= attributes.class ? 'datepicker datepicker_mini ' + attributes.class : 'datepicker datepicker_mini',
+            )
+        .datepicker__wrapper
