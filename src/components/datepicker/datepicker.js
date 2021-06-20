@@ -46,6 +46,17 @@ export const datepickerActivate = () => {
     $('.datepicker_mini_start').datepicker({
         range: 'period',
         showButtonPanel: true,
+        beforeShow: function( input ) {
+            setTimeout(function() {
+                var clearBtn = $( input )
+                                .datepicker( "widget" )
+                                .find( ".ui-datepicker-current" );
+
+                $(clearBtn).on('click', () => {
+                    $.datepicker._clearDate( input );
+                });
+            }, 1 );
+        },
         showOtherMonths: true,
         currentText: 'Очистить',
         closeText: 'Применить',
@@ -60,5 +71,4 @@ export const datepickerActivate = () => {
     $('.datepicker_mini_end').on('click', () => {
         $('.datepicker_mini_start').datepicker('show');
     });
-    
 };

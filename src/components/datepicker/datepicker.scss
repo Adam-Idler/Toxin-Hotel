@@ -54,6 +54,8 @@
     }
 }
 
+// Стили библиотеки JQuery UI
+
 #ui-datepicker-div {
     width: 320px;
     padding: 20px;
@@ -72,6 +74,11 @@
 .ui-widget-header .ui-icon {
     background-image: none;
     overflow: visible;
+}
+
+.ui-datepicker td {
+    max-width: 40px;
+    max-height: 40px;
 }
 
 .ui-icon-circle-triangle-e::after {
@@ -200,8 +207,6 @@ td .ui-state-default {
     font-family: 'Montserrat-Regular';
     font-size: 12px;
     line-height: 15px;
-
-    transition: .2s background;
 }
 
 td .ui-state-hover:hover {
@@ -211,10 +216,9 @@ td .ui-state-hover:hover {
 }
 
 td .ui-state-highlight {
-    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%) !important;
+    background: linear-gradient(180deg, rgba(111, 207, 151, 1) 0%, rgba(102, 210, 234, 1) 100%) !important;
     font-family: 'Montserrat-Bold';
     color: #fff !important;
-    
 }
 
 button.ui-datepicker-close,
@@ -235,9 +239,19 @@ button.ui-datepicker-current {
     transition: .2s color;
 }
 
+button.ui-datepicker-close:hover,
+button.ui-datepicker-current:hover {
+    color: $dark-50 !important;
+}
+
 .ui-datepicker-buttonpane {
     border: none;
     margin: 0;
+}
+
+td a,
+td span {
+    padding: 0 !important;
 }
 
 .selected .ui-state-active {
@@ -258,13 +272,58 @@ button.ui-datepicker-current {
     z-index: -1;
 }
 
+.selected.ui-datepicker-other-month .ui-state-active::before,
 .selected-start .ui-state-active::before,
 .selected .ui-state-highlight::before {
     left: 20px;
 }
 
+.selected.first-of-month:first-of-type .ui-state-active::before {
+    left: 10px;
+}
+
+.selected.ui-datepicker-other-month:first-of-type .ui-state-active::before,
+.selected.ui-datepicker-other-month.first-of-month .ui-state-active::before {
+    left: 0;
+}
+
+.selected.ui-datepicker-week-end:nth-child(2n + 1) .ui-state-active::before,
+.selected.last-of-month .ui-state-active::before {
+    right: 0;
+}
+
+.selected .ui-state-highlight::after {
+    content: "";
+    display: block;
+    background: linear-gradient(180deg, rgba(111, 207, 151, 1) 0%, rgba(102, 210, 234, 1) 100%);
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 20px;
+    border-radius: 0  22px 22px 0;
+    right: 0px;
+    z-index: -1;
+}
+
+.selected .ui-state-highlight:hover::after {
+    background: linear-gradient(180deg, rgba(188, 156, 255, 0.25) 0%, rgba(139, 164, 249, 0.25) 100%)
+}
+
 .selected-end .ui-state-active::before {
     display: none;
+}
+
+.selected-end:not(.selected-start).first-of-month .ui-state-active::before,
+.selected-end:not(.selected-start).first-of-month .ui-state-hover::before {
+    content: "";
+    display: block;
+    background: linear-gradient(180deg, rgba(188, 156, 255, 0.25) 0%, rgba(139, 164, 249, 0.25) 100%);
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 20px;
+    z-index: -1;
 }
 
 .selected .ui-state-highlight {
@@ -281,6 +340,10 @@ button.ui-datepicker-current {
     color: #fff !important;
 }
 
-.selected .ui-state-active:hover::before {
+.selected:not(.ui-datepicker-other-month):not(:nth-child(7n+1)) .ui-state-active:hover::before {
     left: 20px;
+}
+
+.selected.first-of-month:not(.selected-start) .ui-state-active:hover::before {
+    left: 0 !important;
 }
