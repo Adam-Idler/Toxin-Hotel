@@ -4,7 +4,7 @@ mixin datepicker(type="standart", value="")
                 type= "text",
                 placeholder!= 'ДД.ММ.ГГГГ',
                 value!= value,
-                class!= attributes.class ? 'datepicker datepicker_standart' + attributes.class : 'datepicker datepicker_standart',
+                class!= attributes.class ? 'datepicker datepicker_standart ' + attributes.class : 'datepicker datepicker_standart',
             )
     else if type == 'mini'
         input(
@@ -12,5 +12,13 @@ mixin datepicker(type="standart", value="")
                 placeholder!= 'ДД.ММ.ГГГГ',
                 value!= value,
                 class!= attributes.class ? 'datepicker datepicker_mini ' + attributes.class : 'datepicker datepicker_mini',
+            )
+        .datepicker__wrapper
+    else if type == 'filter'
+        input(
+                type= "text",
+                placeholder!= 'ДД.ММ.ГГГГ',
+                value!= value,
+                class!= attributes.class ? 'datepicker datepicker_filter ' + attributes.class : 'datepicker datepicker_filter',
             )
         .datepicker__wrapper

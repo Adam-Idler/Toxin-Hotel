@@ -36,7 +36,8 @@
         }
     }
 
-    &_mini + &__wrapper:after {
+    &_mini + &__wrapper:after,
+    &_filter + &__wrapper:after {
         content: "";
         cursor: pointer;
         position: absolute;
@@ -51,6 +52,17 @@
         pointer-events: none;
 
         transform: rotate(45deg);
+    }
+
+    &_filter,
+    &_filter + &__wrapper {
+        cursor: pointer;
+        width: 266px;
+        text-transform: lowercase;
+
+        &::placeholder {
+            text-transform: uppercase;
+        }
     }
 }
 
@@ -216,9 +228,9 @@ td .ui-state-hover:hover {
 }
 
 td .ui-state-highlight {
-    background: linear-gradient(180deg, rgba(111, 207, 151, 1) 0%, rgba(102, 210, 234, 1) 100%) !important;
     font-family: 'Montserrat-Bold';
     color: #fff !important;
+    background: linear-gradient(180deg, rgba(111, 207, 151, 1) 0%, rgba(102, 210, 234, 1) 100%) !important;
 }
 
 button.ui-datepicker-close,
@@ -272,9 +284,14 @@ td span {
     z-index: -1;
 }
 
-.selected.ui-datepicker-other-month .ui-state-active::before,
-.selected-start .ui-state-active::before,
-.selected .ui-state-highlight::before {
+tr .selected-end:not(.selected-start):first-child .ui-state-active::before {
+    display: block;
+    left: 0;
+    right: 20px;
+}
+
+.selected:not(tr td:first-child) .ui-state-highlight::before, 
+.selected-start:not(.selected-end) .ui-state-active::before {
     left: 20px;
 }
 
@@ -282,8 +299,7 @@ td span {
     left: 10px;
 }
 
-.selected.ui-datepicker-other-month:first-of-type .ui-state-active::before,
-.selected.ui-datepicker-other-month.first-of-month .ui-state-active::before {
+.selected:not(.selected-start).ui-datepicker-other-month:first-of-type .ui-state-active::before {
     left: 0;
 }
 
@@ -296,12 +312,12 @@ td span {
     content: "";
     display: block;
     background: linear-gradient(180deg, rgba(111, 207, 151, 1) 0%, rgba(102, 210, 234, 1) 100%);
+    border-radius: 22px;
     position: absolute;
-    top: 0px;
-    bottom: 0px;
-    left: 20px;
-    border-radius: 0  22px 22px 0;
-    right: 0px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     z-index: -1;
 }
 
@@ -340,10 +356,28 @@ td span {
     color: #fff !important;
 }
 
-.selected:not(.ui-datepicker-other-month):not(:nth-child(7n+1)) .ui-state-active:hover::before {
+.selected:not(.ui-datepicker-other-month):not(:nth-child(7n+1)) .ui-state-active:hover::before,
+.selected-start .ui-state-active::before {
     left: 20px;
 }
 
 .selected.first-of-month:not(.selected-start) .ui-state-active:hover::before {
     left: 0 !important;
+}
+
+.selected-end:not(.selected-start).ui-datepicker-other-month .ui-state-active::before {
+    content: "";
+    display: block;
+    background: linear-gradient(180deg, rgba(188, 156, 255, 0.25) 0%, rgba(139, 164, 249, 0.25) 100%);
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 20px;
+    z-index: -1;
+}
+
+.ui-datepicker-other-month .ui-state-active::before {
+    right: 0;
+    left: 0;
 }

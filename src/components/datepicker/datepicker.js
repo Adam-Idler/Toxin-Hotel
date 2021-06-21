@@ -46,29 +46,69 @@ export const datepickerActivate = () => {
     $('.datepicker_mini_start').datepicker({
         range: 'period',
         showButtonPanel: true,
-        beforeShow: function( input ) {
-            setTimeout(function() {
-                var clearBtn = $( input )
-                                .datepicker( "widget" )
-                                .find( ".ui-datepicker-current" );
-
-                $(clearBtn).on('click', () => {
-                    $.datepicker._clearDate( input );
-                });
-            }, 1 );
-        },
         showOtherMonths: true,
         currentText: 'Очистить',
         closeText: 'Применить',
         gotoCurrent: true,
         defaultDate: '+0d',
+        beforeShow: function(input) {
+            $.datepicker._clearDate(input);
+            $( input ).datepicker( "setDate", "");
+        },
         onSelect: function(dateText, inst, extensionRange) {
-          $('.datepicker_mini_start').val(extensionRange.startDateText);
-          $('.datepicker_mini_end').val(extensionRange.endDateText);
+            $('.datepicker_mini_start').val(extensionRange.startDateText);
+            $('.datepicker_mini_end').val(extensionRange.endDateText);
         }
     });
 
     $('.datepicker_mini_end').on('click', () => {
         $('.datepicker_mini_start').datepicker('show');
+    });
+
+    $('.datepicker_filter').datepicker({
+        range: 'period',
+        showButtonPanel: true,
+        showOtherMonths: true,
+        currentText: 'Очистить',
+        closeText: 'Применить',
+        gotoCurrent: true,
+        defaultDate: '+0d',
+        beforeShow: function(input) {
+            $.datepicker._clearDate(input);
+            $( input ).datepicker( "setDate", "");
+        },
+        onSelect: function(dateText, inst, extensionRange) {
+            if (!extensionRange.startDateText && !extensionRange.endDateText) return;
+
+            let startDateArr = extensionRange.startDateText.split('.'),
+                endDateArr = extensionRange.endDateText.split('.');
+
+            let startMonth = startDateArr[1].replace('0', '') - 1,
+                endMonth = endDateArr[1].replace('0', '') - 1;
+            
+            let formatedStartMonth = $.datepicker.regional['ru'].monthNamesShort[startMonth].toLowerCase(),
+                formatedEndMonth = $.datepicker.regional['ru'].monthNamesShort[endMonth].toLowerCase();
+
+            $('.datepicker_filter').val(`${startDateArr[0] + ' ' + formatedStartMonth} - ${endDateArr[0] + ' ' + formatedEndMonth}`);
+        }
+    });
+
+    let datepickerID;
+    $(window).on('click', (e) => {
+        e.preventDefault(); 
+        let target = e.target;
+
+        if (!target.classList.contains('ui-datepicker-current') &&
+            !target.classList.contains('hasDatepicker')
+        ) return;
+
+        if (target.classList.contains('hasDatepicker')) {
+            datepickerID = target.id;
+        }
+
+        if (target.classList.contains('ui-datepicker-current')) {
+            $.datepicker._clearDate('#' + datepickerID);
+            $( '#' + datepickerID ).datepicker( "setDate", "");
+        }
     });
 };

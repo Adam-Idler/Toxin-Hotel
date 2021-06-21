@@ -48,13 +48,18 @@ html(lang="ru")
                         h3.form-elements__element-name Masked Text Field
                     +datepicker()
 
-                .form-elements__element.form-elements_date-dropdown
+                .form-elements__element.form-elements_date-dropdown.form-elements__element_indent-40
                     .form-elements__annotation
                         h3.form-elements__element-name Date dropdown
                     +datepicker('mini')(class="datepicker_mini_start")
                     .form-elements__annotation
                         h3.form-elements__element-name Date dropdown
                     +datepicker('mini')(class="datepicker_mini_end")
+
+                .form-elements__element.form-elements__element_indent-40
+                    .form-elements__annotation
+                        h3.form-elements__element-name Filter date dropdown
+                    +datepicker('filter')
 
                 .form-elements__element.form-elements__element_indent-100
                     .form-elements__annotation
