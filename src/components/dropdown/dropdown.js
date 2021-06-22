@@ -12,36 +12,33 @@ export const dropdownActivate = () => {
     const openDropdown = (e) => {
         let target = e.target;
 
-        if (!target.closest('.dropdown')) {
+        if (!target.closest('.dropdown') ||
+            target.classList.contains('dropdown__button-solution_confirm')) 
+        {
             dropdowns.forEach(dropdown => {
                 dropdown.classList.remove('dropdown_extended');
+
                 let dropdownButton = dropdown.querySelector('.dropdown__button'),
-                    dropdownButtonText = dropdownButton.querySelector('.dropdown__button__text');
+                    dropdownButtonText = dropdownButton.querySelector('.dropdown__button__text'),
+                    dropdownItems = [...dropdown.querySelectorAll('input[type="number"]')];
+                
+                let counts = {};
+                dropdownItems.forEach(item => {
+                    if (counts[item.dataset.forms])
+                        counts[item.dataset.forms] += +item.value;
+                    else 
+                        counts[item.dataset.forms] = +item.value;
+                });
 
-                if (dropdownButton.dataset.type != '') {
-                    let bedroomsCount = dropdown.querySelectorAll('.dropdown__count-digit')[0].value,
-                        bedsCount = dropdown.querySelectorAll('.dropdown__count-digit')[1].value,
-                        bathroomsCount = dropdown.querySelectorAll('.dropdown__count-digit')[2].value;
-
-                    if (bedroomsCount != 0 || bedsCount != 0 || bathroomsCount != 0) {
-                        dropdownButtonText.textContent = `${bedroomsCount} ${declOfNum(bedroomsCount, ['спальня', 'спальни', 'спалень'])}` +
-                                                     `${bedsCount != 0 ? `, ${bedsCount} ${declOfNum(bedsCount, ['кровать', 'кровати', 'кроватей'])}` : ''}` +
-                                                     `${bathroomsCount != 0 ? `, ${bathroomsCount} ${declOfNum(bathroomsCount, ['ванная', 'ванные', 'ванных'])}` : ''}`;
-                    } else {
-                        dropdownButtonText.textContent = dropdownButton.dataset.initialValue;
-                    }
-                } else {
-                    let guestsArray = [...dropdown.querySelectorAll('.dropdown__count-digit')].map(input => +input.value),
-                        babiesCount = dropdown.querySelectorAll('.dropdown__count-digit')[guestsArray.length - 1].value,
-                        guestsCount = guestsArray.reduce((sum, current) => sum + current, 0) - babiesCount;
-
-                    if (guestsCount != 0 || babiesCount != 0) {
-                        dropdownButtonText.textContent = `${guestsCount} ${declOfNum(guestsCount, ['гость', 'гостя', 'гостей'])}` + 
-                                                `${babiesCount != 0 ? `, ${babiesCount} ${declOfNum(babiesCount, ['младенец', 'младенца', 'младенцев'])}` : ''}`;
-                    } else {
-                        dropdownButtonText.textContent = dropdownButton.dataset.initialValue;
-                    }
+                let str = '';
+                for (let key in counts) {
+                    if (str)
+                        str += `${counts[key] != 0 ? `, ${counts[key]} ${declOfNum(counts[key], key.split(', '))}` : ''}`;
+                    else 
+                        str = `${counts[key] != 0 ? `${counts[key]} ${declOfNum(counts[key], key.split(', '))}` : ''}`;
                 }
+
+                dropdownButtonText.textContent = str ? str : dropdownButton.dataset.initialValue;
             })
             return;
         }
@@ -62,20 +59,21 @@ export const dropdownActivate = () => {
 
         if (!target.classList.contains('dropdown__button-minus') && 
             !target.classList.contains('dropdown__button-plus') &&
-            !target.classList.contains('dropdown__button-solution')) 
+            !target.classList.contains('dropdown__button-solution_cancel')) 
         {
             return;
         }
 
         if (target.classList.contains('dropdown__button-minus')) 
         {
-            target.parentNode.querySelector('.dropdown__count-digit').value--
+            let digit = target.parentNode.querySelector('.dropdown__count-digit');
+            digit.value--;
 
-            if (target.parentNode.querySelector('.dropdown__count-digit').value <= 0) 
+            if (digit.value <= +digit.getAttribute('min')) 
             {
                 clearButton.style.opacity = 0;
                 clearButton.style.pointerEvents = 'none';
-                target.parentNode.querySelector('.dropdown__count-digit').value = 0
+                digit.value = digit.getAttribute('min');
                 target.style.opacity = 0.5;
             } else 
             {
@@ -87,11 +85,12 @@ export const dropdownActivate = () => {
         } 
         else if (target.classList.contains('dropdown__button-plus')) 
         {
-            target.parentNode.querySelector('.dropdown__count-digit').value++
+            let digit = target.parentNode.querySelector('.dropdown__count-digit');
+            digit.value++;
 
-            if (target.parentNode.querySelector('.dropdown__count-digit').value >= 10)
+            if (digit.value >= +digit.getAttribute('max'))
             {
-                target.parentNode.querySelector('.dropdown__count-digit').value = 10
+                digit.value = digit.getAttribute('max');
                 target.style.opacity = 0.5;
             } 
             else 
@@ -102,29 +101,17 @@ export const dropdownActivate = () => {
                 target.parentNode.querySelector('.dropdown__button-minus').style.opacity = 1;
             }
         } 
-        else if (target.classList.contains('dropdown__button-solution')) 
+        else if (target.classList.contains('dropdown__button-solution_cancel')) 
         {
             let dropdown = target.closest('.dropdown'),
                 dropdownButton = dropdown.querySelector('.dropdown__button'),
                 dropdownButtonText = dropdownButton.querySelector('.dropdown__button__text');
 
-            if (target.classList.contains('dropdown__button-solution_cancel')) 
-            {
-                dropdownButtonText.textContent = dropdownButton.dataset.initialValue;
-                clearButton.style.opacity = 0;
-                clearButton.style.pointerEvents = 'none';
-                dropdown.querySelectorAll('.dropdown__count-digit').forEach(input => input.value = 0);
-                dropdown.querySelectorAll('.dropdown__button-minus').forEach(button => button.style.opacity = 0.5)
-            } 
-            else if (target.classList.contains('dropdown__button-solution_confirm')) 
-            {
-                let guestsArray = [...dropdown.querySelectorAll('.dropdown__count-digit')].map(input => +input.value);
-                let babiesCount = dropdown.querySelectorAll('.dropdown__count-digit')[guestsArray.length - 1].value
-
-                let guestsCount = guestsArray.reduce((sum, current) => sum + current, 0) - babiesCount;
-                dropdownButtonText.textContent = `${guestsCount} ${declOfNum(guestsCount, ['гость', 'гостя', 'гостей'])}` + 
-                                             `${babiesCount != 0 ? `, ${babiesCount} ${declOfNum(babiesCount, ['младенец', 'младенца', 'младенцев'])}` : ''}`;
-            }
+            dropdownButtonText.textContent = dropdownButton.dataset.initialValue;
+            clearButton.style.opacity = 0;
+            clearButton.style.pointerEvents = 'none';
+            dropdown.querySelectorAll('.dropdown__count-digit').forEach(input => input.value = 0);
+            dropdown.querySelectorAll('.dropdown__button-minus').forEach(button => button.style.opacity = 0.5)
         }
     };
 

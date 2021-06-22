@@ -36,12 +36,36 @@ html(lang="ru")
                     .form-elements__annotation
                         h3.form-elements__element-name Text Field
                         p.form-elements__subtext Hover / Focus
-                    +text-field("text", "", "This is pretty awesome")(class="text-field__active")
-
+                    +text-field("text", "", "This is pretty awesome")
                 .form-elements__element
                     .form-elements__annotation
                         h3.form-elements__element-name Dropdown
-                    +dropdown(true)
+                    +dropdown({
+                        placeholder: "Сколько гостей", isActive: false, withButton: true, items: [{
+                            id: "adults",
+                            minAmount: "0",
+                            maxAmount: "10",
+                            forms: "гость, гостя, гостей",
+                            itemName: "Взрослые",
+                            startAmount: "0"
+                        },
+                        {
+                            id: "kids",
+                            minAmount: "0",
+                            maxAmount: "10",
+                            forms: "гость, гостя, гостей",
+                            itemName: "Дети",
+                            startAmount: "0"
+                        },
+                        {
+                            id: "babys",
+                            minAmount: "0",
+                            maxAmount: "10",
+                            forms: "младенец, младенца, младенцев",
+                            itemName: "Младенцы",
+                            startAmount: "0"
+                        }
+                    ]})
 
                 .form-elements__element.form-elements__element_indent-40
                     .form-elements__annotation
@@ -70,13 +94,63 @@ html(lang="ru")
                     .form-elements__annotation
                         h3.form-elements__element-name Dropdown
                         p.form-elements__subtext Default
-                    +dropdown(false, 'Какие удобства')
+                    +dropdown({
+                        placeholder: "Какие удобства", isActive: false, withButton: false, items: [{
+                            id: "bedrooms",
+                            minAmount: "0",
+                            maxAmount: "10",
+                            forms: "спальня, спальни, спален",
+                            itemName: "Спальни",
+                            startAmount: "2"
+                        },
+                        {
+                            id: "beds",
+                            minAmount: "0",
+                            maxAmount: "10",
+                            forms: "кровать, кровати, кроватей",
+                            itemName: "Кровати",
+                            startAmount: "2"
+                        },
+                        {
+                            id: "bathrooms",
+                            minAmount: "0",
+                            maxAmount: "10",
+                            forms: "ванная, ванные, ванн",
+                            itemName: "Ванные комнаты",
+                            startAmount: "0"
+                        }
+                    ]})
 
                 .form-elements__element
                     .form-elements__annotation
                         h3.form-elements__element-name Dropdown
                         p.form-elements__subtext Expanded
-                    +dropdown(false, 'Какие удобства')(class="dropdown_extended-always")
+                    +dropdown({
+                        placeholder: "Какие удобства", isActive: true, withButton: false, items: [{
+                            id: "bedrooms",
+                            minAmount: "0",
+                            maxAmount: "10",
+                            forms: "спальня, спальни, спален",
+                            itemName: "Спальни",
+                            startAmount: "2"
+                        },
+                        {
+                            id: "beds",
+                            minAmount: "0",
+                            maxAmount: "10",
+                            forms: "кровать, кровати, кроватей",
+                            itemName: "Кровати",
+                            startAmount: "2"
+                        },
+                        {
+                            id: "bathrooms",
+                            minAmount: "0",
+                            maxAmount: "10",
+                            forms: "ванная, ванные, ванн",
+                            itemName: "Ванные комнаты",
+                            startAmount: "0"
+                        }
+                    ]})
 
             .form-elements__column.form-elements__column-2
 
