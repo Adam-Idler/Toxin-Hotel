@@ -9,6 +9,49 @@ export const dropdownActivate = () => {
         return text_forms[2];
     };
 
+    const changeValueOfDropdown = (dropdown) => {
+        let dropdownButton = dropdown.querySelector('.dropdown__button'),
+            dropdownButtonText = dropdownButton.querySelector('.dropdown__button__text'),
+            dropdownItems = [...dropdown.querySelectorAll('input[type="number"]')];
+                
+        let counts = {};
+        dropdownItems.forEach(item => {
+            if (counts[item.dataset.forms])
+                counts[item.dataset.forms] += +item.value;
+            else 
+                counts[item.dataset.forms] = +item.value;
+        });
+
+        let str = '';
+        for (let key in counts) {
+            if (str)
+                str += `${counts[key] != 0 ? `, ${counts[key]} ${declOfNum(counts[key], key.split(', '))}` : ''}`;
+            else 
+                str = `${counts[key] != 0 ? `${counts[key]} ${declOfNum(counts[key], key.split(', '))}` : ''}`;
+        }
+
+        dropdownButtonText.textContent = str ? str : dropdownButton.dataset.initialValue;
+    };
+
+    dropdowns.forEach(dropdown => {
+        changeValueOfDropdown(dropdown);
+    });
+
+    // Проверка равняется ли value у Input равным max или min. Для подсвечивания или затемнения кнопок + и -
+    const countDigit = document.querySelectorAll('.dropdown__count-digit');
+
+    countDigit.forEach(input => {
+        if ( input.value <= input.getAttribute('min')) {
+            input.parentNode.querySelector('.dropdown__button-minus').style.opacity = 0.5;
+        } else {
+            input.parentNode.querySelector('.dropdown__button-minus').style.opacity = 1;
+        } 
+
+        if (input.value >= +input.getAttribute('max')) {
+            input.parentNode.querySelector('.dropdown__button-plus').style.opacity = 0.5;
+        }
+    });
+
     const openDropdown = (e) => {
         let target = e.target;
 
@@ -18,27 +61,7 @@ export const dropdownActivate = () => {
             dropdowns.forEach(dropdown => {
                 dropdown.classList.remove('dropdown_extended');
 
-                let dropdownButton = dropdown.querySelector('.dropdown__button'),
-                    dropdownButtonText = dropdownButton.querySelector('.dropdown__button__text'),
-                    dropdownItems = [...dropdown.querySelectorAll('input[type="number"]')];
-                
-                let counts = {};
-                dropdownItems.forEach(item => {
-                    if (counts[item.dataset.forms])
-                        counts[item.dataset.forms] += +item.value;
-                    else 
-                        counts[item.dataset.forms] = +item.value;
-                });
-
-                let str = '';
-                for (let key in counts) {
-                    if (str)
-                        str += `${counts[key] != 0 ? `, ${counts[key]} ${declOfNum(counts[key], key.split(', '))}` : ''}`;
-                    else 
-                        str = `${counts[key] != 0 ? `${counts[key]} ${declOfNum(counts[key], key.split(', '))}` : ''}`;
-                }
-
-                dropdownButtonText.textContent = str ? str : dropdownButton.dataset.initialValue;
+                changeValueOfDropdown(dropdown);
             })
             return;
         }
@@ -53,7 +76,7 @@ export const dropdownActivate = () => {
         }
     };
 
-    const changeValue = (e) => {
+    const changeValueOfCountDigit = (e) => {
         let target = e.target;
         let clearButton = document.querySelector('.dropdown__button-solution_cancel');
 
@@ -116,7 +139,7 @@ export const dropdownActivate = () => {
     };
 
     dropdowns.forEach(dropdown => {
-        dropdown.addEventListener('click', changeValue)
+        dropdown.addEventListener('click', changeValueOfCountDigit)
     });
     window.addEventListener('click', openDropdown);
 };
