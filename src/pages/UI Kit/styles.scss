@@ -74,6 +74,7 @@ body {
     &__element {
         margin-bottom: 20px;
 
+
         &_indent-40 {
             margin-bottom: 40px;
         }
@@ -109,6 +110,10 @@ body {
         align-content: space-between;
         flex-wrap: wrap;
         flex-direction: column;
+    }
+
+    &__column {
+        width: 320px;
     }
 }
 

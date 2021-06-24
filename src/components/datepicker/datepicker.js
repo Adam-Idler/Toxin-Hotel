@@ -95,7 +95,6 @@ export const datepickerActivate = () => {
 
     let datepickerID;
     $(window).on('click', (e) => {
-        e.preventDefault(); 
         let target = e.target;
 
         if (!target.classList.contains('ui-datepicker-current') &&

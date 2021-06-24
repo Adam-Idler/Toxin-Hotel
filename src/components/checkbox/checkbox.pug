@@ -1,0 +1,7 @@
+mixin checkbox({text, isChecked})
+    label.checkbox
+        if isChecked 
+            input(type="checkbox" checked).checkbox__hidden
+        else 
+            input(type="checkbox").checkbox__hidden
+        span.checkbox__text !{text}

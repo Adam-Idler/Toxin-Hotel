@@ -3,6 +3,7 @@ include ../../components/footer/footer
 include ../../components/text-field/text-field
 include ../../components/datepicker/datepicker
 include ../../components/dropdown/dropdown
+include ../../components/checkbox/checkbox
 
 doctype html 
 html(lang="ru")
@@ -153,8 +154,15 @@ html(lang="ru")
                     ]})
 
             .form-elements__column.form-elements__column-2
+                .form-elements__element
+                    .form-elements__annotation
+                        h3.form-elements__element-name Checkbox Buttons
+                +checkbox({text: "Можно курить", isChecked: false})
+                +checkbox({text: "Можно c питомцами", isChecked: true})
+                +checkbox({text: "Можно пригласить гостей (до 10 человек)", isChecked: true})
 
             .form-elements__column.form-elements__column-3
+                
 
         
         
