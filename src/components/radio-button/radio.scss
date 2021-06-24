@@ -1,4 +1,6 @@
-.checkbox {
+.radio {
+    margin-right: 20px;
+
     &__text {
         max-width: 230px;
         margin-bottom: 10px;
@@ -15,9 +17,11 @@
             min-width: 20px;
             min-height: 20px;
             border: 1px solid $dark-25;
-            border-radius: 4px;
+            border-radius: 50%;
             margin-right: 10px;
-
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: 50% 50%;
             transition: .2s border-color;
         }
     }
@@ -38,15 +42,12 @@
     &__hidden:checked + &__text::after {
         content: "";
         position: absolute;
-        top: 3px;
-        left: 2px;
+        top: 5px;
+        left: 5px;
         display: block;
-        width: 8px;
-        height: 6px;
-        border: 2px solid rgba(188, 156, 255, 1);
-        border-top: none;
-        border-right: none;
-        transform: rotate(-45deg);
-        transform-origin: 100% 0;
+        width: 12px;
+        height: 12px;
+        background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+        border-radius: 50%;
     }
 }

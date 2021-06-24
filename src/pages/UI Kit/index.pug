@@ -4,6 +4,9 @@ include ../../components/text-field/text-field
 include ../../components/datepicker/datepicker
 include ../../components/dropdown/dropdown
 include ../../components/checkbox/checkbox
+include ../../components/radio-button/radio
+include ../../components/toggle/toggle
+include ../../components/like-button/like-button
 
 doctype html 
 html(lang="ru")
@@ -154,12 +157,32 @@ html(lang="ru")
                     ]})
 
             .form-elements__column.form-elements__column-2
-                .form-elements__element
+                .form-elements__element.form-elements__element_indent-40
                     .form-elements__annotation
                         h3.form-elements__element-name Checkbox Buttons
-                +checkbox({text: "Можно курить", isChecked: false})
-                +checkbox({text: "Можно c питомцами", isChecked: true})
-                +checkbox({text: "Можно пригласить гостей (до 10 человек)", isChecked: true})
+                    +checkbox({text: "Можно курить", isChecked: false})
+                    +checkbox({text: "Можно c питомцами", isChecked: true})
+                    +checkbox({text: "Можно пригласить гостей (до 10 человек)", isChecked: true})
+
+                .form-elements__element.form-elements__element_indent-40
+                    .form-elements__annotation
+                        h3.form-elements__element-name Radio Buttons
+                    +radio({text: "Мужчина", isChecked: true, name: "sex"})
+                    +radio({text: "Женщина", isChecked: false, name: "sex"})
+
+                .form-elements__element.form-elements__element_indent-40
+                    .form-elements__annotation
+                        h3.form-elements__element-name Toggle
+                    +toggle({text: "Получать спецпредложения", isActive: true})
+                    +toggle({text: "Получать спецпредложения", isActive: false})
+
+                .form-elements__element.form-elements__element_indent-40
+                    .form-elements__annotation
+                        h3.form-elements__element-name Like button
+                    +like-button({count: "2", isLiked: false})
+                    +like-button({count: "12", isLiked: true})
+                    
+                
 
             .form-elements__column.form-elements__column-3
                 

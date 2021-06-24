@@ -115,6 +115,10 @@ body {
     &__column {
         width: 320px;
     }
+
+    &__column-2 &__element-name {
+        margin-bottom: 16px;
+    }
 }
 
 .text-field__active {

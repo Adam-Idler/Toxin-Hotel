@@ -1,0 +1,7 @@
+mixin radio({text, isChecked, name})
+    label.radio
+        if isChecked 
+            input(type="radio" name= name checked).radio__hidden
+        else 
+            input(type="radio" name= name).radio__hidden
+        span.radio__text !{text}
