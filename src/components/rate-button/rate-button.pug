@@ -1,0 +1,12 @@
+mixin rate-button({countFill, id})
+    - var n = 1;
+    - var countFill = 6 - countFill;
+    div(class= attributes.class ? 'rate-button ' + attributes.class : 'rate-button')
+        while n <= 5
+            if n == countFill
+                input(type="radio" name="rating" + id id= n + id checked).rate-button__hidden
+                label(for= n+ id).rate-button__item.rate-button__item_empty
+            else    
+                input(type="radio" name="rating"+ id id= n + id).rate-button__hidden
+                label(for= n+ id).rate-button__item.rate-button__item_empty
+            - n++;

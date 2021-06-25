@@ -7,6 +7,7 @@ include ../../components/checkbox/checkbox
 include ../../components/radio-button/radio
 include ../../components/toggle/toggle
 include ../../components/like-button/like-button
+include ../../components/rate-button/rate-button
 
 doctype html 
 html(lang="ru")
@@ -182,6 +183,11 @@ html(lang="ru")
                     +like-button({count: "2", isLiked: false})
                     +like-button({count: "12", isLiked: true})
                     
+                .form-elements__element.form-elements__element_indent-40
+                    .form-elements__annotation
+                        h3.form-elements__element-name Rate button
+                    +rate-button({countFill: 4, id: "a"})(class="rate-button__indent-right__20")
+                    +rate-button({countFill: 5, id: "b"})
                 
 
             .form-elements__column.form-elements__column-3
