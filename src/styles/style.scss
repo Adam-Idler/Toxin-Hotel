@@ -4,10 +4,11 @@ $dark: #1F2041;
 $dark-75: rgba(31, 32, 65, 0.75);
 $dark-50: rgba(31, 32, 65, 0.50);
 $dark-25: rgba(31, 32, 65, 0.25);
+$dark-10: rgba(31, 32, 65, 0.10);
 $dark-05: rgba(31, 32, 65, 0.05);
 
 body {
-    font-family: 'Montserrat-Regular', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 14px;
     line-height: 24px;
     color: $dark-75;
@@ -18,21 +19,24 @@ h1, h2, h3 {
 }
 
 h1 {
-    font-family: 'Montserrat-Bold', sans-serif;
+    font-family: 'Montserrat';
+    font-weight: 700;
     font-size: 24px;
     line-height: 29px;
     color: $dark;
 }
 
 h2 {
-    font-family: 'Montserrat-Bold', sans-serif;
+    font-family: 'Montserrat';
+    font-weight: 700;
     font-size: 19px;
     line-height: 23px;
     color: $dark;
 }
 
 h3 {
-    font-family: 'Montserrat-Bold', sans-serif;
+    font-family: 'Montserrat';
+    font-weight: 700;
     font-size: 12px;
     line-height: 15px;
     text-transform: uppercase;
@@ -67,6 +71,9 @@ h3 {
 @import '../components/toggle/toggle.scss';
 @import '../components/like-button/like-button.scss';
 @import '../components/rate-button/rate-button.scss';
+@import '../components/rich-checkbox/rich-checkbox.scss';
+@import '../components/bullet-list/bullet-list.scss';
+@import '../components/advantage/advantage.scss';
 
 // pages styles
 @import '../pages/UI Kit/styles.scss';

@@ -82,6 +82,14 @@ body {
         &_indent-100 {
             margin-bottom: 100px;
         }
+
+        &_indent-160 {
+            margin-bottom: 160px;
+        }
+
+        &_indent-250 {
+            margin-bottom: 250px;
+        }
     }
 
     &__annotation {
@@ -116,7 +124,7 @@ body {
         width: 320px;
     }
 
-    &__column-2 &__element-name {
+    &__element-name_indent-16 {
         margin-bottom: 16px;
     }
 }

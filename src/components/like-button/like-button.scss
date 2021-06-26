@@ -23,11 +23,11 @@
     }
 
     &_liked {
-        border: 1px solid #BC9CFF;
+        border: 1px solid $purple;
     }
 
     &_liked &__count {
-        color: #BC9CFF;
+        color: $purple;
     }
 
     &_liked &__image {

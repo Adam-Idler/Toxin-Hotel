@@ -50,6 +50,11 @@ export const dropdownActivate = () => {
         if (input.value >= +input.getAttribute('max')) {
             input.parentNode.querySelector('.dropdown__button-plus').style.opacity = 0.5;
         }
+
+        if (+input.value > 0 && input.closest('.dropdown__list').querySelector('.dropdown__button-solution_cancel')) {
+            input.closest('.dropdown__list').querySelector('.dropdown__button-solution_cancel').style.opacity = 1;
+            input.closest('.dropdown__list').querySelector('.dropdown__button-solution_cancel').style.pointerEvents = 'auto';
+        }
     });
 
     const openDropdown = (e) => {
@@ -78,7 +83,7 @@ export const dropdownActivate = () => {
 
     const changeValueOfCountDigit = (e) => {
         let target = e.target;
-        let clearButton = document.querySelector('.dropdown__button-solution_cancel');
+        let clearButton = target.closest('.dropdown__list').querySelector('.dropdown__button-solution_cancel');
 
         if (!target.classList.contains('dropdown__button-minus') && 
             !target.classList.contains('dropdown__button-plus') &&

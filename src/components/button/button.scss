@@ -6,7 +6,8 @@
     background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
 
     font-size: 12px;
-    font-family: 'Montserrat-Bold';
+    font-family: 'Montserrat';
+    font-weight: 700;
     text-transform: uppercase;
     color: #fff;
 
@@ -22,8 +23,8 @@
     padding: 9px 20px;
 
     font-size: 12px;
-    font-family: 'Montserrat-Bold';
-    text-transform: uppercase;
+    font-family: 'Montserrat';
+    font-weight: 700;    text-transform: uppercase;
     color: $purple;
 
     transition: .2s color;
@@ -59,8 +60,8 @@
     background-color: #fff;
 
     font-size: 12px;
-    font-family: 'Montserrat-Bold';
-    text-transform: uppercase;
+    font-family: 'Montserrat';
+    font-weight: 700;    text-transform: uppercase;
     color: $purple;
 
     transition: .2s color;

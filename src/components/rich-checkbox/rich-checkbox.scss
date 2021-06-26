@@ -1,12 +1,13 @@
-.checkbox {
+.rich-checkbox {
     &__text {
-        max-width: 230px;
-        margin-bottom: 10px;
+        max-width: 240px;
         display: flex;
-        align-items: flex-start;
+        align-items: center;
         position: relative;
         user-select: none;
-        color: $dark-50;
+        margin-bottom: 5px;
+        font-family: 'Montserrat';
+        font-weight: 700; 
         line-height: 18px;
         cursor: pointer;
 
@@ -21,6 +22,16 @@
 
             transition: .2s border-color;
         }
+    }
+
+    &__subtext {
+        color: $dark-50;
+        display: block;
+        max-width: 230px;
+        margin-left: 33px;
+        margin-bottom: 10px;
+        font-size: 12px;
+        line-height: 14px;
     }
 
     &__hidden {
@@ -38,6 +49,7 @@
 
     &__hidden:checked + &__text::after {
         content: "";
+        align-self: center;
         position: absolute;
         top: 3px;
         left: 2px;

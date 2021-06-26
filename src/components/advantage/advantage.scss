@@ -1,0 +1,24 @@
+.advantage {
+    display: flex;
+    border-bottom: 1px solid $dark-10;
+    padding: 20px 0;
+
+    &__image {
+        margin-right: 10px;
+        width: 48px;
+        height: 48px;
+    }
+
+    &__words {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+
+    }
+
+    &__name {
+        font-size: 14px;
+        color: $dark-75;
+        text-transform: none;
+    }
+}

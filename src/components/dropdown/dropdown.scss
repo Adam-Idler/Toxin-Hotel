@@ -8,8 +8,7 @@
         cursor: pointer;
 
         background-color: #fff;
-        font-family: 'Montserrat-Regular';
-        color: $dark-75;
+        font-family: 'Montserrat';        color: $dark-75;
         text-align: left;
 
         border: 1px solid $dark-25;
@@ -106,8 +105,8 @@
 
     &__item-name {
         text-transform: uppercase;
-        font-family: 'Montserrat-Bold';
-        color: $dark;
+        font-family: 'Montserrat';
+        font-weight: 700;        color: $dark;
         font-size: 12px;
         line-height: 15px;
     }
@@ -121,8 +120,7 @@
         width: 30px;
         height: 30px;
         background-color: #fff;
-        font-family: 'Montserrat-Regular';
-        color: $dark-75;
+        font-family: 'Montserrat';        color: $dark-75;
 
         border: 1px solid $dark-25;
         border-radius: 50px;
@@ -138,8 +136,8 @@
         padding: 0;
         text-align: center;
 
-        font-family: 'Montserrat-Bold';
-        color: $dark;
+        font-family: 'Montserrat';
+        font-weight: 700;        color: $dark;
 
         &::-webkit-outer-spin-button,
         &::-webkit-inner-spin-button {

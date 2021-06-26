@@ -49,7 +49,7 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: `fonts/[name]/[name].[ext]`,
+              name: `fonts/[name].[ext]`,
               publicPath: "../"
             }
           }
