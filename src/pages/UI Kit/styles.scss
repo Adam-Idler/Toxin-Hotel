@@ -73,6 +73,7 @@ body {
 
     &__element {
         margin-bottom: 20px;
+        flex-grow: 1;
 
 
         &_indent-40 {
@@ -89,6 +90,10 @@ body {
 
         &_indent-250 {
             margin-bottom: 250px;
+        }
+
+        &_comment {
+            flex-grow: 2;
         }
     }
 
@@ -120,7 +125,7 @@ body {
         flex-direction: column;
     }
 
-    &__column {
+    &__column-2 {
         width: 320px;
     }
 

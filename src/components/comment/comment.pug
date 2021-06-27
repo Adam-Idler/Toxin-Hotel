@@ -1,0 +1,14 @@
+include ../like-button/like-button
+
+mixin comment({imageUrl, likesCount, authorName, days, comment})
+    .comment 
+        .comment__left-side 
+            a(href="#")
+                img(src= imageUrl alt="Avatar").comment__author-image
+            +like-button({count: likesCount, isLiked: true})
+
+        .comment__right-side
+            a(href="#")
+                h3.comment__author-name !{authorName}
+            p.comment__date !{days}
+            p.comment__text !{comment}

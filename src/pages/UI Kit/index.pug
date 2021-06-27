@@ -11,6 +11,7 @@ include ../../components/rate-button/rate-button
 include ../../components/rich-checkbox/rich-checkbox
 include ../../components/bullet-list/bullet-list
 include ../../components/advantage/advantage
+include ../../components/comment/comment
 
 doctype html 
 html(lang="ru")
@@ -240,6 +241,14 @@ html(lang="ru")
                     +rich-checkbox({text: "Широкий коридор", subtext: "Ширина коридоров в номере не менее 91 см."})
                     +rich-checkbox({text: "Помощник для инвалидов", subtext: "На 1 этаже вас встретит специалист  и проводит до номера."})
                 
+                .form-elements__element.form-elements__element_comment
+                    +comment({
+                        imageUrl: '../images/comment-avatars/avatar-1.png',
+                        likesCount: '12',
+                        authorName: 'Мурад Сарафанов',
+                        days: '5 дней назад',
+                        comment: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'
+                        })
 
             .form-elements__column.form-elements__column-3
                 .form-elements__element.form-elements__element_indent-250
