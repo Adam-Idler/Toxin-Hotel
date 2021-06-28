@@ -21,5 +21,5 @@ mixin dropdown({placeholder, isActive, withButton, items})
                         button(type="button").dropdown__button-plus +
             if withButton 
                 li.dropdown__item.dropdown__item_solution
-                    +button('no-border', 'Очистить')(class='dropdown__button-solution dropdown__button-solution_cancel')
-                    +button('no-border', 'Применить')(class='dropdown__button-solution dropdown__button-solution_confirm')
+                    +button({species: "no-border", text: "Очистить"})(class='dropdown__button-solution dropdown__button-solution_cancel')
+                    +button({species: "no-border", text: "Применить"})(class='dropdown__button-solution dropdown__button-solution_confirm')
