@@ -12,6 +12,7 @@ include ../../components/rich-checkbox/rich-checkbox
 include ../../components/bullet-list/bullet-list
 include ../../components/advantage/advantage
 include ../../components/comment/comment
+include ../../components/pagination/pagination
 
 doctype html 
 html(lang="ru")
@@ -261,6 +262,11 @@ html(lang="ru")
                     +button({species: "no-border", text: "click me"})(class="form-elements__buton")
                     +button({species: "no-border", text: "click me"})(class="form-elements__buton_active")
                     +button({species: "pay", text: "Перейти к оплате"})
+
+                .form-elements__element
+                    .form-elements__annotation
+                        h3.form-elements__element-name.form-elements__element-name_indent-16 Pagination 
+                    +pagination()
 
                 .form-elements__element.form-elements__element_indent-250
                     .form-elements__annotation
