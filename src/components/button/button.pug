@@ -1,4 +1,7 @@
 //- species Может быть purple, white и no-border
-mixin button(species="white", text="click me")
-    button(type="button", class!= attributes.class ? `button button_${species} ${attributes.class}` : `button button_${species}`)= text
+mixin button({species="white", text="click me"})
+    button(
+            type="button", 
+            class!= attributes.class ? `button button_${species} ${attributes.class}` : `button button_${species}`
+           )= text
     

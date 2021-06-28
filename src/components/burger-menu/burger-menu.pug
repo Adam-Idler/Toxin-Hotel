@@ -1,6 +1,6 @@
 include ../button/button
 
-mixin burger-menu(registred)
+mixin burger-menu({registred})
     .burger-menu
         .burger-menu__block
             button.burger-menu__close-btn
@@ -15,8 +15,8 @@ mixin burger-menu(registred)
                         .burger-menu__separator 
                         p.burger-menu__user-name Юлий Цезарь
                     else 
-                        +button('white', 'Войти')(class="header__button")
-                        +button('purple', 'Зарегестрироваться')
+                        +button({species: "white", text: "Войти"})(class="header__button")
+                        +button({species: "purple", text: "Зарегестрироваться"})
 
             nav.burger-menu__nav 
                 a(href="#").burger-menu__link О нас

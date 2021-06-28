@@ -58,8 +58,6 @@ h3 {
 @import './fonts/font.css';
 
 // components styles
-@import '../components/header/header.scss';
-@import '../components/footer/footer.scss';
 @import '../components/button/button.scss';
 @import '../components/subscription-field/subscription-field.scss';
 @import '../components/burger-menu/burger-menu.scss';
@@ -75,6 +73,8 @@ h3 {
 @import '../components/bullet-list/bullet-list.scss';
 @import '../components/advantage/advantage.scss';
 @import '../components/comment/comment.scss';
+@import '../components/header/header.scss';
+@import '../components/footer/footer.scss';
 
 // pages styles
 @import '../pages/UI Kit/styles.scss';

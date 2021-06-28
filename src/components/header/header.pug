@@ -1,11 +1,11 @@
 include ../button/button
 include ../burger-menu/burger-menu
 
-mixin header(registred)
+mixin header({registred, userName="Иван Иванов"})
     header(class=attributes.class ? "header" + ' ' + attributes.class : "header")
         a(href="#").logo
             img(src="../images/logo/logo.png", alt="Logo").logo_img.header__logo_img
-            img(src="../images/logo/logo-text.png" alt="logo text").logo_text.header__logo_text
+            img(src="../images/logo/logo-text.png", alt="logo text").logo_text.header__logo_text
 
         nav.header__nav 
             ul.header__nav-menu
@@ -40,10 +40,10 @@ mixin header(registred)
             .header__signin 
                 if registred
                     .separator 
-                    p.user-name Юлий Цезарь
+                    p.user-name !{userName}
                 else 
-                    +button('white', 'Войти')(class="header__button")
-                    +button('purple', 'Зарегестрироваться')(class="header__button")
+                    +button({species: "white", text: "Войти"})(class="header__button")
+                    +button({species: "purple", text: "Зарегестрироваться"})(class="header__button")
 
         button.header__burger 
                 .header__burger-item 
