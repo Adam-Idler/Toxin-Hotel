@@ -241,7 +241,7 @@ html(lang="ru")
                     +rich-checkbox({text: "Широкий коридор", subtext: "Ширина коридоров в номере не менее 91 см."})
                     +rich-checkbox({text: "Помощник для инвалидов", subtext: "На 1 этаже вас встретит специалист  и проводит до номера."})
                 
-                .form-elements__element.form-elements__element_comment
+                .form-elements__element
                     +comment({
                         imageUrl: '../images/comment-avatars/avatar-1.png',
                         likesCount: '12',
@@ -251,6 +251,17 @@ html(lang="ru")
                         })
 
             .form-elements__column.form-elements__column-3
+                .form-elements__element
+                    .form-elements__annotation
+                        h3.form-elements__element-name.form-elements__element-name_indent-16 Buttons
+                    +button('purple', 'click me')(class="form-elements__buton")
+                    +button('purple', 'click me')(class="form-elements__buton_active")
+                    +button('white', 'click me')(class="form-elements__buton")
+                    +button('white', 'click me')(class="form-elements__buton_active")
+                    +button('no-border', 'click me')(class="form-elements__buton")
+                    +button('no-border', 'click me')(class="form-elements__buton_active")
+                    +button('pay', 'Перейти к оплате')
+
                 .form-elements__element.form-elements__element_indent-250
                     .form-elements__annotation
                         h3.form-elements__element-name Dropdown
@@ -295,8 +306,3 @@ html(lang="ru")
                             text: "Время прибытия — после 13:00, а выезд до 12:00"
                         }
                     ]})
-
-
-        
-        
-        

@@ -32,7 +32,12 @@
     }
 
     &__button {
-        margin-right: 25px;
+        height: 34px;
+        
+        &:first-of-type {
+            height: 30px;
+            margin-right: 25px;
+        }
     }
 
     &__burger {

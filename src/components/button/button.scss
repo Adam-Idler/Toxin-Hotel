@@ -1,72 +1,135 @@
-.button_purple {
-    border: none;
-    cursor: pointer;
+.button {
+    min-width: 99px;
+    height: 44px;
     border-radius: 22px;
     padding: 10px 20px;
-    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-
     font-size: 12px;
-    font-family: 'Montserrat';
+    line-height: 14px;
     font-weight: 700;
     text-transform: uppercase;
     color: #fff;
-
-    transition: .2s opacity;
-}
-
-.button_white {
-    border: none;
     cursor: pointer;
-    position: relative;
-    background-color: #fff;
-    border-radius: 22px;
-    padding: 9px 20px;
+    border: none;
 
-    font-size: 12px;
-    font-family: 'Montserrat';
-    font-weight: 700;    text-transform: uppercase;
-    color: $purple;
-
-    transition: .2s color;
-
-    &::after {
-        content: "";
-        position: absolute;
-        top: -2px;
-        bottom: -2px;
-        left: -2px;
-        right: -2px;
-        z-index: -1;
-
+    &_purple {
         background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-        border-radius: 22px;
 
         transition: .2s opacity;
+
+        &:hover, &:active,
+        &.form-elements__buton_active {
+            opacity: .5;
+        }
     }
-    &:hover {
-        color: rgba(188, 156, 255, .5);
+
+    &_white {
+        position: relative;
+        z-index: 100;
+        height: 40px;
+
+        color: $purple;
+
+        transition: .2s color;
+
+        &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            border-radius: 22px;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            z-index: -1;
+            background-color: #fff;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: -2px;
+            bottom: -2px;
+            left: -2px;
+            right: -2px;
+            z-index: -2;
+
+            background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+            border-radius: 22px;
+
+            transition: .2s opacity;
+        }
+
+        &:hover::after, &:active::after,
+        &.form-elements__buton_active::after {
+            opacity: .5;
+        }
     }
-}
 
-.button_purple:hover, .button_purple:active,
-.button_white:hover:after, .button_white:active:after {
-    opacity: .5;
-}
+    &_no-border {
+        padding: 0;
+        min-width: 0;
+        color: $purple;
+        background-color: #fff;
 
-.button_no-border {
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    background-color: #fff;
+        transition: .2s color;
 
-    font-size: 12px;
-    font-family: 'Montserrat';
-    font-weight: 700;    text-transform: uppercase;
-    color: $purple;
+        &:hover, &:active,
+        &.form-elements__buton_active {
+            color: $dark-50;
+        }
+    }
 
-    transition: .2s color;
-}
+    &_pay {
+        width: 320px;
+        background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+        position: relative;
 
-.button_no-border:hover, .button_no-border:active {
-    color: $dark-50;
+        transition: .2s opacity;
+
+        &::before {
+            content: "";
+            display: block;
+            width: 10px;
+            height: 10px;
+    
+            position: absolute;
+            top: 50%;
+            right: 15px;
+
+            border: 2px solid #fff;
+            border-bottom: none;
+            border-left: none;
+    
+            transform: translateY(-50%) rotate(45deg);
+        }
+
+        &::after {
+            content: "";
+            display: block;
+            width: 15px;
+            height: 2px;
+    
+            position: absolute;
+            top: 50%;
+            right: 15px;
+            
+            background-color: #fff;
+
+            transform: translateY(-50%);
+        }
+        
+        &:hover, &:active,
+        &.form-elements__buton_active {
+            opacity: .5;
+        }
+    }
+
+    &.form-elements__buton {
+        margin-bottom: 30px;
+        margin-right: 20px;
+    }
+
+    &.form-elements__buton_active {
+        margin-right: 50px;
+    }
 }
