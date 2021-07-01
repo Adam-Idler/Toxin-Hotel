@@ -13,6 +13,7 @@ include ../../components/bullet-list/bullet-list
 include ../../components/advantage/advantage
 include ../../components/comment/comment
 include ../../components/pagination/pagination
+include ../../components/checkbox-list/checkbox-list
 
 doctype html 
 html(lang="ru")
@@ -161,6 +162,26 @@ html(lang="ru")
                             startAmount: "0"
                         }
                     ]})
+
+                .form-elements__element
+                    +checkbox-list({text: "Expandable checkbox list", isActive: false})
+                        +checkbox({text: "Завтрак", isChecked: false})
+                        +checkbox({text: "Письменный стол", isChecked: true})
+                        +checkbox({text: "Стул для кормления", isChecked: true})
+                        +checkbox({text: "Кроватка", isChecked: true})
+                        +checkbox({text: "Телевизор", isChecked: false})
+                        +checkbox({text: "Шампунь", isChecked: false})
+                        +checkbox({text: "Телевизор", isChecked: false})
+                        +checkbox({text: "Шампунь", isChecked: false})
+                    +checkbox-list({text: "Expandable checkbox list", isActive: true})
+                        +checkbox({text: "Завтрак", isChecked: false})
+                        +checkbox({text: "Письменный стол", isChecked: true})
+                        +checkbox({text: "Стул для кормления", isChecked: true})
+                        +checkbox({text: "Кроватка", isChecked: true})
+                        +checkbox({text: "Телевизор", isChecked: false})
+                        +checkbox({text: "Шампунь", isChecked: false})
+                        +checkbox({text: "Телевизор", isChecked: false})
+                        +checkbox({text: "Шампунь", isChecked: false})
                 
                 .form-elements__element
                     +advantage({

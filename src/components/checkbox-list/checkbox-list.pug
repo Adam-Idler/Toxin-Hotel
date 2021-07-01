@@ -1,0 +1,5 @@
+mixin checkbox-list({text, isActive})
+    div(class= isActive ? "checkbox-list checkbox-list_extended-always" : "checkbox-list")
+        button(type="button").checkbox-list__button= text
+        ul.checkbox-list__items 
+            block

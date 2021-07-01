@@ -1,8 +1,13 @@
 .checkbox {
+    &::after {
+        content: '\A'; 
+        white-space: pre;
+    }
+
     &__text {
+        margin-bottom: 10.56px;
         max-width: 230px;
-        margin-bottom: 10px;
-        display: flex;
+        display: inline-flex;
         align-items: flex-start;
         position: relative;
         user-select: none;
