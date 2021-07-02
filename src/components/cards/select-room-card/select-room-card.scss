@@ -1,0 +1,24 @@
+.select-room {
+    width: 380px;
+
+    &__title {
+        margin-bottom: 21px;
+    }
+
+    &__date {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: space-between;
+        height: 65px;
+        flex-direction: column;
+        margin-bottom: 20.56px;
+    }
+
+    &__name-input {
+        margin-bottom: 5.44px;
+    }
+
+    &__guests {
+        margin-bottom: 31px;
+    }
+}

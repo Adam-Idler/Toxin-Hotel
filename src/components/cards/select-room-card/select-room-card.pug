@@ -1,0 +1,42 @@
+include ../../form-elements/datepicker/datepicker
+include ../../form-elements/dropdown/dropdown
+include ../../form-elements/button/button
+
+mixin select-room-card()
+    .card.select-room 
+        h1.select-room__title Найдём номера под ваши пожелания
+        .select-room__date
+            h3.select-room__name-input Прибытие
+            +datepicker({type: "mini"})(class="datepicker_mini_start")
+            h3.select-room__name-input Выезд
+            +datepicker({type: "mini"})(class="datepicker_mini_end")
+        .select-room__guests 
+            h3.select-room__name-input Гости
+            +dropdown({
+                        placeholder: "Сколько гостей", isActive: false, withButton: true, items: [{
+                            id: "adults",
+                            minAmount: "0",
+                            maxAmount: "10",
+                            forms: "гость, гостя, гостей",
+                            itemName: "Взрослые",
+                            startAmount: "0"
+                        },
+                        {
+                            id: "kids",
+                            minAmount: "0",
+                            maxAmount: "10",
+                            forms: "гость, гостя, гостей",
+                            itemName: "Дети",
+                            startAmount: "0"
+                        },
+                        {
+                            id: "babys",
+                            minAmount: "0",
+                            maxAmount: "10",
+                            forms: "младенец, младенца, младенцев",
+                            itemName: "Младенцы",
+                            startAmount: "0"
+                        }
+                    ]})
+        .select-room__button
+            +button({species: "pay", text: "подобрать номер"})

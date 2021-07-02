@@ -7,6 +7,10 @@ $dark-25: rgba(31, 32, 65, 0.25);
 $dark-10: rgba(31, 32, 65, 0.10);
 $dark-05: rgba(31, 32, 65, 0.05);
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
     font-size: 14px;
@@ -16,31 +20,25 @@ body {
 
 h1, h2, h3 {
     margin: 0;
+    font-family: 'Montserrat';
+    font-weight: 700;
+    color: $dark;
 }
 
 h1 {
-    font-family: 'Montserrat';
-    font-weight: 700;
     font-size: 24px;
     line-height: 29px;
-    color: $dark;
 }
 
 h2 {
-    font-family: 'Montserrat';
-    font-weight: 700;
     font-size: 19px;
     line-height: 23px;
-    color: $dark;
 }
 
 h3 {
-    font-family: 'Montserrat';
-    font-weight: 700;
     font-size: 12px;
     line-height: 15px;
     text-transform: uppercase;
-    color: $dark;
 }
 
 .logo {
@@ -58,30 +56,32 @@ h3 {
 @import './fonts/font.css';
 
 // components styles
-@import '../components/button/button.scss';
-@import '../components/subscription-field/subscription-field.scss';
-@import '../components/burger-menu/burger-menu.scss';
-@import '../components/text-field/text-field.scss';
-@import '../components/datepicker/datepicker.scss';
-@import '../components/dropdown/dropdown.scss';
-@import '../components/checkbox/checkbox.scss';
-@import '../components/radio-button/radio.scss';
-@import '../components/toggle/toggle.scss';
-@import '../components/like-button/like-button.scss';
-@import '../components/rate-button/rate-button.scss';
-@import '../components/rich-checkbox/rich-checkbox.scss';
-@import '../components/bullet-list/bullet-list.scss';
-@import '../components/advantage/advantage.scss';
-@import '../components/comment/comment.scss';
-@import '../components/pagination/pagination.scss';
-@import '../components/checkbox-list/checkbox-list.scss';
-@import '../components/range-slider/range-slider.scss';
-@import '../components/header/header.scss';
-@import '../components/footer/footer.scss';
+    // Form Elements
+    @import '../components/form-elements/button/button.scss';
+    @import '../components/form-elements/subscription-field/subscription-field.scss';
+    @import '../components/form-elements/text-field/text-field.scss';
+    @import '../components/form-elements/datepicker/datepicker.scss';
+    @import '../components/form-elements/dropdown/dropdown.scss';
+    @import '../components/form-elements/checkbox/checkbox.scss';
+    @import '../components/form-elements/radio-button/radio.scss';
+    @import '../components/form-elements/toggle/toggle.scss';
+    @import '../components/form-elements/like-button/like-button.scss';
+    @import '../components/form-elements/rate-button/rate-button.scss';
+    @import '../components/form-elements/rich-checkbox/rich-checkbox.scss';
+    @import '../components/form-elements/bullet-list/bullet-list.scss';
+    @import '../components/form-elements/advantage/advantage.scss';
+    @import '../components/form-elements/comment/comment.scss';
+    @import '../components/form-elements/pagination/pagination.scss';
+    @import '../components/form-elements/checkbox-list/checkbox-list.scss';
+    @import '../components/form-elements/range-slider/range-slider.scss';
+    // Headers & Footers
+    @import '../components/headers-and-footers/header/header.scss';
+    @import '../components/headers-and-footers/footer/footer.scss';
+    @import '../components/headers-and-footers/burger-menu/burger-menu.scss';
+    // Cards
+    @import '../components/cards/select-room-card/select-room-card.scss';
+
 
 // pages styles
 @import '../pages/UI Kit/styles.scss';
 
-* {
-    box-sizing: border-box;
-}

@@ -24,10 +24,12 @@
 
     &__wrapper {
         position: relative;
+        width: 150px;
     }
 
     &_mini {
         width: 150px;
+        display: inline-flex;
         position: relative;
         cursor: pointer;
 

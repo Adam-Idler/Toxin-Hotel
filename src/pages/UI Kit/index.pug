@@ -1,20 +1,25 @@
-include ../../components/header/header
-include ../../components/footer/footer
-include ../../components/text-field/text-field
-include ../../components/datepicker/datepicker
-include ../../components/dropdown/dropdown
-include ../../components/checkbox/checkbox
-include ../../components/radio-button/radio
-include ../../components/toggle/toggle
-include ../../components/like-button/like-button
-include ../../components/rate-button/rate-button
-include ../../components/rich-checkbox/rich-checkbox
-include ../../components/bullet-list/bullet-list
-include ../../components/advantage/advantage
-include ../../components/comment/comment
-include ../../components/pagination/pagination
-include ../../components/checkbox-list/checkbox-list
-include ../../components/range-slider/range-slider
+//- Headers & Footers
+include ../../components/headers-and-footers/header/header
+include ../../components/headers-and-footers/footer/footer
+//- Form Elements
+include ../../components/form-elements/text-field/text-field
+include ../../components/form-elements/datepicker/datepicker
+include ../../components/form-elements/dropdown/dropdown
+include ../../components/form-elements/checkbox/checkbox
+include ../../components/form-elements/radio-button/radio
+include ../../components/form-elements/toggle/toggle
+include ../../components/form-elements/like-button/like-button
+include ../../components/form-elements/rate-button/rate-button
+include ../../components/form-elements/rich-checkbox/rich-checkbox
+include ../../components/form-elements/bullet-list/bullet-list
+include ../../components/form-elements/advantage/advantage
+include ../../components/form-elements/comment/comment
+include ../../components/form-elements/pagination/pagination
+include ../../components/form-elements/checkbox-list/checkbox-list
+include ../../components/form-elements/range-slider/range-slider
+//- Cards
+include ../../components/cards/select-room-card/select-room-card
+
 
 doctype html 
 html(lang="ru")
@@ -100,7 +105,7 @@ html(lang="ru")
                 .form-elements__element.form-elements__element_indent-100
                     .form-elements__annotation
                         h3.form-elements__element-name Subscription text field
-                    include ../../components/subscription-field/subscription-field
+                    include ../../components/form-elements/subscription-field/subscription-field
 
                 .form-elements__element
                     .form-elements__annotation
@@ -336,3 +341,9 @@ html(lang="ru")
                             text: "Время прибытия — после 13:00, а выезд до 12:00"
                         }
                     ]})
+
+        //- Cards
+        h1.block__name Cards
+        .cards
+            +select-room-card()
+
