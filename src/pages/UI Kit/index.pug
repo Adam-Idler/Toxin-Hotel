@@ -19,7 +19,7 @@ include ../../components/form-elements/checkbox-list/checkbox-list
 include ../../components/form-elements/range-slider/range-slider
 //- Cards
 include ../../components/cards/select-room-card/select-room-card
-
+include ../../components/cards/login-card/login-card
 
 doctype html 
 html(lang="ru")
@@ -290,7 +290,7 @@ html(lang="ru")
                     +button({species: "white", text: "click me"})(class="form-elements__buton_active")
                     +button({species: "no-border", text: "click me"})(class="form-elements__buton")
                     +button({species: "no-border", text: "click me"})(class="form-elements__buton_active")
-                    +button({species: "pay", text: "Перейти к оплате"})
+                    +button({species: "wide", text: "Перейти к оплате"})
 
                 .form-elements__element.form-elements__element_indent-205
                     .form-elements__annotation
@@ -345,5 +345,6 @@ html(lang="ru")
         //- Cards
         h1.block__name Cards
         .cards
-            +select-room-card()
+            +select-room-card().card_indent-40
+            +login-card()
 

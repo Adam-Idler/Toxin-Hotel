@@ -1,0 +1,25 @@
+.login-card {
+    &__email-input {
+        margin-bottom: 10px;
+    }
+
+    &__password-input {
+        margin-bottom: 20px;
+    }
+
+    &__login-button {
+        margin-bottom: 30px;
+    }
+
+    &__registration  {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &-text {
+            color: #000;
+        }
+    }
+
+
+}
