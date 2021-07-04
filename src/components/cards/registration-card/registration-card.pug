@@ -1,0 +1,29 @@
+include ../../form-elements/text-field/text-field
+include ../../form-elements/datepicker/datepicker
+include ../../form-elements/radio-button/radio
+include ../../form-elements/toggle/toggle
+
+mixin registration-card()
+    form.card.registration-card 
+        h1.card__title Регистрация аккаунта 
+
+        .registration-card__text-fields 
+            +text-field({placeholder: "Имя"}).registration-card__input-item
+            +text-field({placeholder: "Фамилия"}).registration-card__input-item
+        .registration-card__radio-buttons 
+            +radio({text: "Мужчина", isChecked: true, name: "sex"})
+            +radio({text: "Женщина", isChecked: false, name: "sex"})
+
+        h3.card__name-input Дата рождения
+        +datepicker({type: "standart"}).registration-card__datepicker
+
+        h3.card__name-input Данные для входа в сервис
+        .registration-card__inputs 
+            +text-field({type: "email", placeholder: "Email"}).registration-card__input-item
+            +text-field({type: "password", placeholder: "Пароль"}).registration-card__input-item
+        +toggle({text: "Получать спецпредложения", isActive: false}).registration-card__toggle
+        +button({species: "wide", text: "Перейти к оплате", type: "submit"}).registration-card__pay-button
+
+        .registration-card__login
+            p.registration-card__login-text Уже есть аккаунт на Toxin
+            +button({species: "white", text: "Войти"})

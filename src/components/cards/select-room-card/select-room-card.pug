@@ -3,17 +3,17 @@ include ../../form-elements/dropdown/dropdown
 include ../../form-elements/button/button
 
 mixin select-room-card()
-    div(class= attributes.class ? "card select-room " + attributes.class : "card select-room")
+    form(class= attributes.class ? "card select-room " + attributes.class : "card select-room")
         h1.card__title Найдём номера под ваши пожелания
 
         .select-room__date
-            h3.select-room__name-input Прибытие
+            h3.card__name-input Прибытие
             +datepicker({type: "mini"})(class="datepicker_mini_start")
-            h3.select-room__name-input Выезд
+            h3.card__name-input Выезд
             +datepicker({type: "mini"})(class="datepicker_mini_end")
 
         .select-room__guests 
-            h3.select-room__name-input Гости
+            h3.card__name-input Гости
             +dropdown({
                         placeholder: "Сколько гостей", isActive: false, withButton: true, items: [{
                             id: "adults",
@@ -42,4 +42,4 @@ mixin select-room-card()
             ]})
             
         .select-room__button
-            +button({species: "wide", text: "подобрать номер"})
+            +button({species: "wide", text: "подобрать номер", type: "submit"})

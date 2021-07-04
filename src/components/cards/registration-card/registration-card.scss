@@ -1,0 +1,28 @@
+.registration-card {
+    &__input-item,
+    &__radio-buttons {
+        margin-bottom: 10px;
+    }
+    
+    &__datepicker {
+        margin-bottom: 20px;
+    }
+
+    &__toggle  {
+        margin-bottom: 24px;
+    }
+
+    &__pay-button {
+        margin-bottom: 30px;
+    }
+
+    &__login  {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &-text {
+            color: #000;
+        }
+    }
+}

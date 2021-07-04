@@ -17,7 +17,7 @@
         transition: .2s opacity;
 
         &:hover, &:active,
-        &.form-elements__buton_active {
+        &.page__buton_active {
             opacity: .5;
         }
     }
@@ -60,7 +60,7 @@
         }
 
         &:hover::after, &:active::after,
-        &.form-elements__buton_active::after {
+        &.page__buton_active::after {
             opacity: .5;
         }
     }
@@ -75,7 +75,7 @@
         transition: .2s color;
 
         &:hover, &:active,
-        &.form-elements__buton_active {
+        &.page__buton_active {
             color: $dark-50;
         }
     }
@@ -120,17 +120,17 @@
         }
         
         &:hover, &:active,
-        &.form-elements__buton_active {
+        &.page__buton_active {
             opacity: .5;
         }
     }
 
-    &.form-elements__buton {
+    &.page__buton {
         margin-bottom: 30px;
         margin-right: 20px;
     }
 
-    &.form-elements__buton_active {
+    &.page__buton_active {
         margin-right: 50px;
     }
 }

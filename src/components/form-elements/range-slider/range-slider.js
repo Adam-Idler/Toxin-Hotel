@@ -18,7 +18,7 @@ export const rangeSliderActivate = () => {
         animate: "slow",
         range: true,
         min: 0,
-        max: 18000, 
+        max: 16000, 
         values: [ 5000, 10000 ],
         slide : function(event, ui) { 
             $( ".range-slider__result" ).text( `${formateValue(ui.values[0])}₽ - ${formateValue(ui.values[1])}₽` );        

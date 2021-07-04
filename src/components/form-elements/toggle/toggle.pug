@@ -1,4 +1,4 @@
 mixin toggle({text, isActive})
-    .switch-btn__wrapper 
+    div(class= attributes.class ? "switch-btn__wrapper " + attributes.class : "switch-btn__wrapper")
         div(class= isActive ? 'switch-btn switch-btn_on' : 'switch-btn')
         span.switch-btn__text= text
