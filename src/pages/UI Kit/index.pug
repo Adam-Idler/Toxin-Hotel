@@ -2,24 +2,25 @@
 include ../../components/headers-and-footers/header/header
 include ../../components/headers-and-footers/footer/footer
 //- Form Elements
-include ../../components/form-elements/text-field/text-field
-include ../../components/form-elements/datepicker/datepicker
+include ../../components/form-elements/toggle/toggle
+include ../../components/form-elements/comment/comment
 include ../../components/form-elements/dropdown/dropdown
 include ../../components/form-elements/checkbox/checkbox
 include ../../components/form-elements/radio-button/radio
-include ../../components/form-elements/toggle/toggle
-include ../../components/form-elements/like-button/like-button
-include ../../components/form-elements/rate-button/rate-button
-include ../../components/form-elements/rich-checkbox/rich-checkbox
-include ../../components/form-elements/bullet-list/bullet-list
 include ../../components/form-elements/advantage/advantage
-include ../../components/form-elements/comment/comment
+include ../../components/form-elements/text-field/text-field
+include ../../components/form-elements/datepicker/datepicker
 include ../../components/form-elements/pagination/pagination
-include ../../components/form-elements/checkbox-list/checkbox-list
+include ../../components/form-elements/rate-button/rate-button
+include ../../components/form-elements/like-button/like-button
+include ../../components/form-elements/bullet-list/bullet-list
 include ../../components/form-elements/range-slider/range-slider
+include ../../components/form-elements/rich-checkbox/rich-checkbox
+include ../../components/form-elements/checkbox-list/checkbox-list
 //- Cards
-include ../../components/cards/select-room-card/select-room-card
+include ../../components/cards/room-card/room-card
 include ../../components/cards/login-card/login-card
+include ../../components/cards/select-room-card/select-room-card
 include ../../components/cards/registration-card/registration-card
 
 doctype html 
@@ -351,6 +352,7 @@ html(lang="ru")
                 +select-room-card().card_indent-40
                 +registration-card()
             .page__column.page__column-2
+                +room-card().card_indent-40
                 +login-card()
             .page__column.page__column-3
 

@@ -1,0 +1,68 @@
+mixin room-card()
+    form(class= attributes.class ? "card room-card " + attributes.class : "card room-card")
+        header.room-card__header
+            .room-card__card-name
+                span №
+                h1.card__title 888
+                p.room-card__type-of-room Люкс
+        
+            p.room-card__price-per-day 
+                span.room-card__price 9 900₽
+                |  в сутки
+
+        .room-card__date
+            h3.card__name-input Прибытие
+            +datepicker({type: "mini", value: "19.08.2019"})(class="datepicker_mini_start")
+            h3.card__name-input Выезд
+            +datepicker({type: "mini", value: "23.08.2019"})(class="datepicker_mini_end")
+
+        .room-card__guests 
+            h3.card__name-input Гости
+            +dropdown({
+                        placeholder: "Сколько гостей", isActive: false, withButton: true, items: [{
+                            id: "adults",
+                            minAmount: "0",
+                            maxAmount: "10",
+                            forms: "гость, гостя, гостей",
+                            itemName: "Взрослые",
+                            startAmount: "2"
+                        },
+                        {
+                            id: "kids",
+                            minAmount: "0",
+                            maxAmount: "10",
+                            forms: "гость, гостя, гостей",
+                            itemName: "Дети",
+                            startAmount: "1"
+                        },
+                        {
+                            id: "babys",
+                            minAmount: "0",
+                            maxAmount: "10",
+                            forms: "младенец, младенца, младенцев",
+                            itemName: "Младенцы",
+                            startAmount: "0"
+                        }
+            ]})
+
+        ul.room-card__prices 
+            li.room-card__price-item 
+                p.room-card__price-name 
+                    span.room-card__price 9 900₽ 
+                    | x 4 суток
+                span.room-card__sum 39 960₽
+            li.room-card__price-item 
+                p.room-card__price-name Сбор за услуги: скидка 2 179₽
+                a(href="#").room-card__info
+                span.room-card__sum 0₽
+            li.room-card__price-item 
+                p.room-card__price-name Сбор за дополнительные услуги
+                a(href="#").room-card__info
+                span.room-card__sum 300₽
+            
+            li.room-card__price-item.room-card__total-price 
+                p.room-card__total-text Итого
+                .room-card__separator
+                span.room-card__total-price-sum 38 081₽
+        
+        +button({species: "wide", text: "Забронировать", type: "submit"})
