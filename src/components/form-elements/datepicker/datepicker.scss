@@ -66,11 +66,21 @@
             text-transform: uppercase;
         }
     }
+
+    &__hidden {
+        border: none;
+        padding: 0;
+        margin-bottom: 350px;
+    }
+
+    &__hidden .ui-datepicker {
+        margin-top: 0;
+    }
 }
 
 // Стили библиотеки JQuery UI
 
-#ui-datepicker-div {
+.ui-datepicker {
     width: 320px;
     padding: 20px;
     border-radius: 4px;

@@ -33,7 +33,6 @@ export const datepickerActivate = () => {
         showOtherMonths: true,
         currentText: 'Очистить',
         closeText: 'Применить',
-        gotoCurrent: true,
         defaultDate: '+0d',
         onSelect: function() {
             $(this).data('datepicker').inline = true;                               
@@ -49,15 +48,14 @@ export const datepickerActivate = () => {
         showOtherMonths: true,
         currentText: 'Очистить',
         closeText: 'Применить',
-        gotoCurrent: true,
         defaultDate: '+0d',
         beforeShow: function(input) {
             $.datepicker._clearDate(input);
             $( input ).datepicker( "setDate", "");
         },
         onSelect: function(dateText, inst, extensionRange) {
-            $('.datepicker_mini_start').val(extensionRange.startDateText);
-            $('.datepicker_mini_end').val(extensionRange.endDateText);
+            $(inst.input[0]).val(extensionRange.startDateText);
+            $(inst.input[0].parentNode.querySelector('.datepicker_mini_end')).val(extensionRange.endDateText);
         }
     });
 
@@ -71,7 +69,6 @@ export const datepickerActivate = () => {
         showOtherMonths: true,
         currentText: 'Очистить',
         closeText: 'Применить',
-        gotoCurrent: true,
         defaultDate: '+0d',
         beforeShow: function(input) {
             $.datepicker._clearDate(input);
@@ -93,13 +90,29 @@ export const datepickerActivate = () => {
         }
     });
 
+    $('.datepicker__hidden').datepicker({
+        range: 'period',
+        showButtonPanel: true,
+        showOtherMonths: true,
+        currentText: 'Очистить',
+        closeText: 'Применить',
+        defaultDate: '+0d',
+        onSelect: function(dateText, inst, extensionRange) {
+            $(inst.input[0]).val(extensionRange.startDateText);
+            $(inst.input[0].parentNode.querySelector('.datepicker_mini_end')).val(extensionRange.endDateText);
+        }
+    });
+    $('.datepicker__hidden').datepicker('setDate', [$('.datepicker_hidden_start').val(), $('.datepicker_hidden_end').val()]);
+   
     let datepickerID;
     $(window).on('click', (e) => {
+        e.preventDefault();
         let target = e.target;
 
         if (!target.classList.contains('ui-datepicker-current') &&
             !target.classList.contains('hasDatepicker')
-        ) return;
+        )
+            return;
 
         if (target.classList.contains('hasDatepicker')) {
             datepickerID = target.id;
@@ -110,4 +123,7 @@ export const datepickerActivate = () => {
             $( '#' + datepickerID ).datepicker( "setDate", "");
         }
     });
+
+    // Этот костыль нужен для календаря в блоке cards, чтобы было возможно очистить инпут
+    $('.datepicker__hidden').click();
 };

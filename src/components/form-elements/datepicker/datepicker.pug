@@ -22,3 +22,9 @@ mixin datepicker({type="standart", value=""})
                 class!= attributes.class ? 'datepicker datepicker_filter ' + attributes.class : 'datepicker datepicker_filter',
             )
         .datepicker__wrapper
+    else if type == 'hidden'
+        input(
+                type= "hidden",
+                value!= value,
+                class!= attributes.class ? 'datepicker datepicker_mini ' + attributes.class : 'datepicker datepicker_mini',
+            )

@@ -1,13 +1,14 @@
-mixin room-card()
+mixin room-card({roomNumber, roomType, roomPrice, day, sale, service, additionalService})
+    
     form(class= attributes.class ? "card room-card " + attributes.class : "card room-card")
         header.room-card__header
             .room-card__card-name
                 span №
-                h1.card__title 888
-                p.room-card__type-of-room Люкс
+                h1.card__title= roomNumber 
+                p.room-card__type-of-room= roomType
         
             p.room-card__price-per-day 
-                span.room-card__price 9 900₽
+                span.room-card__price= roomPrice + '₽ '
                 |  в сутки
 
         .room-card__date
@@ -48,17 +49,17 @@ mixin room-card()
         ul.room-card__prices 
             li.room-card__price-item 
                 p.room-card__price-name 
-                    span.room-card__price 9 900₽ 
-                    | x 4 суток
+                    span.room-card__price= roomPrice + '₽ '
+                    | x !{day} суток
                 span.room-card__sum 39 960₽
             li.room-card__price-item 
-                p.room-card__price-name Сбор за услуги: скидка 2 179₽
+                p.room-card__price-name Сбор за услуги: скидка !{sale}₽
                 a(href="#").room-card__info
-                span.room-card__sum 0₽
+                span.room-card__sum= service + '₽'
             li.room-card__price-item 
                 p.room-card__price-name Сбор за дополнительные услуги
                 a(href="#").room-card__info
-                span.room-card__sum 300₽
+                span.room-card__sum= additionalService + '₽'
             
             li.room-card__price-item.room-card__total-price 
                 p.room-card__total-text Итого

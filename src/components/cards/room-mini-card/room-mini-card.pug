@@ -1,0 +1,30 @@
+include ../../form-elements/rate-button/rate-button
+
+mixin room-mini-card({urls})
+    .room-mini-card 
+        .room-mini-card__slider 
+            each url in urls
+                img(src= url, alt="slider image").room-mini-card__slider__img
+
+            .room-mini-card__slider__arrow.room-mini-card__slider__arrow_left
+            .room-mini-card__slider__arrow.room-mini-card__slider__arrow_right 
+            
+            .room-mini-card__slider__pagination 
+                - for (let i = 0; i < urls.length; i++)
+                    .room-mini-card__slider__pagination__dot
+
+        .room-mini-card__wrapper
+            .room-mini-card__card-name
+                span №
+                p.room-mini-card__number 888
+                p.room-mini-card__type-of-room Люкс
+            
+            p.room-mini-card__price-per-day 
+                span.room-mini-card__price 9 990₽ 
+                |  в сутки
+        
+        .room-mini-card__reviews
+            +rate-button(({countFill: 5, id: "c"}))
+            p.room-mini-card__review
+                span.room-mini-card__reviews-number 145 
+                | Отзывов
