@@ -4,8 +4,10 @@ import { dropdownActivate }     from "../components/form-elements/dropdown/dropd
 import { datepickerActivate }   from "../components/form-elements/datepicker/datepicker";
 import { rangeSliderActivate }  from "../components/form-elements/range-slider/range-slider";
 import { checkboxListActivate } from "../components/form-elements/checkbox-list/checkbox-list";
+import { sliderActivate }       from "../components/cards/room-mini-card/room-mini-card";
 import './jquery.datepicker.extension.range.min.js';
 
+sliderActivate();
 dropdownActivate();
 datepickerActivate();
 rangeSliderActivate();

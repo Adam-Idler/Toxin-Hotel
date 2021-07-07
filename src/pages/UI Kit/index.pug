@@ -367,5 +367,22 @@ html(lang="ru")
                 .datepicker.datepicker__hidden
                 +datepicker({type: "hidden", value: "19.08.2019"})(class="datepicker_hidden_start")
                 +datepicker({type: "hidden", value: "23.08.2019"})(class="datepicker_hidden_end")
-                +room-mini-card({urls: ['../images/slider-images/image2.png', '2', '3', '4']})
+                +room-mini-card({
+                    urls: ['../images/slider-images/image1.png', '../images/slider-images/image2.png', '../images/slider-images/image3.png', '../images/slider-images/image4.png'],
+                    roomNumber: "888", 
+                    roomType: "Люкс",
+                    roomPrice: "9 990",
+                    rating: 5,
+                    ratingId: "c",
+                    reviewNumber: "145"
+                }).card_indent-40
+                +room-mini-card({
+                    urls: ['../images/slider-images/image2.png', '../images/slider-images/image1.png', '../images/slider-images/image3.png', '../images/slider-images/image4.png'],
+                    roomNumber: "840", 
+                    roomType: "Люкс",
+                    roomPrice: "9 900",
+                    rating: 4,
+                    ratingId: "d",
+                    reviewNumber: "65"
+                })
 

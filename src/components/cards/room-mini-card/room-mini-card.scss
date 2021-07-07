@@ -10,11 +10,16 @@
         margin: -20px -20px 0 -20px;
 
         &__img {
+            display: none;
             width: 100%;
             object-fit: cover;
             object-position: right bottom;
             border-radius: 4px 4px 0px 0px;
             height: 150px;
+
+            &_active {
+                display: block;
+            }
         }
 
         &__arrow {
@@ -67,13 +72,15 @@
         &__pagination {
             position: absolute;
             height: 7.5px;
-            bottom: 69px;
-            right: 15px;
+            bottom: 14px;
+            right: 17px;
             display: flex;
-            // justify-content: space-between;
+            margin: 0;
+            padding: 0;
+            list-style: none;
 
             &__dot {
-                width: 7.5px;
+                width: 7px;
                 height: 7.5px;
                 margin-right: 3.75px;
                 border: 1px solid #fff;
@@ -100,7 +107,7 @@
 
     &__wrapper {
         font-weight: 700;
-        padding-top: 15px;
+        padding-top: 22px;
         padding-bottom: 10px;
         margin-bottom: 8px;
         border-bottom: 1px solid $dark-10;
