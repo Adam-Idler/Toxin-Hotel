@@ -1,6 +1,6 @@
-mixin range-slider({text, subtext})
+mixin range-slider({text, subtext, minValue, maxValue})
     .range-slider__wrapper
         h3.range-slider__text= text
         span.range-slider__result
-        div(class="range-slider")
+        div(class="range-slider", data-min-value= minValue, data-max-value= maxValue)
         span.range-slider__subtext= subtext

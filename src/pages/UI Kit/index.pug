@@ -115,7 +115,7 @@ html(lang="ru")
                         h3.page__element-name Dropdown
                         p.page__subtext Default
                     +dropdown({
-                        placeholder: "Какие удобства", isActive: false, withButton: false, items: [{
+                        placeholder: "Удобства номера", isActive: false, withButton: false, items: [{
                             id: "bedrooms",
                             minAmount: "0",
                             maxAmount: "10",
@@ -146,7 +146,7 @@ html(lang="ru")
                         h3.page__element-name Dropdown
                         p.page__subtext Expanded
                     +dropdown({
-                        placeholder: "Какие удобства", isActive: true, withButton: false, items: [{
+                        placeholder: "Удобства номера", isActive: true, withButton: false, items: [{
                             id: "bedrooms",
                             minAmount: "0",
                             maxAmount: "10",
@@ -284,7 +284,7 @@ html(lang="ru")
 
             .page__column.page__column-3
                 .page__element
-                    +range-slider({text: "Range Slider"})
+                    +range-slider({text: "Range Slider", minValue: 5000, maxValue: 10000})
                 .page__element.page__element_indent-75
                     .page__annotation
                         h3.page__element-name.page__element-name_indent-16 Buttons

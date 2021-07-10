@@ -1,5 +1,7 @@
 export const rangeSliderActivate = () => {
-
+    const minValue = +$('.range-slider').attr('data-min-value'),
+          maxValue = +$('.range-slider').attr('data-max-value')
+        
     const formateValue = (val) => {
         let str = '',
             valLength = val.toString().length - 1;
@@ -19,7 +21,7 @@ export const rangeSliderActivate = () => {
         range: true,
         min: 0,
         max: 16000, 
-        values: [ 5000, 10000 ],
+        values: [ minValue, maxValue ],
         slide : function(event, ui) { 
             $( ".range-slider__result" ).text( `${formateValue(ui.values[0])}₽ - ${formateValue(ui.values[1])}₽` );        
         }

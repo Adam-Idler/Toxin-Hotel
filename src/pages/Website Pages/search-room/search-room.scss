@@ -1,0 +1,15 @@
+.search-room {
+    &__main {
+        padding: 30px 140px 70px;
+        background-color: #fff;
+    }
+
+    &__datepicker,
+    &__datepicker + .datepicker__wrapper {
+        width: 320px;
+    }
+
+    &__aside {
+        
+    }
+}

@@ -16,8 +16,6 @@ export const sliderActivate = () => {
         const nextSlide = (elem, index, strClass) => elem[index].classList.add(strClass);
 
         slider.addEventListener('click', (event) => {
-            event.preventDefault();
-
             let target = event.target;
 
             if (!target.matches('.room-mini-card__slider__arrow, .room-mini-card__slider__pagination__dot')) return;
