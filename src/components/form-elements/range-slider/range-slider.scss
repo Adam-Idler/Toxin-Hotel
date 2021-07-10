@@ -25,10 +25,10 @@
     &.ui-slider {
         height: 6px;
         border-radius: 3px;
+        margin-bottom: 18px;
     }
 
     .ui-slider {
-        
         &-handle {
             width: 16px;
             height: 16px;
@@ -42,6 +42,12 @@
 
         &-range {
             background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+        }
+    }
+
+    @media (max-width: 1060px) {
+        &, &__wrapper {
+            width: 240px;
         }
     }
 }

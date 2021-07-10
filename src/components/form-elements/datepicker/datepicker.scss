@@ -65,6 +65,12 @@
         &::placeholder {
             text-transform: uppercase;
         }
+
+        @media (max-width: 1060px) {
+            & {
+                width: 240px;
+            }
+        }
     }
 
     &__hidden {

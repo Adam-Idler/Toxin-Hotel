@@ -1,6 +1,8 @@
 .room-mini-card  {
     width: 270px;
+    min-width: 250px;
     padding: 20px;
+    display: block;
     background-color: #fff;
     box-shadow: 0px 10px 20px $dark-05;
     overflow: hidden;
@@ -23,6 +25,7 @@
         }
 
         &__arrow {
+            opacity: 0;
             position: absolute;
             top: 0;
             height: 150px;
@@ -30,6 +33,7 @@
             cursor: pointer;
             background: linear-gradient(90deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
             
+            transition: .4s opacity;
 
             &_left {
                 left: 0;
@@ -69,6 +73,10 @@
             }
         }
 
+        &:hover &__arrow {
+            opacity: 1;
+        }
+
         &__pagination {
             position: absolute;
             height: 7.5px;
@@ -80,7 +88,8 @@
             list-style: none;
 
             &__dot {
-                width: 7px;
+                display: block;
+                width: 7.5px;
                 height: 7.5px;
                 margin-right: 3.75px;
                 border: 1px solid #fff;
@@ -94,7 +103,8 @@
                     background-color: #fff;
                 }
 
-                &:hover {
+                &:hover,
+                &:focus {
                     background-color: rgba(255, 255, 255, 0.4);
                 }
 

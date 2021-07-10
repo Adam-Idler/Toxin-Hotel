@@ -2,14 +2,155 @@
     &__main {
         padding: 30px 140px 70px;
         background-color: #fff;
+        display: flex;
+        justify-content: space-between;
     }
 
-    &__datepicker,
-    &__datepicker + .datepicker__wrapper {
-        width: 320px;
+    &__section {
+        max-width: 72%;
     }
 
-    &__aside {
-        
+    &__section .room-mini-card {
+        width: 100%;
+    }
+
+    &__cards {
+        max-width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    &__title {
+        margin-bottom: 21px;
+    }
+
+    &__card-item {
+        max-width: 32%;
+        margin-bottom: 2.2%;
+        max-height: 260px;
+    }
+
+    &__pagination {
+        margin: 18px auto 0;
+    }
+
+    @media (max-width: 1420px) {
+        &__section {
+            max-width: 70%;
+        }
+
+        &__aside {
+            margin-right: 30px;   
+        }
+    }
+
+    @media (max-width: 1370px) {
+        &__section {
+            max-width: 69%;
+        }
+
+        &__card-item {
+            max-width: 48%;
+        }
+    }
+
+    @media (max-width: 1280px) {
+        &__main {
+            padding: 30px 100px 70px;
+        }
+    }
+
+    @media (max-width: 1235px) {
+        &__section {
+            max-width: 70%;
+        }
+    }
+
+    @media (max-width: 1180px) {
+        &__section {
+            max-width: 68%;
+        }
+
+        &__card-item .room-mini-card {
+            width: 290px;
+        }
+    }
+
+    @media (max-width: 1090px) {
+        &__section {
+            max-width: 64%;
+        }
+
+        &__card-item .room-mini-card {
+            width: 250px;
+        }
+    }
+
+    @media (max-width: 1060px) {
+        &__section {
+            max-width: 65%;
+        }
+    }
+
+    @media (max-width: 1030px) {
+        &__main {
+            padding: 30px 70px 70px;
+        }
+
+        &__section {
+            max-width: 68%;
+        }
+
+        &__card-item .room-mini-card {
+            width: 270px;
+        }
+    }
+
+    @media (max-width: 960px) {
+        &__main {
+            padding: 30px 40px 70px;
+        }
+    }
+
+    @media (max-width: 900px) {
+        &__main {
+            padding: 30px 80px 70px;
+        }
+
+        &__card-item .room-mini-card {
+            width: 100%;
+        }
+
+        &__card-item {
+            max-width: 100%;
+            width: 100%;
+        }
+
+        &__card-item {
+            max-height: none;
+        }
+
+        &__card-item .room-mini-card__slider__img,
+        &__card-item .room-mini-card__slider__arrow {
+            height: 200px;
+        }
+
+        &__card-item:nth-child(n+6) {
+            display: none;
+        }
+    }
+
+    @media (max-width: 770px) {
+        &__card-item .room-mini-card__slider__img,
+        &__card-item .room-mini-card__slider__arrow {
+            height: 150px;
+        }
+    }
+
+    @media (max-width: 620px) {
+        &__main {
+            padding: 30px 40px 70px;
+        }
     }
 }

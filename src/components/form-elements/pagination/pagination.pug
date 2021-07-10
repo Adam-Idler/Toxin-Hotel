@@ -1,5 +1,5 @@
 mixin pagination()
-    .pagination 
+    div(class= attributes.class ? "pagination " + attributes.class : "pagination")
         .pagination__items 
             a(href="#").pagination__item.pagination__item_active 1
             a(href="#").pagination__item 2

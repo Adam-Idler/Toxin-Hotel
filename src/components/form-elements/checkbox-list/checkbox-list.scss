@@ -6,17 +6,17 @@
         font-weight: 700;
         text-transform: uppercase;
         width: 266px;
-        height: 44px;
         padding: 0;
         text-align: left;
         background-color: transparent;
         cursor: pointer;
+        margin-bottom: 17.4px;
 
         &::after {
             content: "";
             position: absolute;
-            top: 16px;
-            right: 17px;
+            top: 0px;
+            right: 14px;
             display: block;
             width: 6px;
             height: 6px;
@@ -38,12 +38,18 @@
     &_extended:not(&_extended-always) &__button::after,
     &_extended-always &__button::after {
         transform: rotate(225deg);
-        top: 21px;
+        top: 5px;
     }
 
     &_extended &__items, 
     &_extended-always &__items{
         display: block;
         z-index: 50;
+    }
+
+    @media (max-width: 1060px) {
+        &__button {
+            width: 240px;
+        }
     }
 }

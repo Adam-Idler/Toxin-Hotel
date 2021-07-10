@@ -114,4 +114,131 @@ html(lang="ru")
                             +checkbox({text: "Телевизор", isChecked: false})
                             +checkbox({text: "Шампунь", isChecked: false})
             section.search-room__section
+                h1.search-room__title Номера, которые мы для вас подобрали
+                .search-room__cards 
+                    .search-room__card-item 
+                        +room-mini-card({
+                            urls: ['../images/slider-images/image1.png', '../images/slider-images/image2.png', '../images/slider-images/image3.png', '../images/slider-images/image4.png'],
+                            roomNumber: "888", 
+                            roomType: "Люкс",
+                            roomPrice: "9 990",
+                            rating: 5,
+                            ratingId: "1",
+                            reviewNumber: "145"
+                        })
+                    .search-room__card-item 
+                        +room-mini-card({
+                            urls: ['../images/slider-images/image2.png', '../images/slider-images/image1.png', '../images/slider-images/image3.png', '../images/slider-images/image4.png'],
+                            roomNumber: "840", 
+                            roomType: "",
+                            roomPrice: "9 900",
+                            rating: 4,
+                            ratingId: "2",
+                            reviewNumber: "65"
+                        })
+                    .search-room__card-item 
+                        +room-mini-card({
+                            urls: ['../images/slider-images/image3.png', '../images/slider-images/image1.png', '../images/slider-images/image3.png', '../images/slider-images/image4.png'],
+                            roomNumber: "980", 
+                            roomType: "Люкс",
+                            roomPrice: "8 500",
+                            rating: 3,
+                            ratingId: "3",
+                            reviewNumber: "35"
+                        })
+
+                    .search-room__card-item 
+                        +room-mini-card({
+                            urls: ['../images/slider-images/image4.png', '../images/slider-images/image1.png', '../images/slider-images/image3.png', '../images/slider-images/image4.png'],
+                            roomNumber: "856", 
+                            roomType: "",
+                            roomPrice: "7 300",
+                            rating: 5,
+                            ratingId: "4",
+                            reviewNumber: "19"
+                        })
+                    .search-room__card-item 
+                        +room-mini-card({
+                            urls: ['../images/slider-images/image5.png', '../images/slider-images/image1.png', '../images/slider-images/image3.png', '../images/slider-images/image4.png'],
+                            roomNumber: "740", 
+                            roomType: "",
+                            roomPrice: "6 000",
+                            rating: 4,
+                            ratingId: "5",
+                            reviewNumber: "44"
+                        })
+                    .search-room__card-item 
+                        +room-mini-card({
+                            urls: ['../images/slider-images/image6.png', '../images/slider-images/image1.png', '../images/slider-images/image3.png', '../images/slider-images/image4.png'],
+                            roomNumber: "982", 
+                            roomType: "",
+                            roomPrice: "5 800",
+                            rating: 3,
+                            ratingId: "6",
+                            reviewNumber: "56"
+                        })
+                    .search-room__card-item 
+                        +room-mini-card({
+                            urls: ['../images/slider-images/image7.png', '../images/slider-images/image1.png', '../images/slider-images/image3.png', '../images/slider-images/image4.png'],
+                            roomNumber: "678", 
+                            roomType: "",
+                            roomPrice: "5 500",
+                            rating: 5,
+                            ratingId: "7",
+                            reviewNumber: "45"
+                        })
+
+                    .search-room__card-item 
+                        +room-mini-card({
+                            urls: ['../images/slider-images/image8.png', '../images/slider-images/image1.png', '../images/slider-images/image3.png', '../images/slider-images/image4.png'],
+                            roomNumber: "450", 
+                            roomType: "Люкс",
+                            roomPrice: "5 300",
+                            rating: 4,
+                            ratingId: "8",
+                            reviewNumber: "39"
+                        })
+                    .search-room__card-item 
+                        +room-mini-card({
+                            urls: ['../images/slider-images/image9.png', '../images/slider-images/image1.png', '../images/slider-images/image3.png', '../images/slider-images/image4.png'],
+                            roomNumber: "350", 
+                            roomType: "",
+                            roomPrice: "5 000",
+                            rating: 3,
+                            ratingId: "9",
+                            reviewNumber: "77"
+                        })
+                    .search-room__card-item 
+                        +room-mini-card({
+                            urls: ['../images/slider-images/image10.png', '../images/slider-images/image1.png', '../images/slider-images/image3.png', '../images/slider-images/image4.png'],
+                            roomNumber: "666", 
+                            roomType: "Люкс",
+                            roomPrice: "5 000",
+                            rating: 5,
+                            ratingId: "10",
+                            reviewNumber: "25"
+                        })
+
+                    .search-room__card-item 
+                        +room-mini-card({
+                            urls: ['../images/slider-images/image11.png', '../images/slider-images/image1.png', '../images/slider-images/image3.png', '../images/slider-images/image4.png'],
+                            roomNumber: "444", 
+                            roomType: "Люкс",
+                            roomPrice: "5 000",
+                            rating: 3,
+                            ratingId: "11",
+                            reviewNumber: "15"
+                        })
+                    .search-room__card-item 
+                        +room-mini-card({
+                            urls: ['../images/slider-images/image12.png', '../images/slider-images/image1.png', '../images/slider-images/image3.png', '../images/slider-images/image4.png'],
+                            roomNumber: "352", 
+                            roomType: "",
+                            roomPrice: "5 000",
+                            rating: 3,
+                            ratingId: "12",
+                            reviewNumber: "55"
+                        })
+                    +pagination().search-room__pagination
+
         +footer({mobile: false})
