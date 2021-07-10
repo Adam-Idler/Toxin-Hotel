@@ -1,0 +1,20 @@
+.landing-page {
+    &__main {
+        background: url('../images/backgrounds/background1.png') no-repeat center;
+        background-size: cover;
+    }
+
+    &__container {
+        height: calc(100vh - 70px);
+        padding: 70px 140px 18px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &__words {
+        max-width: 290px;
+        text-align: right;
+        align-self: flex-end;
+    }
+}

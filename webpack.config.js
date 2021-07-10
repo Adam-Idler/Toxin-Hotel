@@ -8,6 +8,7 @@ module.exports = {
   entry: ['./src/scripts/index.js', './src/styles/style.scss'],
   devtool: "eval-source-map",
   output: {
+    publicPath: '../',
     path: path.resolve(__dirname, 'dist'),
     filename: 'scripts/bundle.js',
     assetModuleFilename: 'images/[name][ext]'
@@ -54,7 +55,14 @@ module.exports = {
             }
           }
         ]
-      }
+      },
+      {
+        test: /\.(png|jpg)$/,
+        loader: "file-loader",
+        options: {
+          name: "images/[folder]/[name].[ext]",
+        },
+      },
     ]
   },
   plugins: [
@@ -63,8 +71,8 @@ module.exports = {
     }),
 
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'src/pages/Website Pages') + '/index.pug',
-      filename: 'pages/Website-pages.html'
+      template: path.resolve(__dirname, 'src/pages/Website Pages/landing-page') + '/landing-page.pug',
+      filename: 'pages/landing-page.html'
     }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'src/pages/UI Kit') + '/index.pug',
@@ -78,7 +86,6 @@ module.exports = {
             to:   path.resolve(__dirname, 'dist/images')
           }
         ]
-      })
+    })
   ],
-  
 };
