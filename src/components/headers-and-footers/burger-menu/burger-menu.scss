@@ -13,6 +13,10 @@
 
     background-color: rgba(31, 32, 65, 0.1);
 
+    &_active {
+        display: flex;
+    }
+
     &__block {
         width: 70%;
         min-height: 75vh;
@@ -98,6 +102,7 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+        margin-top: 20px;
     }
 
     &__user-name {

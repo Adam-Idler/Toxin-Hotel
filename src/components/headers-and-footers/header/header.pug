@@ -22,7 +22,6 @@ mixin header({registred, userName="Иван Иванов"})
                             a(href="#").header__link Отзывы о номерах
                         li.header__link__expanded-list-item
                             a(href="#").header__link Сравнение цен
-                        
                 li 
                     a(href="#").header__link Вакансии
                 li 
@@ -47,11 +46,5 @@ mixin header({registred, userName="Иван Иванов"})
 
         button.header__burger 
                 .header__burger-item 
-
-    +burger-menu(false)
-
         
-
-            
-            
-
+        +burger-menu({registred: registred})
