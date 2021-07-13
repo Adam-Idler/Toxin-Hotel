@@ -1,0 +1,18 @@
+include ../../../components/headers-and-footers/header/header
+include ../../../components/headers-and-footers/footer/footer
+include ../../../components/cards/registration-card/registration-card
+
+doctype html 
+html(lang="ru")
+    head 
+        meta(charset="utf-8")
+        meta(name="viewport", content="initial-scale=1.0, width=device-width")
+        link(rel="stylesheet", href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css")
+        script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js")
+        script(src="https://code.jquery.com/ui/1.12.1/jquery-ui.js")
+        title Registration
+    body 
+        +header({registred: false})
+        main.login-page__main 
+            +registration-card()
+        +footer({mobile: false})

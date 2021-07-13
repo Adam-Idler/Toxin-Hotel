@@ -79,6 +79,14 @@ module.exports = {
       filename: 'pages/search-room.html'
     }),
     new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, 'src/pages/Website Pages/login-page') + '/registration-page.pug',
+      filename: 'pages/registration-page.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, 'src/pages/Website Pages/login-page') + '/sign-in-page.pug',
+      filename: 'pages/sign-in-page.html'
+    }),
+    new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'src/pages/UI Kit') + '/index.pug',
       filename: 'pages/UI-kit.html'
     }),
