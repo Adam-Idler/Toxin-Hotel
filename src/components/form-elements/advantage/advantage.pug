@@ -1,5 +1,5 @@
-mixin advantage({svg, name, subtext})
-    .advantage
+mixin advantage({svg, name, subtext, withBorder})
+    div(class= withBorder ? "advantage advantage_border" : "advantage")
         .advantage__image
             #{svg}
         .advantage__words

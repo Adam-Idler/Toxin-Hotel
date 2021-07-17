@@ -1,7 +1,15 @@
 .advantage {
     display: flex;
-    border-bottom: 1px solid $dark-10;
     padding: 20px 0;
+    max-width: 290px;
+
+    &:nth-child(1) {
+        padding-top: 0;
+    }
+
+    &_border {
+        border-bottom: 1px solid $dark-10;
+    }
 
     &__image {
         margin-right: 10px;

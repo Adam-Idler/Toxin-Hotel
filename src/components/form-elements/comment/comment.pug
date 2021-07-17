@@ -1,11 +1,11 @@
 include ../like-button/like-button
 
-mixin comment({imageUrl, likesCount, authorName, days, comment})
+mixin comment({imageUrl, likesCount, isLiked, authorName, days, comment})
     .comment 
         .comment__left-side 
             a(href="#")
                 img(src= imageUrl alt="Avatar").comment__author-image
-            +like-button({count: likesCount, isLiked: true})
+            +like-button({count: likesCount, isLiked: isLiked})
 
         .comment__right-side
             a(href="#")

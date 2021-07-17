@@ -79,6 +79,10 @@ module.exports = {
       filename: 'pages/search-room.html'
     }),
     new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, 'src/pages/Website Pages/room-details') + '/room-details.pug',
+      filename: 'pages/room-details.html'
+    }),
+    new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'src/pages/Website Pages/login-page') + '/registration-page.pug',
       filename: 'pages/registration-page.html'
     }),
