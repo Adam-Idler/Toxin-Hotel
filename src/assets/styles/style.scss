@@ -57,40 +57,40 @@ h3 {
 
 // components styles
     // Form Elements
-    @import '../components/form-elements/button/button.scss';
-    @import '../components/form-elements/subscription-field/subscription-field.scss';
-    @import '../components/form-elements/text-field/text-field.scss';
-    @import '../components/form-elements/datepicker/datepicker.scss';
-    @import '../components/form-elements/dropdown/dropdown.scss';
-    @import '../components/form-elements/checkbox/checkbox.scss';
-    @import '../components/form-elements/radio-button/radio.scss';
-    @import '../components/form-elements/toggle/toggle.scss';
-    @import '../components/form-elements/like-button/like-button.scss';
-    @import '../components/form-elements/rate-button/rate-button.scss';
-    @import '../components/form-elements/rich-checkbox/rich-checkbox.scss';
-    @import '../components/form-elements/bullet-list/bullet-list.scss';
-    @import '../components/form-elements/advantage/advantage.scss';
-    @import '../components/form-elements/comment/comment.scss';
-    @import '../components/form-elements/pagination/pagination.scss';
-    @import '../components/form-elements/checkbox-list/checkbox-list.scss';
-    @import '../components/form-elements/range-slider/range-slider.scss';
+    @import '../../components/form-elements/button/button.scss';
+    @import '../../components/form-elements/subscription-field/subscription-field.scss';
+    @import '../../components/form-elements/text-field/text-field.scss';
+    @import '../../components/form-elements/datepicker/datepicker.scss';
+    @import '../../components/form-elements/dropdown/dropdown.scss';
+    @import '../../components/form-elements/checkbox/checkbox.scss';
+    @import '../../components/form-elements/radio-button/radio.scss';
+    @import '../../components/form-elements/toggle/toggle.scss';
+    @import '../../components/form-elements/like-button/like-button.scss';
+    @import '../../components/form-elements/rate-button/rate-button.scss';
+    @import '../../components/form-elements/rich-checkbox/rich-checkbox.scss';
+    @import '../../components/form-elements/bullet-list/bullet-list.scss';
+    @import '../../components/form-elements/advantage/advantage.scss';
+    @import '../../components/form-elements/comment/comment.scss';
+    @import '../../components/form-elements/pagination/pagination.scss';
+    @import '../../components/form-elements/checkbox-list/checkbox-list.scss';
+    @import '../../components/form-elements/range-slider/range-slider.scss';
     // Headers & Footers
-    @import '../components/headers-and-footers/header/header.scss';
-    @import '../components/headers-and-footers/footer/footer.scss';
-    @import '../components/headers-and-footers/burger-menu/burger-menu.scss';
+    @import '../../components/headers-and-footers/header/header.scss';
+    @import '../../components/headers-and-footers/footer/footer.scss';
+    @import '../../components/headers-and-footers/burger-menu/burger-menu.scss';
     // Cards
-    @import '../components/cards/room-card/room-card.scss';
-    @import '../components/cards/login-card/login-card.scss';
-    @import '../components/cards/room-mini-card/room-mini-card.scss';
-    @import '../components/cards/select-room-card/select-room-card.scss';
-    @import '../components/cards/registration-card/registration-card.scss';
+    @import '../../components/cards/room-card/room-card.scss';
+    @import '../../components/cards/login-card/login-card.scss';
+    @import '../../components/cards/room-mini-card/room-mini-card.scss';
+    @import '../../components/cards/select-room-card/select-room-card.scss';
+    @import '../../components/cards/registration-card/registration-card.scss';
 
 // pages styles
-@import '../pages/UI Kit/styles.scss';
-@import '../pages/Website Pages/landing-page/landing-page.scss';
-@import '../pages/Website Pages/search-room/search-room.scss';
-@import '../pages/Website Pages/login-page/login-page.scss';
-@import '../pages/Website Pages/room-details/room-details.scss';
+@import '../../pages/UI Kit/styles.scss';
+@import '../../pages/Website Pages/landing-page/landing-page.scss';
+@import '../../pages/Website Pages/search-room/search-room.scss';
+@import '../../pages/Website Pages/login-page/login-page.scss';
+@import '../../pages/Website Pages/room-details/room-details.scss';
 
 .page {
     padding: 140px;

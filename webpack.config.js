@@ -5,7 +5,7 @@ const CopyPlugin = require('copy-webpack-plugin')
 
 module.exports = {
   mode: 'development',
-  entry: ['./src/scripts/index.js', './src/styles/style.scss'],
+  entry: ['./src/assets/scripts/index.js', './src/assets/styles/style.scss'],
   devtool: "eval-source-map",
   output: {
     publicPath: '../',
@@ -98,7 +98,7 @@ module.exports = {
     new CopyPlugin({
       patterns: [
           {
-            from: path.resolve(__dirname, 'src/images'),
+            from: path.resolve(__dirname, 'src/assets/images'),
             to:   path.resolve(__dirname, 'dist/images')
           }
         ]

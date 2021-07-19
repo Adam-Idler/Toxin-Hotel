@@ -1,14 +1,16 @@
-mixin room-card({roomNumber, roomType, roomPrice, day, sale, service, additionalService})
-    
+include ../../../components/form-elements/dropdown/dropdown
+include ../../../components/form-elements/datepicker/datepicker
+
+mixin room-card()
     form(class= attributes.class ? "card room-card " + attributes.class : "card room-card")
         header.room-card__header
             .room-card__card-name
                 span №
-                h1.card__title= roomNumber 
-                p.room-card__type-of-room= roomType
+                h1.card__title 888
+                p.room-card__type-of-room Люкс
         
             p.room-card__price-per-day 
-                span.room-card__price= roomPrice + '₽ '
+                span.room-card__price 9 990₽
                 |  в сутки
 
         .room-card__date
@@ -19,8 +21,8 @@ mixin room-card({roomNumber, roomType, roomPrice, day, sale, service, additional
 
         .room-card__guests 
             h3.card__name-input Гости
-            +dropdown({
-                        placeholder: "Сколько гостей", isActive: false, withButton: true, items: [{
+            +dropdown({placeholder: "Сколько гостей", isActive: false, withButton: true, 
+                items: [{
                             id: "adults",
                             minAmount: "0",
                             maxAmount: "10",
@@ -49,17 +51,17 @@ mixin room-card({roomNumber, roomType, roomPrice, day, sale, service, additional
         ul.room-card__prices 
             li.room-card__price-item 
                 p.room-card__price-name 
-                    span.room-card__price= roomPrice + '₽ '
-                    | x !{day} суток
+                    span.room-card__price 9 990₽
+                    | x 4 суток
                 span.room-card__sum 39 960₽
             li.room-card__price-item 
-                p.room-card__price-name Сбор за услуги: скидка !{sale}₽
+                p.room-card__price-name Сбор за услуги: скидка 2179₽
                 a(href="#").room-card__info
-                span.room-card__sum= service + '₽'
+                span.room-card__sum 0₽
             li.room-card__price-item 
                 p.room-card__price-name Сбор за дополнительные услуги
                 a(href="#").room-card__info
-                span.room-card__sum= additionalService + '₽'
+                span.room-card__sum 300₽
             
             li.room-card__price-item.room-card__total-price 
                 p.room-card__total-text Итого

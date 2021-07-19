@@ -3,8 +3,12 @@
     padding: 20px 0;
     max-width: 290px;
 
-    &:nth-child(1) {
+    &:first-of-type {
         padding-top: 0;
+    }
+
+    &:last-child {
+        padding-bottom: 0;
     }
 
     &_border {

@@ -1,6 +1,14 @@
 .room-details {
-    &__advantages {
-        margin-bottom: 30px;
+    background-color: #fff;
+    padding: 70px 140px;
+    display: flex;
+    justify-content: space-between;
+
+    &__main {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        max-width: 780px;
     }
 
     &__images {
@@ -36,9 +44,26 @@
         height: 17.225vw;
     }
 
-    &__main {
-        background-color: #fff;
-        padding: 70px 140px;
+    &__main-item {
+        max-width: 340px;
+        margin-bottom: 30px;
+
+        &:nth-last-child(-n+2) {
+            margin-bottom: 0;
+        }
+
+        &_comments {
+            max-width: none;
+        }
+    }
+
+    &__reviews {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__reviews-count {
+        color: $dark-50;
     }
 
     @media (max-width: 950px) {
