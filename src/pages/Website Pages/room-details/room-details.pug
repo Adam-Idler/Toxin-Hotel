@@ -3,6 +3,7 @@ include ../../../components/headers-and-footers/footer/footer
 include ../../../components/form-elements/advantage/advantage
 include ../../../components/form-elements/comment/comment
 include ../../../components/form-elements/bullet-list/bullet-list
+include ../../../components/form-elements/donut/donut
 include ../../../components/cards/room-card/room-card
 
 doctype html
@@ -45,6 +46,21 @@ html(lang="ru")
                         withBorder: false
                     })
 
+                .room-details__main-item
+                    h2.room-details__subtitle Впечатления от номера
+                    +donut({
+                        slices: {
+                            first: 0.50,
+                            second: 0.25,
+                            third: 0.25,
+                            fourth: 0,
+                            fifth: 0
+                        },
+                        heading: "260",
+                        sub: "голосов",
+                        legend: ["Великолепно", "Хорошо", "Удовлетворительно", "Разочарован"]
+                    })
+
                 .room-details__main-item.room-details__main-item_comments
                     .room-details__reviews
                         h2.room-details__subtitle Отзывы посетителей номера
@@ -56,7 +72,7 @@ html(lang="ru")
                         authorName: 'Мурад Сарафанов',
                         days: '5 дней назад',
                         comment: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'
-                    })
+                    }).room-details__comment
                     +comment({
                         imageUrl: '../images/comment-avatars/avatar-2.png',
                         likesCount: '5',
@@ -64,7 +80,7 @@ html(lang="ru")
                         authorName: 'Патрисия Стёклышкова',
                         days: 'Неделю назад',
                         comment: 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент'
-                    })
+                    }).room-details__comment
 
                 .room-details__main-item
                     h2.room-details__subtitle Правила

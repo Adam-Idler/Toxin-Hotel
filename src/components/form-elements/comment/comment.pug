@@ -1,7 +1,7 @@
 include ../like-button/like-button
 
 mixin comment({imageUrl, likesCount, isLiked, authorName, days, comment})
-    .comment 
+    div(class!= attributes.class ? `comment ${attributes.class}` : `comment`)
         .comment__left-side 
             a(href="#")
                 img(src= imageUrl alt="Avatar").comment__author-image

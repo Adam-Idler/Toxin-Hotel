@@ -1,5 +1,6 @@
 .comment {
-    width: 710px;
+    max-width: 710px;
+    width: 100%;
     display: flex;
     
     &__left-side {

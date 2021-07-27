@@ -1,0 +1,152 @@
+$donut-slices: (
+    first: #FFE39C,
+    second: #6FCF97,
+    third: #BC9CFF,
+    fourth: #919191
+);
+
+$legend-items: (
+    first: linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%),
+    second: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%),
+    third: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%),
+    fourth: linear-gradient(180deg, #919191 0%, #3D4975 100%)
+);
+
+.donut {
+    --donut-size: 112px;
+    --donut-border-width: 4px;
+    --donut-spacing: 2.2;
+    --donut-spacing-color: 255, 255, 255;
+    --donut-spacing-deg: calc(1deg * var(--donut-spacing));
+    
+    border-radius: 50%;
+    height: var(--donut-size);
+    margin: 10px;
+    position: relative;
+    width: var(--donut-size);
+
+    &__wrapper {
+        display: inline-flex;
+        align-items: flex-end;
+    }
+
+    &__label {
+        left: 47%;
+        position: absolute;
+        text-align: center;
+        color: $purple;
+        font-weight: bold;
+        text-transform: uppercase;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+
+        &__heading {
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 24px;
+            padding-top: 9px;
+            margin-bottom: 3px;
+        }
+
+        &__sub {
+            font-size: 12px;
+            line-height: 15px;
+        }
+    }
+
+    &__slice {
+        height: 100%;
+        position: absolute;
+        width: 100%;
+        transform: matrix(-1, 0, 0, 1, 0, 0);
+
+        &::before,
+        &::after {
+            border: var(--donut-border-width) solid rgba(0,0,0,0);
+            border-radius: 50%;
+            content: '';
+            height: 100%;
+            left:0;
+            position: absolute;
+            top: 0;
+            transform: rotate(45deg);
+            width: 100%;
+        }
+
+        &::before {
+            box-shadow: 0 0 1px 0 #{'rgba(var(--donut-spacing-color), calc(100 * var(--donut-spacing)))'};
+        }
+    }
+
+    $slides-concat: '';
+  
+    @each $slice in $donut-slices {
+        $name: nth($slice, 1);
+        $color: nth($slice, 2);
+        $i: index($donut-slices, $slice);
+    
+        @if $i > 1 {
+            &__slice__#{$name} {
+                --#{$name}-start: calc(#{$slides-concat});
+                --#{$name}-check: max(calc(var(--#{$name}-start) - .5), 0);
+                clip-path: inset(0 calc(50% * (var(--#{$name}-check) / var(--#{$name}-check))) 0 0);
+            }
+        }
+
+        @else {
+            &__slice__#{$name} {
+                --#{$name}-start: 0;
+
+                &::after {
+                    transform: rotate(45deg) !important;
+                }
+            }
+        }
+    
+        &__slice__#{$name}::before {
+            border-top-color: #{'rgba(var(--donut-spacing-color), calc(100 * var(--donut-spacing)))'};
+            transform: rotate(calc(360deg * var(--#{$name}-start) + 45deg));
+        }
+    
+        &__slice__#{$name}::after {
+            border-top-color: rgba($color, 1);
+            border-right-color: rgba($color, calc(100 * (var(--#{$name}) - .25)));
+            border-bottom-color: rgba($color, calc(100 * (var(--#{$name}) - .5)));
+            border-left-color: rgba($color, calc(100 * (var(--#{$name}) - .75)));
+            transform: rotate(calc(360deg * var(--#{$name}-start) + 45deg + var(--donut-spacing-deg)));
+        }
+    
+        @if $i == 1 {
+            $slides-concat: var(--#{$name});
+        }
+        @else {
+            $slides-concat: $slides-concat + ' + ' + var(--#{$name});
+        }
+    }
+
+    &__legend {
+        margin: 0;
+        margin-left: 20px;
+        padding: 0;
+        list-style: none;
+
+        &__item::before {
+            content: "";
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+
+        @each $item in $legend-items {
+            $color: nth($item, 2);
+            $i: index($legend-items, $item);
+
+            &__item-#{$i}::before {
+                background: $color;
+            }
+        }
+    }
+}

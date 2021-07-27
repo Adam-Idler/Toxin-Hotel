@@ -10,6 +10,10 @@
         max-width: 72%;
     }
 
+    &__dropdown {
+        width: 266px;
+    }
+
     &__section .room-mini-card {
         width: 100%;
     }
@@ -74,6 +78,12 @@
 
         &__card-item .room-mini-card {
             width: 290px;
+        }
+    }
+
+    @media (max-width: 1060px) {
+        &__dropdown {
+            width: 240px;
         }
     }
 

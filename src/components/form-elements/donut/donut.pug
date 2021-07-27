@@ -1,0 +1,19 @@
+mixin donut({slices, heading, sub, legend})
+    .donut__wrapper 
+        .donut(style=`--first: ${slices.first}; 
+                    --second: ${slices.second};
+                    --third: ${slices.third};
+                    --fourth: ${slices.fourth};
+                    --fifth: ${slices.fifth}
+        `)
+            .donut__slice.donut__slice__first
+            .donut__slice.donut__slice__second
+            .donut__slice.donut__slice__third
+            .donut__slice.donut__slice__fourth
+            .donut__slice.donut__slice__fifth
+            .donut__label
+                .donut__label__heading= heading
+                .donut__label__sub= sub
+        ul.donut__legend
+            -for(let i = 0; i < legend.length; i++)
+                li(class= `donut__legend__item donut__legend__item-${i + 1}`)= legend[i]

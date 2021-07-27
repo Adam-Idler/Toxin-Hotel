@@ -1,7 +1,7 @@
 include ../button/button
 
 mixin dropdown({placeholder, isActive, withButton, items})
-    div(class= isActive ? 'dropdown dropdown_extended-always' : 'dropdown')
+    div(class= isActive ? 'dropdown dropdown_extended-always' :  attributes.class ? `dropdown ${attributes.class}` : 'dropdown')
         button(type="button", data-initial-value= placeholder).dropdown__button 
             .dropdown__button__text= placeholder
         ul.dropdown__list 
