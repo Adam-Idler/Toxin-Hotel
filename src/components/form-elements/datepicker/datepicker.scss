@@ -24,7 +24,6 @@
 
     &__wrapper {
         position: relative;
-        width: 150px;
     }
 
     &_mini {
@@ -38,13 +37,12 @@
         }
     }
 
-    &_mini + &__wrapper:after,
-    &_filter + &__wrapper:after {
+    &__wrapper:after {
         content: "";
         cursor: pointer;
         position: absolute;
-        top: -28px;
-        right: 15px;
+        top: 21px;
+        right: 11%;
         display: block;
         width: 6px;
         height: 6px;
@@ -53,11 +51,15 @@
         border-left: none;
         pointer-events: none;
 
-        transform: rotate(45deg);
+        transform: rotate(45deg) translateY(-50%);
     }
 
-    &_filter,
-    &_filter + &__wrapper {
+    &__wrapper_filter:after {
+        top: 7px;
+        right: 8%;
+    }
+
+    &_filter {
         cursor: pointer;
         width: 266px;
         text-transform: lowercase;
@@ -94,6 +96,31 @@
     overflow: hidden;
     position: relative;
     z-index: 1000 !important;
+
+    @media (max-width: 470px) {
+        & {
+            left: 50% !important;
+            transform: translateX(-50%);
+        }
+    }
+
+    @media (max-width: 350px) {
+        & {
+            position: fixed !important;
+            width: 100% !important;
+            height: 100vh !important;
+            top: 0 !important;
+            margin-top: 0;
+        }
+
+        .ui-datepicker-title {
+            margin-bottom: 70px;
+        }
+
+        .ui-datepicker-calendar {
+            margin-bottom: 100px;
+        }
+    }
 }
 
 .ui-datepicker-header {

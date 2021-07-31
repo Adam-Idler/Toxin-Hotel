@@ -176,7 +176,6 @@
     }
 
     // Адаптив
-
     @media (max-width: 1280px) {
         & {
             padding: 15px 100px;
@@ -232,6 +231,12 @@
         }
     }
 
+    @media (max-width: 620px) {
+        & {
+            padding: 15px 40px;
+        }
+    }
+
     @media (max-width: 380px) {
         &__logo-img {
             margin-right: 0;
@@ -239,12 +244,6 @@
 
         &__logo-text {
             display: none;
-        }
-    }
-
-    @media (max-width: 620px) {
-        & {
-            padding: 15px 40px;
         }
     }
 

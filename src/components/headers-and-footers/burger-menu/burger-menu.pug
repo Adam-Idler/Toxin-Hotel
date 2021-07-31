@@ -16,7 +16,7 @@ mixin burger-menu({registred})
                         p.burger-menu__user-name Юлий Цезарь
                     else 
                         +button({species: "white", text: "Войти"})(class="header__button")
-                        +button({species: "purple", text: "Зарегестрироваться"})
+                        +button({species: "purple", text: "Зарегестрироваться"})(class="header__button")
 
             nav.burger-menu__nav 
                 a(href="#").burger-menu__link О нас

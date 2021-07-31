@@ -1,27 +1,27 @@
 mixin datepicker({type="standart", value=""})
     if type == 'standart'
         input(
-                type= "text",
-                placeholder!= 'ДД.ММ.ГГГГ',
-                value!= value,
-                class!= attributes.class ? 'datepicker datepicker_standart ' + attributes.class : 'datepicker datepicker_standart',
-            )
+            type= "text",
+            placeholder!= 'ДД.ММ.ГГГГ',
+            value!= value,
+            class!= attributes.class ? 'datepicker datepicker_standart ' + attributes.class : 'datepicker datepicker_standart',
+        )
     else if type == 'mini'
-        input(
+        label.datepicker__wrapper
+            input(
                 type= "text",
                 placeholder!= 'ДД.ММ.ГГГГ',
                 value!= value,
                 class!= attributes.class ? 'datepicker datepicker_mini ' + attributes.class : 'datepicker datepicker_mini',
             )
-        .datepicker__wrapper
     else if type == 'filter'
-        input(
+        label.datepicker__wrapper.datepicker__wrapper_filter
+            input(  
                 type= "text",
                 placeholder!= 'ДД.ММ.ГГГГ',
                 value!= value,
                 class!= attributes.class ? 'datepicker datepicker_filter ' + attributes.class : 'datepicker datepicker_filter',
             )
-        .datepicker__wrapper
     else if type == 'hidden'
         input(
                 type= "hidden",

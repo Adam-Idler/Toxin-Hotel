@@ -55,7 +55,7 @@ export const datepickerActivate = () => {
         },
         onSelect: function(dateText, inst, extensionRange) {
             $(inst.input[0]).val(extensionRange.startDateText);
-            $(inst.input[0].parentNode.querySelector('.datepicker_mini_end')).val(extensionRange.endDateText);
+            $(inst.input[0].parentNode.parentNode.querySelector('.datepicker_mini_end')).val(extensionRange.endDateText);
         }
     });
 

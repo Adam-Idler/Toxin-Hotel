@@ -8,7 +8,8 @@
         cursor: pointer;
 
         background-color: #fff;
-        font-family: 'Montserrat';        color: $dark-75;
+        font-family: 'Montserrat';
+        color: $dark-75;
         text-align: left;
 
         border: 1px solid $dark-25;
@@ -25,6 +26,18 @@
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
+        }
+
+        &-solution {
+            max-width: 85px;
+
+            &:first-child {
+                text-align: left;
+            }
+
+            &:last-child {
+                text-align: right;
+            }
         }
         
         &-solution_cancel {
@@ -121,7 +134,8 @@
         width: 30px;
         height: 30px;
         background-color: #fff;
-        font-family: 'Montserrat';        color: $dark-75;
+        font-family: 'Montserrat';
+        color: $dark-75;
 
         border: 1px solid $dark-25;
         border-radius: 50px;
@@ -138,7 +152,8 @@
         text-align: center;
 
         font-family: 'Montserrat';
-        font-weight: 700;        color: $dark;
+        font-weight: 700;
+        color: $dark;
 
         &::-webkit-outer-spin-button,
         &::-webkit-inner-spin-button {

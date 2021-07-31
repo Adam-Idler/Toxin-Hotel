@@ -13,6 +13,10 @@
 
     background-color: rgba(31, 32, 65, 0.1);
 
+    .button_puple {
+        height: 34px;
+    }
+
     &_active {
         display: flex;
     }
@@ -145,7 +149,7 @@
         }
     }
 
-    @media (max-width: 630px) {
+    @media (max-width: 690px) {
         &__signin {
             display: flex;
             flex-wrap: wrap;
@@ -153,9 +157,14 @@
             align-items: center;
         }
 
-        .button_white {
+        .header__button {
             margin-right: 0;
-            margin-bottom: 5px;
+            width: 100%;
+            margin-bottom: 15px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
         }
 
         &__nav {

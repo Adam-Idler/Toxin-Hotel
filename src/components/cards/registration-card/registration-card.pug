@@ -8,21 +8,21 @@ mixin registration-card()
         h1.card__title Регистрация аккаунта 
 
         .registration-card__text-fields 
-            +text-field({placeholder: "Имя"}).registration-card__input-item
-            +text-field({placeholder: "Фамилия"}).registration-card__input-item
+            +text-field({placeholder: "Имя"})
+            +text-field({placeholder: "Фамилия"})
         .registration-card__radio-buttons 
             +radio({text: "Мужчина", isChecked: true, name: "sex"})
             +radio({text: "Женщина", isChecked: false, name: "sex"})
 
         h3.card__name-input Дата рождения
-        +datepicker({type: "standart"}).registration-card__datepicker
+        +datepicker({type: "standart"})
 
         h3.card__name-input Данные для входа в сервис
         .registration-card__inputs 
-            +text-field({type: "email", placeholder: "Email"}).registration-card__input-item
-            +text-field({type: "password", placeholder: "Пароль"}).registration-card__input-item
-        +toggle({text: "Получать спецпредложения", isActive: false}).registration-card__toggle
-        +button({species: "wide", text: "Перейти к оплате", type: "submit"}).registration-card__pay-button
+            +text-field({type: "email", placeholder: "Email"})
+            +text-field({type: "password", placeholder: "Пароль"})
+        +toggle({text: "Получать спецпредложения", isActive: false})
+        +button({species: "wide", text: "Перейти к оплате", type: "submit"})
 
         .registration-card__login
             p.registration-card__login-text Уже есть аккаунт на Toxin

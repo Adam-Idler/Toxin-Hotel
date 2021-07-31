@@ -3,12 +3,41 @@
         display: flex;
         flex-wrap: wrap;
         align-content: space-between;
-        height: 65px;
+        max-height: 65px;
         flex-direction: column;
         margin-bottom: 20px;
     }
 
     &__guests {
         margin-bottom: 31px;
+    }
+
+    @media (max-width: 470px) {
+        & {
+            width: 100%;
+            background-color: rgba(255, 255, 255, .85);
+
+            .dropdown,
+            .button_wide {
+                width: 100%;
+            }
+        }
+
+        &__date {
+            max-height: none;
+
+            .datepicker_mini_start {
+                margin-bottom: 10px;
+            }
+
+            .datepicker,
+            .datepicker__wrapper {
+                width: 100%;
+            }
+
+            .datepicker__wrapper:after {
+                right: 5.5%;  
+            }
+        }
     }
 }

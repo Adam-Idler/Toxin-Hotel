@@ -4,6 +4,9 @@ include ../../../components/form-elements/dropdown/dropdown
 include ../../../components/form-elements/checkbox/checkbox
 include ../../../components/form-elements/datepicker/datepicker
 include ../../../components/form-elements/range-slider/range-slider
+
+include ../../../components/form-elements/button/button
+
 include ../../../components/form-elements/checkbox-list/checkbox-list
 include ../../../components/form-elements/rich-checkbox/rich-checkbox
 include ../../../components/form-elements/pagination/pagination
@@ -20,11 +23,12 @@ html(lang="ru")
         title Search Room
     body 
         +header({registred: false}) 
+        +button({species: "purple", text: "Фильтры"})
         main.search-room__main 
             aside.search-room__aside 
                 .page__element.page__element_indent-20
                     h3.page__element-name даты пребывания в отеле
-                    +datepicker({type: "filter", value: "19 авг - 23 авг"}).search-room__datepicker
+                    +datepicker({type: "filter", value: "19 авг - 23 авг"})
                 
                 .page__element.page__element_indent-30
                     h3.page__element-name Гости
@@ -53,7 +57,7 @@ html(lang="ru")
                                 itemName: "Младенцы",
                                 startAmount: "1"
                             }
-                    ]}).search-room__dropdown
+                    ]})
 
                 .page__element.page__element_indent-30
                     +range-slider({
@@ -101,7 +105,7 @@ html(lang="ru")
                                 itemName: "Ванные комнаты",
                                 startAmount: ""
                             }
-                    ]}).search-room__dropdown
+                    ]})
 
                 .page__element
                     +checkbox-list({text: "дополнительные удобства", isActive: false})
@@ -113,6 +117,7 @@ html(lang="ru")
                             +checkbox({text: "Шампунь", isChecked: false})
                             +checkbox({text: "Телевизор", isChecked: false})
                             +checkbox({text: "Шампунь", isChecked: false})
+
             section.search-room__section
                 h1.search-room__title Номера, которые мы для вас подобрали
                 .search-room__cards 
@@ -239,6 +244,6 @@ html(lang="ru")
                             ratingId: "12",
                             reviewNumber: "55"
                         })
-                    +pagination().search-room__pagination
+                    +pagination()
 
         +footer({mobile: false})

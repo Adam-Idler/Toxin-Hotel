@@ -83,7 +83,6 @@ export const dropdownActivate = () => {
 
     const changeValueOfCountDigit = (e) => {
         let target = e.target;
-        let clearButton = target.closest('.dropdown__list').querySelector('.dropdown__button-solution_cancel');
 
         if (!target.classList.contains('dropdown__button-minus') && 
             !target.classList.contains('dropdown__button-plus') &&
@@ -91,6 +90,9 @@ export const dropdownActivate = () => {
         {
             return;
         }
+
+        let clearButton = target.closest('.dropdown__list').querySelector('.dropdown__button-solution_cancel');
+
 
         if (target.classList.contains('dropdown__button-minus')) 
         {
