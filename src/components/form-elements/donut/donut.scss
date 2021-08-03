@@ -27,7 +27,9 @@ $legend-items: (
 
     &__wrapper {
         display: inline-flex;
+        flex-wrap: wrap;
         align-items: flex-end;
+        justify-content: center;
     }
 
     &__label {
@@ -147,6 +149,12 @@ $legend-items: (
             &__item-#{$i}::before {
                 background: $color;
             }
+        }
+    }
+
+    @media (max-width: 392px) {
+        .donut {
+            margin-bottom: 30px;
         }
     }
 }

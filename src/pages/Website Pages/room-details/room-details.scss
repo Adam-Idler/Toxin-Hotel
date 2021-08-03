@@ -12,6 +12,10 @@
         max-width: 780px;
     }
 
+    &__subtitle {
+        margin-bottom: 20px;
+    }
+
     &__images {
         max-height: 485px;
         display: flex;
@@ -29,19 +33,17 @@
         }
     }
 
-    &__subtitle {
-        margin-bottom: 20px;
-    }
-
     &__column-1 {
         width: 68.13%;
         max-height: 485px;
+        min-height: 250px;
         height: 34.45vw;
     }
 
     &__column-2 {
         width: 31.87%;
         max-height: 242.5px;
+        min-height: 150px;
         height: 17.225vw;
     }
 
@@ -164,6 +166,17 @@
 
         &__reviews-count {
             display: none;
+        }
+    }
+
+    @media (max-width: 470px) {
+        & {
+            padding: 40px 0 0;
+        }
+
+        &__main {
+            padding: 0 40px;
+            margin-bottom: 0;
         }
     }
 }

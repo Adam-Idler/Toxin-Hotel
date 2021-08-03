@@ -23,7 +23,6 @@ html(lang="ru")
         title Search Room
     body 
         +header({registred: false}) 
-        +button({species: "purple", text: "Фильтры"})
         main.search-room__main 
             aside.search-room__aside 
                 .page__element.page__element_indent-20
@@ -117,8 +116,110 @@ html(lang="ru")
                             +checkbox({text: "Шампунь", isChecked: false})
                             +checkbox({text: "Телевизор", isChecked: false})
                             +checkbox({text: "Шампунь", isChecked: false})
+            
+            aside.search-room__aside.search-room__aside_mobile 
+                header.aside__header
+                    a(href="#").logo
+                        img(src="../images/logo/logo.png", alt="Logo").logo_img.header__logo_img
+                        img(src="../images/logo/logo-text.png", alt="logo text").logo_text.header__logo_text
+                    
+                    .aside__close-btn 
+
+                .page__element.page__element_indent-20
+                    h3.page__element-name даты пребывания в отеле
+                    +datepicker({type: "filter", value: "19 авг - 23 авг"})
+                
+                .page__element.page__element_indent-30
+                    h3.page__element-name Гости
+                    +dropdown({
+                            placeholder: "Сколько гостей", isActive: false, withButton: true, items: [{
+                                id: "adults",
+                                minAmount: "0",
+                                maxAmount: "10",
+                                forms: "гость, гостя, гостей",
+                                itemName: "Взрослые",
+                                startAmount: "2"
+                            },
+                            {
+                                id: "kids",
+                                minAmount: "0",
+                                maxAmount: "10",
+                                forms: "гость, гостя, гостей",
+                                itemName: "Дети",
+                                startAmount: "1"
+                            },
+                            {
+                                id: "babys",
+                                minAmount: "0",
+                                maxAmount: "10",
+                                forms: "младенец, младенца, младенцев",
+                                itemName: "Младенцы",
+                                startAmount: "1"
+                            }
+                    ]})
+
+                .page__element.page__element_indent-30
+                    +range-slider({
+                        text: "диапазон цены", 
+                        subtext: "Стоимость за сутки пребывания в номере", 
+                        minValue: 5000, 
+                        maxValue: 10000
+                    })
+
+                .page__element.page__element_indent-30
+                    h3.page__element-name.page__element-name_indent-16 правила дома
+                    +checkbox({text: "Можно курить", isChecked: false})
+                    +checkbox({text: "Можно c питомцами", isChecked: true})
+                    +checkbox({text: "Можно пригласить гостей (до 10 человек)", isChecked: true})
+
+                .page__element.page__element_indent-30
+                    h3.page__element-name.page__element-name_indent-16 доступность
+                    +rich-checkbox({text: "Широкий коридор", subtext: "Ширина коридоров в номере не менее 91 см."})
+                    +rich-checkbox({text: "Помощник для инвалидов", subtext: "На 1 этаже вас встретит специалист  и проводит до номера."})
+
+                .page__element.page__element_indent-30
+                    h3.page__element-name удобства номера
+                    +dropdown({
+                            placeholder: "Удобства номера", isActive: false, withButton: false, items: [{
+                                id: "bedrooms",
+                                minAmount: "0",
+                                maxAmount: "10",
+                                forms: "спальня, спальни, спален",
+                                itemName: "Спальни",
+                                startAmount: "2"
+                            },
+                            {
+                                id: "beds",
+                                minAmount: "0",
+                                maxAmount: "10",
+                                forms: "кровать, кровати, кроватей",
+                                itemName: "Кровати",
+                                startAmount: "2"
+                            },
+                            {
+                                id: "bathrooms",
+                                minAmount: "0",
+                                maxAmount: "10",
+                                forms: "ванная, ванные, ванн",
+                                itemName: "Ванные комнаты",
+                                startAmount: ""
+                            }
+                    ]})
+
+                .page__element
+                    +checkbox-list({text: "дополнительные удобства", isActive: false})
+                            +checkbox({text: "Завтрак", isChecked: false})
+                            +checkbox({text: "Письменный стол", isChecked: true})
+                            +checkbox({text: "Стул для кормления", isChecked: true})
+                            +checkbox({text: "Кроватка", isChecked: true})
+                            +checkbox({text: "Телевизор", isChecked: false})
+                            +checkbox({text: "Шампунь", isChecked: false})
+                            +checkbox({text: "Телевизор", isChecked: false})
+                            +checkbox({text: "Шампунь", isChecked: false})
 
             section.search-room__section
+                +button({species: "purple", text: "Фильтры"}).search-room__btn-filter
+
                 h1.search-room__title Номера, которые мы для вас подобрали
                 .search-room__cards 
                     .search-room__card-item 

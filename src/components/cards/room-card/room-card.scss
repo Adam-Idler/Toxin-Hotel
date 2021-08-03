@@ -31,7 +31,7 @@
         display: flex;
         flex-wrap: wrap;
         align-content: space-between;
-        height: 65px;
+        max-height: 65px;
         flex-direction: column;
         margin-bottom: 20px;
     }
@@ -102,5 +102,51 @@
         height: 20px;
 
         border-bottom: 1px dashed $dark-25;
+    }
+
+    @media (max-width: 470px) {
+        & {
+            width: 100%;
+            box-shadow: none;
+            border: none;
+            background-color: rgba(255, 255, 255, .85);
+
+            .dropdown,
+            .button_wide {
+                width: 100%;
+            }
+        }
+
+        &__date {
+            max-height: none;
+
+            .datepicker_mini_start {
+                margin-bottom: 10px;
+            }
+
+            .datepicker,
+            .datepicker__wrapper {
+                width: 100%;
+            }
+
+            .datepicker__wrapper:after {
+                right: 5.5%;  
+            }
+        }
+
+    }
+
+    @media (max-width: 350px) {
+        &__price-name {
+            max-width: 178px;
+        }
+
+        &__sum {
+            align-self: flex-end;
+        }
+
+        &__info {
+            display: none;
+        }
     }
 }

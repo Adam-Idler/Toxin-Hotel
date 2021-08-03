@@ -70,14 +70,10 @@
         position: relative;
         z-index: 100;
         margin: 0;
-        padding: 7px 7px 13px 15px;
+        padding: 0;
         list-style: none;
 
         width: 100%;
-        background-color: #fff;
-
-        border: 1px solid $dark-25;
-        border-radius: 0 0 4px 4px;
 
         transition: .2s border-color;
     }
@@ -85,8 +81,13 @@
     &_extended > &__list,
     &_extended-always > &__list {
         display: block;
-        border: 1px solid $dark-50;
         color: $dark-75;
+    }
+
+    &_extended-always &__item {
+        opacity: 1;
+        pointer-events: auto;
+        visibility: visible;
     }
 
     &_extended-always > &__list {
@@ -97,22 +98,46 @@
     &_extended-always > &__button {
         border: 1px solid $dark-50;
         border-radius: 4px 4px 0 0;
-        border-bottom:  none;
     }
 
     &__item {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+
+        padding: 0 7px 7px 13px;
+        background-color: #fff;
+        
+        border-left: 1px solid $dark-50;
+        border-right: 1px solid $dark-50;
+        
         display: flex;
         justify-content: space-between;
         align-items: center;
 
-        margin-bottom: 7px;
+        &:first-of-type {
+            padding: 7px 7px 7px 13px;
+        }
 
         &:last-of-type {
-            margin-bottom: 0;
+            border-bottom: 1px solid $dark-50;
+            border-radius: 0 0 4px 4px;
+        }
+
+        &:last-of-type:not(&_solution) {
+            padding: 0px 7px 15px 13px;
         }
 
         &_solution {
-            margin-top: 20px;
+            padding: 20px 7px 15px 13px;
+        }
+    }
+
+    @for $i from 1 through 8 {
+        &_extended &__item:nth-child(#{$i}),
+        li:hover &__expanded-list-item:nth-child(#{$i}) {
+            animation: dropdown 0.1s ease-in-out forwards;
+            animation-delay: 0.05s * $i;
         }
     }
 
@@ -159,6 +184,20 @@
         &::-webkit-inner-spin-button {
             -webkit-appearance: none;
             margin: 0;
+        }
+    }
+
+    @keyframes dropdown {
+        0% {
+          opacity: 0;
+          transform: rotateX(-90deg);
+        }
+    
+        100% {
+          opacity: 1;
+          pointer-events: auto;
+          visibility: visible;
+          transform: rotateX(0);
         }
     }
 }
