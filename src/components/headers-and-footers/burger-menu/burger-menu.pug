@@ -1,22 +1,23 @@
 include ../../form-elements/button/button
 
-mixin burger-menu({registred})
+mixin burger-menu({registred, index=false})
+    - var path = index ? './' : '../'
     .burger-menu
         .burger-menu__block
             button.burger-menu__close-btn
 
             header.burger-menu__header
                 .logo.burger-menu__logo
-                    img(src="../images/logo/logo.png", alt="Logo").logo_img.burger-menu__logo_img
-                    img(src="../images/logo/logo-text.png" alt="logo text").logo_text.burger-menu__logo_text
+                    img(src= path +"images/logo/logo.png", alt="Logo").logo_img.burger-menu__logo_img
+                    img(src= path +"images/logo/logo-text.png" alt="logo text").logo_text.burger-menu__logo_text
 
                 .burger-menu__signin 
                     if registred
                         .burger-menu__separator 
                         p.burger-menu__user-name Юлий Цезарь
                     else 
-                        +button({species: "white", text: "Войти"})(class="header__button")
-                        +button({species: "purple", text: "Зарегестрироваться"})(class="header__button")
+                        +button({species: "white", text: "Войти", href: index ? "./pages/sign-in-page.html" : "./sign-in-page.html"})(class="header__button")
+                        +button({species: "purple", text: "Зарегестрироваться", href: index ? "./pages/registration-page.html" : "./registration-page.html"})(class="header__button")
 
             nav.burger-menu__nav 
                 a(href="#").burger-menu__link О нас

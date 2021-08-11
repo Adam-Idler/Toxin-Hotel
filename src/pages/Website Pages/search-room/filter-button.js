@@ -4,6 +4,9 @@ export const filterButton = () => {
           aside = document.querySelector('.search-room__aside_mobile'),
           section = document.querySelector('.search-room__section');
     
+    if (!filterBtn) {
+        return;
+    }
 
     const openAside = () => {
         aside.classList.add('search-room__aside_mobile_shown');

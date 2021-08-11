@@ -12,9 +12,9 @@ html(lang="ru")
         script(src="https://code.jquery.com/ui/1.12.1/jquery-ui.js")
         title Landing Page
     body 
-        +header({registred: false})
+        +header({registred: false, index: true})
         main.landing-page__main 
             .landing-page__container
-                +select-room-card()
+                +select-room-card({href: './pages/search-room.html'})
                 p.landing-page__words Лучшие номера для вашей работы, отдыха и просто вдохновения
-        +footer({mobile: false})
+        +footer({mobile: false, index: true})

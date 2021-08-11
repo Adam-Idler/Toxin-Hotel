@@ -1,50 +1,98 @@
 include ../../form-elements/button/button
 include ../burger-menu/burger-menu
 
-mixin header({registred, userName="Иван Иванов"})
-    header(class=attributes.class ? "header" + ' ' + attributes.class : "header")
-        a(href="#").logo
-            img(src="../images/logo/logo.png", alt="Logo").logo_img.header__logo_img
-            img(src="../images/logo/logo-text.png", alt="logo text").logo_text.header__logo_text
+mixin header({registred, userName="Иван Иванов", index=false})
+    if index
+        header(class=attributes.class ? "header" + ' ' + attributes.class : "header")
+            a(href="./index.html").logo
+                img(src="./images/logo/logo.png", alt="Logo").logo_img.header__logo_img
+                img(src="./images/logo/logo-text.png", alt="Logo text").logo_text.header__logo_text
 
-        nav.header__nav 
-            ul.header__nav-menu
-                li 
-                    a(href="#").header__link.header__link_active О нас
-                li 
-                    a(href="#").header__link.header__link_expanded Услуги
-                    ul.header__link__expanded-list
-                        li.header__link__expanded-list-item
-                            a(href="#").header__link Подбор номера
-                        li.header__link__expanded-list-item
-                            a(href="#").header__link Подбор отеля
-                        li.header__link__expanded-list-item
-                            a(href="#").header__link Отзывы о номерах
-                        li.header__link__expanded-list-item
-                            a(href="#").header__link Сравнение цен
-                li 
-                    a(href="#").header__link Вакансии
-                li 
-                    a(href="#").header__link Новости
-                li 
-                    a(href="#").header__link.header__link_expanded Соглашения
-                    ul.header__link__expanded-list
-                        li.header__link__expanded-list-item
-                            a(href="#").header__link Пользовательское
-                        li.header__link__expanded-list-item
-                            a(href="#").header__link Обработка персональных данных
-                        li.header__link__expanded-list-item
-                            a(href="#").header__link Оказание услуг
+            nav.header__nav 
+                ul.header__nav-menu
+                    li 
+                        a(href="#").header__link.header__link_active О нас
+                    li 
+                        a(href="#").header__link.header__link_expanded Услуги
+                        ul.header__link__expanded-list
+                            li.header__link__expanded-list-item
+                                a(href="#").header__link Подбор номера
+                            li.header__link__expanded-list-item
+                                a(href="#").header__link Подбор отеля
+                            li.header__link__expanded-list-item
+                                a(href="#").header__link Отзывы о номерах
+                            li.header__link__expanded-list-item
+                                a(href="#").header__link Сравнение цен
+                    li 
+                        a(href="#").header__link Вакансии
+                    li 
+                        a(href="#").header__link Новости
+                    li 
+                        a(href="#").header__link.header__link_expanded Соглашения
+                        ul.header__link__expanded-list
+                            li.header__link__expanded-list-item
+                                a(href="#").header__link Пользовательское
+                            li.header__link__expanded-list-item
+                                a(href="#").header__link Обработка персональных данных
+                            li.header__link__expanded-list-item
+                                a(href="#").header__link Оказание услуг
 
-            .header__signin 
-                if registred
-                    .separator 
-                    p.user-name !{userName}
-                else 
-                    +button({species: "white", text: "Войти"})(class="header__button")
-                    +button({species: "purple", text: "Зарегестрироваться"})(class="header__button")
+                .header__signin 
+                    if registred
+                        .separator 
+                        p.user-name !{userName}
+                    else 
+                        +button({species: "white", text: "Войти", href: "./pages/sign-in-page.html"})(class="header__button")
+                        +button({species: "purple", text: "Зарегестрироваться", href: "./pages/registration-page.html"})(class="header__button")
 
-        button.header__burger 
-                .header__burger-item 
-        
-        +burger-menu({registred: registred})
+            button.header__burger 
+                    .header__burger-item
+            
+            +burger-menu({registred: registred, index: index})
+    else 
+        header(class=attributes.class ? "header" + ' ' + attributes.class : "header")
+            a(href="../index.html").logo
+                img(src="../images/logo/logo.png", alt="Logo").logo_img.header__logo_img
+                img(src="../images/logo/logo-text.png", alt="Logo text").logo_text.header__logo_text
+
+            nav.header__nav 
+                ul.header__nav-menu
+                    li 
+                        a(href="#").header__link.header__link_active О нас
+                    li 
+                        a(href="#").header__link.header__link_expanded Услуги
+                        ul.header__link__expanded-list
+                            li.header__link__expanded-list-item
+                                a(href="#").header__link Подбор номера
+                            li.header__link__expanded-list-item
+                                a(href="#").header__link Подбор отеля
+                            li.header__link__expanded-list-item
+                                a(href="#").header__link Отзывы о номерах
+                            li.header__link__expanded-list-item
+                                a(href="#").header__link Сравнение цен
+                    li 
+                        a(href="#").header__link Вакансии
+                    li 
+                        a(href="#").header__link Новости
+                    li 
+                        a(href="#").header__link.header__link_expanded Соглашения
+                        ul.header__link__expanded-list
+                            li.header__link__expanded-list-item
+                                a(href="#").header__link Пользовательское
+                            li.header__link__expanded-list-item
+                                a(href="#").header__link Обработка персональных данных
+                            li.header__link__expanded-list-item
+                                a(href="#").header__link Оказание услуг
+
+                .header__signin 
+                    if registred
+                        .separator 
+                        p.user-name !{userName}
+                    else 
+                        +button({species: "white", text: "Войти", href: "./sign-in-page.html"})(class="header__button")
+                        +button({species: "purple", text: "Зарегестрироваться", href: "./registration-page.html"})(class="header__button")
+
+            button.header__burger 
+                    .header__burger-item
+            
+            +burger-menu({registred: registred, index: index})

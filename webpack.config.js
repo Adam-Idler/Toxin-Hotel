@@ -8,8 +8,8 @@ module.exports = {
   entry: ['./src/assets/scripts/index.js', './src/assets/styles/style.scss'],
   devtool: "eval-source-map",
   output: {
-    publicPath: '../',
     path: path.resolve(__dirname, 'dist'),
+    publicPath: '../',
     filename: 'scripts/bundle.js',
     assetModuleFilename: 'images/[name][ext]'
   },
@@ -72,7 +72,8 @@ module.exports = {
 
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'src/pages/Website Pages/landing-page') + '/landing-page.pug',
-      filename: 'pages/landing-page.html'
+      publicPath: './',
+      filename: 'index.html'
     }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'src/pages/Website Pages/search-room') + '/search-room.pug',

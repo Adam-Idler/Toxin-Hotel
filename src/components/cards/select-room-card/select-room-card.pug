@@ -2,7 +2,7 @@ include ../../form-elements/datepicker/datepicker
 include ../../form-elements/dropdown/dropdown
 include ../../form-elements/button/button
 
-mixin select-room-card()
+mixin select-room-card({href = ''})
     form(class= attributes.class ? "card select-room " + attributes.class : "card select-room")
         h1.card__title Найдём номера под ваши пожелания
 
@@ -42,4 +42,4 @@ mixin select-room-card()
             ]})
             
         .select-room__button
-            +button({species: "wide", text: "подобрать номер", type: "submit"})
+            +button({species: "wide", text: "подобрать номер", href: href})

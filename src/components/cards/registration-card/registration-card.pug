@@ -3,7 +3,7 @@ include ../../form-elements/datepicker/datepicker
 include ../../form-elements/radio-button/radio
 include ../../form-elements/toggle/toggle
 
-mixin registration-card()
+mixin registration-card({href = ''})
     form.card.registration-card 
         h1.card__title Регистрация аккаунта 
 
@@ -26,4 +26,4 @@ mixin registration-card()
 
         .registration-card__login
             p.registration-card__login-text Уже есть аккаунт на Toxin
-            +button({species: "white", text: "Войти"})
+            +button({species: "white", text: "Войти", href: href})

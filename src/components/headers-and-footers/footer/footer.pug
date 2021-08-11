@@ -1,9 +1,10 @@
-mixin footer({mobile})
+mixin footer({mobile, index=false})
+    - var path = index ? './' : '../'
     if mobile
         footer(class= attributes.class ? "footer-mobile " + attributes.class : "footer-mobile")
-            a(href="#").footer-mobile__logo.logo 
-                img(src="../images/logo/logo.png", alt="Logo").footer-mobile__logo_img
-                img(src="../images/logo/logo-text.png" alt="logo text")
+            a(href=path + "index.html").footer-mobile__logo.logo 
+                img(src=path + "images/logo/logo.png", alt="Logo").footer-mobile__logo_img
+                img(src=path + "images/logo/logo-text.png" alt="logo text")
 
             p.footer-mobile__copyrights Copyright © 2018 Toxin отель. Все права защищены.
 
@@ -44,9 +45,9 @@ mixin footer({mobile})
         footer.footer(class= attributes.class ? "footer " + attributes.class : "footer")
             .footer__widgets
                 .footer__words
-                    a(href="#").logo.footer__logo
-                        img(src="../images/logo/logo.png", alt="Logo").logo_img.footer__logo_img
-                        img(src="../images/logo/logo-text.png" alt="Logo text").logo_text.footer__logo_text
+                    a(href=path + "index.html").logo.footer__logo
+                        img(src=path + "images/logo/logo.png", alt="Logo").logo_img.footer__logo_img
+                        img(src=path + "images/logo/logo-text.png" alt="Logo text").logo_text.footer__logo_text
 
                     p.footer__text.footer__text_about Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
 
