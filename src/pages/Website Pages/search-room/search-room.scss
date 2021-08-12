@@ -164,10 +164,11 @@
     }
 
     @media (max-width: 1060px) {
-        &__dropdown {
+        &__aside .dropdown {
             width: 240px;
         }
     }
+
 
     @media (max-width: 1090px) {
         &__section {

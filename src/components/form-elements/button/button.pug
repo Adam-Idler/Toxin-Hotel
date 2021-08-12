@@ -1,8 +1,8 @@
 //- species Может быть purple, white, wide и no-border
-mixin button({species="white", text="click me", type, href})
+mixin button({species, text="click me", type, href=''})
     button(
             type= type ? type : "button", 
             class!= attributes.class ? `button button_${species} ${attributes.class}` : `button button_${species}`
-            onclick= href ? `document.location='${href}'` : ''
+            onclick!= href ? `document.location='${href}'` : ''
            )= text
     

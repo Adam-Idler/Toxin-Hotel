@@ -1,4 +1,4 @@
-// import './jquery.datepicker.extension.range.min.js';
+import './jquery.datepicker.extension.range.min.js';
 import { toggleBtn }            from "../../components/form-elements/toggle/toggle";
 import { dropdownActivate }     from "../../components/form-elements/dropdown/dropdown";
 import { datepickerActivate }   from "../../components/form-elements/datepicker/datepicker";

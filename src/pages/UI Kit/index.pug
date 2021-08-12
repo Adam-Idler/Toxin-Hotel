@@ -353,13 +353,13 @@ html(lang="ru")
         h1.block__name Cards
         .cards.page
             .page__column.page__column-1
-                +select-room-card().card_indent-40
-                +registration-card()
+                +select-room-card({}).card_indent-40
+                +registration-card({})
                 
             .page__column.page__column-2
                 +room-card().card_indent-40
 
-                +login-card()
+                +login-card({})
 
             .page__column.page__column-3
                 .datepicker.datepicker__hidden

@@ -71,8 +71,8 @@ module.exports = {
     }),
 
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'src/pages/Website Pages/landing-page') + '/landing-page.pug',
       publicPath: './',
+      template: path.resolve(__dirname, 'src/pages/Website Pages/landing-page') + '/landing-page.pug',
       filename: 'index.html'
     }),
     new HtmlWebpackPlugin({
